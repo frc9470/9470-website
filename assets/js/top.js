@@ -315,36 +315,104 @@
         }
 
         hoverEvent() {
-            this.$list_item_a
-                .on("mouseenter", (event) => {
+            let scrollCheckTimeout = null;
+            let isCheckingPosition = false;
+            const hideMovie = () => {
+                if (this.hover_flag) {
+                    this.hover_flag = false;
+                    this.currentHoveredElement = null;
+                    this.$project.removeClass("is-movie_play");
+                    this.$contents.removeClass("is-movie_play");
+                    this.$header.removeClass("is-movie_play");
+                    this.$movie_info.removeClass("is-movie_play");
+                    this.delayTimeout = setTimeout(() => {
+                        this.$movie.removeClass("is-movie_play");
+                        this.$movie_container.removeClass("is-visible");
+                        this.stop();
+                    }, 350);
+                }
+            };
+
+            const showMovie = (element) => {
+                if (!this.hover_flag || this.currentHoveredElement !== element) {
                     this.hover_flag = true;
+                    this.currentHoveredElement = element;
                     clearTimeout(this.delayTimeout);
                     this.$movie_container.removeClass("is-visible");
-                    const index = this.$list_item_a.index(event.currentTarget);
+                    const index = this.$list_item_a.index(element);
                     this.$movie_image.removeClass("is-current").eq(index).addClass("is-current");
                     this.$movie_info_item.removeClass("is-current").eq(index).addClass("is-current");
-                    this.videoId = $(event.currentTarget).data("yt");
+                    this.videoId = $(element).data("yt");
                     this.ytPlayer.cueVideoById({ videoId: this.videoId });
                     this.$movie.addClass("is-movie_play");
                     this.$project.addClass("is-movie_play");
                     this.$contents.addClass("is-movie_play");
                     this.$header.addClass("is-movie_play");
                     this.$movie_info.addClass("is-movie_play");
-                })
-                .on("mouseleave", () => {
-                    if (this.hover_flag) {
-                        this.hover_flag = false;
-                        this.$project.removeClass("is-movie_play");
-                        this.$contents.removeClass("is-movie_play");
-                        this.$header.removeClass("is-movie_play");
-                        this.$movie_info.removeClass("is-movie_play");
-                        this.delayTimeout = setTimeout(() => {
-                            this.$movie.removeClass("is-movie_play");
-                            this.$movie_container.removeClass("is-visible");
-                            this.stop();
-                        }, 350);
+                }
+            };
+
+            const checkMousePosition = () => {
+                if (isCheckingPosition) return;
+                isCheckingPosition = true;
+
+                requestAnimationFrame(() => {
+                    if (app.mouseStalker) {
+                        const mouseX = app.mouseStalker.posX;
+                        const mouseY = app.mouseStalker.posY;
+                        let foundHoveredElement = null;
+
+                        if (mouseX > 0 || mouseY > 0) {
+                            this.$list_item_a.each(function() {
+                                const $element = $(this);
+                                const offset = $element.offset();
+                                
+                                if (mouseX < offset.left - 10 || mouseX > offset.left + $element.outerWidth() + 10) {
+                                    return true;
+                                }
+                                
+                                const isWithinBounds = mouseX >= offset.left && 
+                                                     mouseX <= offset.left + $element.outerWidth() &&
+                                                     mouseY >= offset.top && 
+                                                     mouseY <= offset.top + $element.outerHeight();
+                                
+                                if (isWithinBounds) {
+                                    foundHoveredElement = this;
+                                    return false;
+                                }
+                            });
+                        }
+
+                        if (foundHoveredElement) {
+                            if (this.currentHoveredElement !== foundHoveredElement) {
+                                showMovie(foundHoveredElement);
+                            }
+                        } else if (this.hover_flag) {
+                            hideMovie();
+                        }
                     }
+                    isCheckingPosition = false;
                 });
+            };
+
+            const throttledScrollCheck = () => {
+                clearTimeout(scrollCheckTimeout);
+                scrollCheckTimeout = setTimeout(() => {
+                    checkMousePosition();
+                }, 16);
+            };
+
+            this.$list_item_a
+                .on("mouseenter", (event) => {
+                    showMovie(event.currentTarget);
+                })
+                .on("mouseleave", hideMovie);
+
+            $(window).on("scroll", throttledScrollCheck);
+
+            if (app.locoScroll) {
+                app.locoScroll.on("scroll", throttledScrollCheck);
+            }
         }
 
         setMovieInfo() {
