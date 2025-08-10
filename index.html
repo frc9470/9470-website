@@ -29,6 +29,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <!-- End Web Fonts -->
+  
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link href="assets/css/common.css" rel="stylesheet" type="text/css"/>
     <link href="assets/css/top.css" rel="stylesheet" type="text/css"/>
 
@@ -868,6 +871,27 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
     <script src="assets/js/common.js"></script>
               <script src="assets/js/top.js"></script>
         <!-- webfont -->
+
+<!-- Registration Popup Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Show the registration popup after a short delay
+  setTimeout(function() {
+    Swal.fire({
+      title: 'Join Team 9470!',
+      text: 'Join Team 9470! Interested in robotics, engineering, or technology? Join Ctrl-Alt-Defeat and become part of our FIRST Robotics Competition team —',
+      icon: 'info',
+      showCancelButton: true,
+      confirmButtonText: 'Sign Up Now!',
+      cancelButtonText: 'Maybe Later'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.open('http://bit.ly/9470robot', '_blank');
+      }
+    });
+  }, 2000); // Show popup after 2 seconds
+});
+</script>
 
 
       </body>
