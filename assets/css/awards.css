@@ -7,6 +7,22 @@
     z-index: 1;
 }
 
+section.Main.Main--fixed#Main:has(.awards-hero) {
+    background: #16213e;
+}
+
+section.Main.Main--fixed#Main:has(.awards-hero)::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(197, 37, 53, 0.12) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+section.Main.Main--fixed#Main:has(.awards-hero) ~ #SectContents {
+    background: #16213e;
+}
+
 .awards-hero__badge {
     display: inline-flex;
     align-items: center;
