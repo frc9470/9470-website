@@ -177,6 +177,15 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 <!-- Hero Section -->
 <section class="Main Main--fixed" id="Main">
+  <canvas class="awards-hero__particles" id="awardsParticles"></canvas>
+  <div class="awards-hero__marquee" aria-hidden="true">
+    <div class="awards-hero__marquee-track">
+      <span class="awards-hero__marquee-text">AWARDS &amp; RESULTS&nbsp;&mdash;&nbsp;</span>
+      <span class="awards-hero__marquee-text">AWARDS &amp; RESULTS&nbsp;&mdash;&nbsp;</span>
+      <span class="awards-hero__marquee-text">AWARDS &amp; RESULTS&nbsp;&mdash;&nbsp;</span>
+      <span class="awards-hero__marquee-text">AWARDS &amp; RESULTS&nbsp;&mdash;&nbsp;</span>
+    </div>
+  </div>
   <div class="awards-hero">
     <div class="awards-hero__badge">
       <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2Z"/></svg>
@@ -202,20 +211,20 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
         <!-- Stats -->
         <div class="stats-grid awards-stagger-parent fInview">
-          <div class="stat-card awards-stagger-child">
-            <div class="stat-card__number">#3</div>
+          <div class="stat-card awards-stagger-child awards-tilt">
+            <div class="stat-card__number" data-count-prefix="#" data-count-to="3">0</div>
             <div class="stat-card__label">CA District Rank</div>
           </div>
-          <div class="stat-card awards-stagger-child">
-            <div class="stat-card__number">14-3</div>
+          <div class="stat-card awards-stagger-child awards-tilt">
+            <div class="stat-card__number" data-count-text="14-3">0-0</div>
             <div class="stat-card__label">Win-Loss Record</div>
           </div>
-          <div class="stat-card awards-stagger-child">
-            <div class="stat-card__number">70</div>
+          <div class="stat-card awards-stagger-child awards-tilt">
+            <div class="stat-card__number" data-count-to="70">0</div>
             <div class="stat-card__label">District Points</div>
           </div>
-          <div class="stat-card awards-stagger-child">
-            <div class="stat-card__number">720</div>
+          <div class="stat-card awards-stagger-child awards-tilt">
+            <div class="stat-card__number" data-count-to="720">0</div>
             <div class="stat-card__label">Highest Match Score</div>
           </div>
         </div>
@@ -309,24 +318,24 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                 <h4 class="alliance-section__title">District Points Earned</h4>
               </div>
               <div class="points-grid awards-stagger-parent fInview">
-                <div class="points-card awards-stagger-child">
-                  <div class="points-card__value">19</div>
+                <div class="points-card awards-stagger-child awards-tilt">
+                  <div class="points-card__value" data-count-to="19">0</div>
                   <div class="points-card__label">Qual Points</div>
                 </div>
-                <div class="points-card awards-stagger-child">
-                  <div class="points-card__value">16</div>
+                <div class="points-card awards-stagger-child awards-tilt">
+                  <div class="points-card__value" data-count-to="16">0</div>
                   <div class="points-card__label">Alliance</div>
                 </div>
-                <div class="points-card awards-stagger-child">
-                  <div class="points-card__value">30</div>
+                <div class="points-card awards-stagger-child awards-tilt">
+                  <div class="points-card__value" data-count-to="30">0</div>
                   <div class="points-card__label">Playoff</div>
                 </div>
-                <div class="points-card awards-stagger-child">
-                  <div class="points-card__value">5</div>
+                <div class="points-card awards-stagger-child awards-tilt">
+                  <div class="points-card__value" data-count-to="5">0</div>
                   <div class="points-card__label">Award</div>
                 </div>
-                <div class="points-card points-card--total awards-stagger-child">
-                  <div class="points-card__value">70</div>
+                <div class="points-card points-card--total awards-stagger-child awards-tilt">
+                  <div class="points-card__value" data-count-to="70">0</div>
                   <div class="points-card__label">Total</div>
                 </div>
               </div>
@@ -440,31 +449,32 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
         <h2 class="rankings-section__heading">District Rankings</h2>
       </div>
       <div class="rankings-podium awards-stagger-parent fInview">
-        <div class="podium-card awards-stagger-child">
+        <div class="podium-card awards-stagger-child awards-tilt">
           <div class="podium-card__rank">#1</div>
           <div class="podium-card__team">1678</div>
           <div class="podium-card__name">Citrus Circuits</div>
           <div class="podium-card__epa">EPA 290.7</div>
         </div>
-        <div class="podium-card awards-stagger-child">
+        <div class="podium-card awards-stagger-child awards-tilt">
           <div class="podium-card__rank">#2</div>
           <div class="podium-card__team">9483</div>
           <div class="podium-card__name">Overcharge</div>
           <div class="podium-card__epa">EPA 279.8</div>
         </div>
-        <div class="podium-card podium-card--highlight awards-stagger-child">
+        <div class="podium-card podium-card--highlight awards-stagger-child awards-tilt">
           <div class="podium-card__rank">#3</div>
           <div class="podium-card__team">9470</div>
           <div class="podium-card__name">Ctrl-Alt-Defeat</div>
           <div class="podium-card__epa">EPA 215.1</div>
+          <div class="awards-shimmer"></div>
         </div>
-        <div class="podium-card awards-stagger-child">
+        <div class="podium-card awards-stagger-child awards-tilt">
           <div class="podium-card__rank">#4</div>
           <div class="podium-card__team">498</div>
           <div class="podium-card__name">The Cobra Commanders</div>
           <div class="podium-card__epa">EPA 202.0</div>
         </div>
-        <div class="podium-card awards-stagger-child">
+        <div class="podium-card awards-stagger-child awards-tilt">
           <div class="podium-card__rank">#5</div>
           <div class="podium-card__team">9128</div>
           <div class="podium-card__name">ITKAN Robotics</div>
@@ -483,23 +493,23 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
         <h2 class="gallery-section__heading">Team Gallery</h2>
       </div>
       <div class="gallery-grid awards-stagger-parent fInview">
-        <div class="gallery-item gallery-item--large awards-stagger-child">
+        <div class="gallery-item gallery-item--large awards-stagger-child awards-img-reveal">
           <img class="gallery-item__image" src="media/5f167d2e-e3a5-4854-bf85-108a17bb402b.JPG" alt="Team 9470 with robot and Winner banner at Half Moon Bay" loading="lazy"/>
           <span class="gallery-item__caption">District Event Winners &mdash; Half Moon Bay 2026</span>
         </div>
-        <div class="gallery-item awards-stagger-child">
+        <div class="gallery-item awards-stagger-child awards-img-reveal">
           <img class="gallery-item__image" src="media/6bb56584-c7c0-4a2f-b8e6-c155a71f1002.JPG" alt="Team 9470 group photo with Winner banner" loading="lazy"/>
           <span class="gallery-item__caption">Team photo with the Winner banner</span>
         </div>
-        <div class="gallery-item awards-stagger-child">
+        <div class="gallery-item awards-stagger-child awards-img-reveal">
           <img class="gallery-item__image" src="media/9274c294-1399-4c15-8f54-d9d5ecc544e5.JPG" alt="Team members huddling in the pit" loading="lazy"/>
           <span class="gallery-item__caption">Pre-match huddle in the pits</span>
         </div>
-        <div class="gallery-item awards-stagger-child">
+        <div class="gallery-item awards-stagger-child awards-img-reveal">
           <img class="gallery-item__image" src="media/b7de1c4e-adb4-4037-a726-921081862553.JPG" alt="Team members walking near the field" loading="lazy"/>
           <span class="gallery-item__caption">Heading to the field</span>
         </div>
-        <div class="gallery-item awards-stagger-child">
+        <div class="gallery-item awards-stagger-child awards-img-reveal">
           <img class="gallery-item__image" src="media/f78ba268-0137-424e-957b-ffc5aa0e6d04.JPG" alt="Team 9470 receiving award on stage" loading="lazy"/>
           <span class="gallery-item__caption">Excellence in Engineering Award ceremony</span>
         </div>
@@ -643,12 +653,265 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
     <script>
     (function() {
       "use strict";
+
+      /* ── Intersection-based scroll animations ── */
       $(window).on("content--show", function() {
         new $.fInview(document.querySelectorAll(".awards-fade-up.fInview, .awards-fade-in.fInview, .awards-scale-in.fInview, .awards-slide-left.fInview, .awards-stagger-parent.fInview"), {
           rootMargin: "-12% 0%",
           threshold: 0
         });
       });
+
+      /* ── Floating star particles in hero ── */
+      (function initParticles() {
+        var canvas = document.getElementById("awardsParticles");
+        if (!canvas) return;
+        var ctx = canvas.getContext("2d");
+        var stars = [];
+        var COUNT = 80;
+        var raf;
+
+        function resize() {
+          canvas.width = canvas.offsetWidth;
+          canvas.height = canvas.offsetHeight;
+        }
+
+        function createStars() {
+          stars = [];
+          for (var i = 0; i < COUNT; i++) {
+            stars.push({
+              x: Math.random() * canvas.width,
+              y: Math.random() * canvas.height,
+              r: Math.random() * 2 + 0.5,
+              dx: (Math.random() - 0.5) * 0.3,
+              dy: (Math.random() - 0.5) * 0.3,
+              alpha: Math.random() * 0.5 + 0.2,
+              phase: Math.random() * Math.PI * 2
+            });
+          }
+        }
+
+        function draw(time) {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          for (var i = 0; i < stars.length; i++) {
+            var s = stars[i];
+            s.x += s.dx;
+            s.y += s.dy;
+            if (s.x < -5) s.x = canvas.width + 5;
+            if (s.x > canvas.width + 5) s.x = -5;
+            if (s.y < -5) s.y = canvas.height + 5;
+            if (s.y > canvas.height + 5) s.y = -5;
+            var flicker = Math.sin(time * 0.001 + s.phase) * 0.15 + 0.85;
+            ctx.beginPath();
+            ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+            ctx.fillStyle = "rgba(197,37,53," + (s.alpha * flicker) + ")";
+            ctx.fill();
+          }
+          raf = requestAnimationFrame(draw);
+        }
+
+        resize();
+        createStars();
+        raf = requestAnimationFrame(draw);
+        window.addEventListener("resize", function() { resize(); createStars(); });
+      })();
+
+      /* ── Count-up animation ── */
+      (function initCounters() {
+        var els = document.querySelectorAll("[data-count-to]");
+        if (!els.length) return;
+
+        function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+
+        function animateCount(el) {
+          var target = parseInt(el.getAttribute("data-count-to"), 10);
+          var prefix = el.getAttribute("data-count-prefix") || "";
+          var duration = Math.min(800 + target * 3, 2000);
+          var start = null;
+          function step(ts) {
+            if (!start) start = ts;
+            var progress = Math.min((ts - start) / duration, 1);
+            var val = Math.round(easeOut(progress) * target);
+            el.textContent = prefix + val;
+            if (progress < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        }
+
+        function animateText(el) {
+          var text = el.getAttribute("data-count-text");
+          var parts = text.split("-");
+          var targets = parts.map(function(p) { return parseInt(p, 10); });
+          var duration = 1200;
+          var start = null;
+          function step(ts) {
+            if (!start) start = ts;
+            var progress = Math.min((ts - start) / duration, 1);
+            var vals = targets.map(function(t) { return Math.round(easeOut(progress) * t); });
+            el.textContent = vals.join("-");
+            if (progress < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        }
+
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              var el = entry.target;
+              if (el.getAttribute("data-count-to")) {
+                animateCount(el);
+              }
+              observer.unobserve(el);
+            }
+          });
+        }, { rootMargin: "-10% 0%", threshold: 0.1 });
+
+        els.forEach(function(el) { observer.observe(el); });
+
+        var textEls = document.querySelectorAll("[data-count-text]");
+        var textObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              animateText(entry.target);
+              textObserver.unobserve(entry.target);
+            }
+          });
+        }, { rootMargin: "-10% 0%", threshold: 0.1 });
+        textEls.forEach(function(el) { textObserver.observe(el); });
+      })();
+
+      /* ── 3D tilt hover on cards ── */
+      (function initTilt() {
+        var cards = document.querySelectorAll(".awards-tilt");
+        cards.forEach(function(card) {
+          card.addEventListener("mousemove", function(e) {
+            var rect = card.getBoundingClientRect();
+            var x = (e.clientX - rect.left) / rect.width - 0.5;
+            var y = (e.clientY - rect.top) / rect.height - 0.5;
+            card.style.transform = "perspective(600px) rotateX(" + (-y * 8) + "deg) rotateY(" + (x * 8) + "deg) scale3d(1.02,1.02,1.02)";
+          });
+          card.addEventListener("mouseleave", function() {
+            card.style.transform = "";
+          });
+        });
+      })();
+
+      /* ── Gallery image reveal via clip-path ── */
+      (function initGalleryReveal() {
+        var items = document.querySelectorAll(".awards-img-reveal");
+        if (!items.length) return;
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("awards-img-reveal--visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { rootMargin: "-5% 0%", threshold: 0.15 });
+        items.forEach(function(el) { observer.observe(el); });
+      })();
+
+      /* ── GSAP parallax on sections (if GSAP available) ── */
+      (function initParallax() {
+        if (typeof gsap === "undefined") return;
+
+        $(window).on("content--show", function() {
+          gsap.to(".awards-season__header", {
+            y: -30,
+            ease: "none",
+            scrollTrigger: {
+              trigger: ".awards-season",
+              start: "top bottom",
+              end: "bottom top",
+              scrub: 1
+            }
+          });
+          gsap.to(".stats-grid", {
+            y: -20,
+            ease: "none",
+            scrollTrigger: {
+              trigger: ".stats-grid",
+              start: "top bottom",
+              end: "bottom top",
+              scrub: 1.2
+            }
+          });
+          gsap.to(".event-card", {
+            y: -15,
+            ease: "none",
+            scrollTrigger: {
+              trigger: ".event-section",
+              start: "top bottom",
+              end: "bottom top",
+              scrub: 1
+            }
+          });
+          gsap.from(".rankings-section__heading", {
+            scale: 0.85,
+            opacity: 0.3,
+            ease: "none",
+            scrollTrigger: {
+              trigger: ".rankings-section",
+              start: "top 80%",
+              end: "top 30%",
+              scrub: 1
+            }
+          });
+          gsap.to(".gallery-grid", {
+            y: -25,
+            ease: "none",
+            scrollTrigger: {
+              trigger: ".gallery-section",
+              start: "top bottom",
+              end: "bottom top",
+              scrub: 1.5
+            }
+          });
+          document.querySelectorAll(".match-card").forEach(function(card, i) {
+            gsap.from(card, {
+              y: 40 + i * 10,
+              rotation: (i % 2 === 0 ? -1 : 1),
+              ease: "none",
+              scrollTrigger: {
+                trigger: card,
+                start: "top 95%",
+                end: "top 50%",
+                scrub: 1
+              }
+            });
+          });
+        });
+      })();
+
+      /* ── Match score count-up ── */
+      (function initScoreCount() {
+        var scores = document.querySelectorAll(".match-card__score-value");
+        if (!scores.length) return;
+        function animateScore(el) {
+          var target = parseInt(el.textContent, 10);
+          if (isNaN(target)) return;
+          el.textContent = "0";
+          var duration = 1000;
+          var start = null;
+          function step(ts) {
+            if (!start) start = ts;
+            var progress = Math.min((ts - start) / duration, 1);
+            var val = Math.round(progress * progress * target);
+            el.textContent = val;
+            if (progress < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        }
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.querySelectorAll(".match-card__score-value").forEach(animateScore);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { rootMargin: "-5% 0%", threshold: 0.2 });
+        document.querySelectorAll(".match-card").forEach(function(c) { observer.observe(c); });
+      })();
     })();
     </script>
         <!-- webfont -->
