@@ -139,6 +139,7 @@ section.Main.Main--fixed#Main:has(.awards-hero) ~ #SectContents {
     color: #c52535;
     line-height: 1;
     margin-bottom: 0.8rem;
+    white-space: nowrap;
 }
 
 .stat-card__label {
@@ -147,6 +148,136 @@ section.Main.Main--fixed#Main:has(.awards-hero) ~ #SectContents {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+}
+
+/* Progression Grid */
+.progression-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+    margin-bottom: 3rem;
+}
+
+.progression-card {
+    background: #fff;
+    border: 1px solid #e6e3de;
+    border-radius: 1.2rem;
+    padding: 2.2rem;
+}
+
+.progression-card__label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #888;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.7rem;
+}
+
+.progression-card__value {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #2c2a28;
+    line-height: 1.4;
+}
+
+.progression-card__note {
+    margin-top: 0.7rem;
+    font-size: 1.2rem;
+    color: #7a7672;
+}
+
+/* Event Accordions */
+.event-accordion {
+    border: 1px solid #ddd9d4;
+    border-radius: 1.2rem;
+    background: #f8f8f6;
+    overflow: hidden;
+    margin-bottom: 1.8rem;
+}
+
+.event-accordion summary {
+    list-style: none;
+}
+
+.event-accordion summary::-webkit-details-marker {
+    display: none;
+}
+
+.event-accordion__summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.6rem;
+    padding: 2rem 2.2rem;
+    cursor: pointer;
+}
+
+.event-accordion__summary-main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.event-accordion__week {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #c52535;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.event-accordion__name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c2a28;
+    line-height: 1.3;
+}
+
+.event-accordion__meta {
+    font-size: 1.2rem;
+    color: #797572;
+}
+
+.event-accordion__chevron {
+    width: 1.2rem;
+    height: 1.2rem;
+    border-right: 2px solid #8c8681;
+    border-bottom: 2px solid #8c8681;
+    transform: rotate(45deg);
+    transition: transform 250ms ease;
+    margin-right: 0.4rem;
+    flex-shrink: 0;
+}
+
+.event-accordion[open] .event-accordion__chevron {
+    transform: rotate(225deg);
+}
+
+.event-accordion .event-card {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.event-card--na .event-card__header {
+    background: #3a3835;
+}
+
+.na-state {
+    padding: 0.5rem 0;
+}
+
+.na-state__title {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: #2c2a28;
+    margin-bottom: 0.8rem;
+}
+
+.na-state__text {
+    font-size: 1.5rem;
+    color: #666;
+    line-height: 1.6;
 }
 
 /* Event Section */
@@ -433,6 +564,16 @@ section.Main.Main--fixed#Main:has(.awards-hero) ~ #SectContents {
     font-weight: 700;
     color: #fff;
     line-height: 1.2;
+}
+
+.rankings-section__progress {
+    margin-top: 1.5rem;
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.rankings-section__progress strong {
+    color: #fff;
 }
 
 .rankings-podium {
@@ -1130,6 +1271,23 @@ section.Main.Main--fixed#Main:has(.awards-hero) ~ #SectContents {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .progression-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .event-accordion__summary {
+        padding: 1.6rem;
+        gap: 1rem;
+    }
+
+    .event-accordion__name {
+        font-size: 1.5rem;
+    }
+
+    .event-accordion__meta {
+        font-size: 1.1rem;
+    }
+
     .awards-list {
         grid-template-columns: 1fr;
     }
@@ -1200,6 +1358,10 @@ section.Main.Main--fixed#Main:has(.awards-hero) ~ #SectContents {
         flex-direction: column;
         gap: 0.8rem;
     }
+
+    .na-state__title {
+        font-size: 1.8rem;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -1222,6 +1384,19 @@ section.Main.Main--fixed#Main:has(.awards-hero) ~ #SectContents {
 
     .stat-card__number {
         font-size: 3rem;
+    }
+
+    .progression-card {
+        padding: 1.6rem;
+    }
+
+    .progression-card__value {
+        font-size: 1.6rem;
+    }
+
+    .rankings-section__progress {
+        font-size: 1.2rem;
+        line-height: 1.6;
     }
 
     .points-grid {
