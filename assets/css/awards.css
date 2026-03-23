@@ -187,6 +187,168 @@ section.Main.Main--fixed#Main:has(.awards-hero) ~ #SectContents {
     color: #7a7672;
 }
 
+/* Progression Intro Overlay */
+.progression-grid {
+    position: relative;
+}
+
+.progression-grid.progression-grid--intro-lock .progression-card__label,
+.progression-grid.progression-grid--intro-lock .progression-card__value,
+.progression-grid.progression-grid--intro-lock .progression-card__note {
+    opacity: 0;
+    transform: translateY(1.2rem);
+}
+
+.progression-grid .progression-card__label,
+.progression-grid .progression-card__value,
+.progression-grid .progression-card__note {
+    transition: opacity 550ms ease, transform 550ms ease;
+}
+
+.progression-grid.progression-grid--intro-lock .progression-card.progression-card--revealed .progression-card__label,
+.progression-grid.progression-grid--intro-lock .progression-card.progression-card--revealed .progression-card__value,
+.progression-grid.progression-grid--intro-lock .progression-card.progression-card--revealed .progression-card__note {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+body.progression-intro--running {
+    overflow: hidden;
+}
+
+.progression-intro-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 350ms ease, visibility 350ms ease;
+    overflow: hidden;
+}
+
+.progression-intro-overlay.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.progression-intro-overlay__bg {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 25%, rgba(255, 90, 95, 0.24), transparent 46%),
+        radial-gradient(circle at 85% 20%, rgba(51, 214, 255, 0.24), transparent 45%),
+        radial-gradient(circle at 35% 80%, rgba(255, 196, 63, 0.22), transparent 46%),
+        linear-gradient(135deg, rgba(16, 20, 38, 0.96), rgba(22, 33, 62, 0.96));
+    opacity: 1;
+}
+
+.progression-intro-overlay__bg::before {
+    content: "";
+    position: absolute;
+    inset: -20%;
+    background: conic-gradient(from 40deg,
+        rgba(255, 99, 72, 0.2),
+        rgba(45, 212, 191, 0.2),
+        rgba(251, 191, 36, 0.2),
+        rgba(244, 114, 182, 0.2),
+        rgba(255, 99, 72, 0.2));
+    filter: blur(60px);
+    animation: progression-intro-wash 7s linear infinite;
+}
+
+.progression-intro-overlay__bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(circle at center, black 35%, transparent 78%);
+    opacity: 0.25;
+}
+
+.progression-intro-item {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center center;
+    font-size: clamp(2.6rem, 7vw, 7.5rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    user-select: none;
+    will-change: transform, opacity, filter;
+    text-shadow:
+        0 0 12px rgba(255, 255, 255, 0.26),
+        0 0 45px rgba(51, 214, 255, 0.24);
+    filter: saturate(1.25);
+}
+
+.progression-intro-item--label {
+    top: 22vh;
+    font-size: clamp(2rem, 4.3vw, 4.6rem);
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 0 24px rgba(34, 211, 238, 0.2);
+}
+
+.progression-intro-item--value {
+    top: 52vh;
+    font-size: clamp(2.6rem, 7vw, 7.5rem);
+}
+
+.progression-intro-item--week {
+    top: 11vh;
+    font-size: clamp(1rem, 2.2vw, 1.8rem);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.progression-intro-item--note {
+    top: 74vh;
+    font-size: clamp(1rem, 2.1vw, 1.8rem);
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.16);
+}
+
+.progression-intro-item__segment {
+    background: linear-gradient(120deg, #fff5f5 0%, #ffd7d7 22%, #b2feff 48%, #ffdd8a 72%, #ffd5ef 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.progression-intro-item__arrow {
+    display: inline-block;
+    margin: 0 0.2em;
+    background: linear-gradient(90deg, #fb7185, #fbbf24, #22d3ee, #fb7185);
+    background-size: 220% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: progression-intro-arrow 1100ms linear infinite;
+}
+
+@keyframes progression-intro-arrow {
+    from { background-position: 0% 50%; transform: translateX(0); }
+    to   { background-position: 220% 50%; transform: translateX(2px); }
+}
+
+@keyframes progression-intro-wash {
+    0%   { transform: rotate(0deg) scale(1); }
+    50%  { transform: rotate(180deg) scale(1.08); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
 /* Event Accordions */
 .event-accordion {
     border: 1px solid #ddd9d4;
@@ -1275,6 +1437,27 @@ section.Main.Main--fixed#Main:has(.awards-hero) ~ #SectContents {
         grid-template-columns: 1fr;
     }
 
+    .progression-intro-item--label {
+        top: 19vh;
+        font-size: clamp(1.6rem, 4.8vw, 3.2rem);
+        letter-spacing: 0.11em;
+    }
+
+    .progression-intro-item--value {
+        font-size: clamp(2.2rem, 8.2vw, 5rem);
+    }
+
+    .progression-intro-item--week {
+        top: 10vh;
+        font-size: clamp(0.95rem, 2.5vw, 1.3rem);
+        letter-spacing: 0.12em;
+    }
+
+    .progression-intro-item--note {
+        top: 72vh;
+        font-size: clamp(0.95rem, 2.6vw, 1.35rem);
+    }
+
     .event-accordion__summary {
         padding: 1.6rem;
         gap: 1rem;
@@ -1394,6 +1577,26 @@ section.Main.Main--fixed#Main:has(.awards-hero) ~ #SectContents {
         font-size: 1.6rem;
     }
 
+    .progression-intro-item--label {
+        top: 17vh;
+        font-size: clamp(1.1rem, 5.2vw, 2rem);
+    }
+
+    .progression-intro-item--value {
+        font-size: clamp(1.7rem, 8.6vw, 3rem);
+    }
+
+    .progression-intro-item--week {
+        top: 9vh;
+        font-size: clamp(0.82rem, 3.2vw, 1.05rem);
+        letter-spacing: 0.1em;
+    }
+
+    .progression-intro-item--note {
+        top: 70vh;
+        font-size: clamp(0.82rem, 3.2vw, 1.05rem);
+    }
+
     .rankings-section__progress {
         font-size: 1.2rem;
         line-height: 1.6;
@@ -1418,5 +1621,16 @@ section.Main.Main--fixed#Main:has(.awards-hero) ~ #SectContents {
     .alliance-table thead th,
     .alliance-table tbody td {
         padding: 1rem 1.2rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .progression-intro-overlay,
+    .progression-intro-overlay__bg,
+    .progression-intro-item,
+    .progression-intro-overlay__bg::before,
+    .progression-intro-item__arrow {
+        animation: none !important;
+        transition: none !important;
     }
 }
