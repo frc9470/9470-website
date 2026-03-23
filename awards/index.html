@@ -839,7 +839,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
     (function() {
       "use strict";
 
-      /* â”€â”€ Intersection-based scroll animations â”€â”€ */
+      /* ── Intersection-based scroll animations ── */
       $(window).on("content--show", function() {
         new $.fInview(document.querySelectorAll(".awards-fade-up.fInview, .awards-fade-in.fInview, .awards-scale-in.fInview, .awards-slide-left.fInview, .awards-stagger-parent.fInview"), {
           rootMargin: "-12% 0%",
@@ -847,7 +847,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
         });
       });
 
-      /* â”€â”€ Floating star particles in hero â”€â”€ */
+      /* ── Floating star particles in hero ── */
       (function initParticles() {
         var canvas = document.getElementById("awardsParticles");
         if (!canvas) return;
@@ -901,7 +901,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
         window.addEventListener("resize", function() { resize(); createStars(); });
       })();
 
-      /* â”€â”€ Count-up animation â”€â”€ */
+      /* ── Count-up animation ── */
       (function initCounters() {
         var els = document.querySelectorAll("[data-count-to]");
         if (!els.length) return;
@@ -965,7 +965,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
         textEls.forEach(function(el) { textObserver.observe(el); });
       })();
 
-      /* â”€â”€ 3D tilt hover on cards â”€â”€ */
+      /* ── 3D tilt hover on cards ── */
       (function initTilt() {
         var cards = document.querySelectorAll(".awards-tilt");
         cards.forEach(function(card) {
@@ -981,7 +981,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
         });
       })();
 
-      /* â”€â”€ Gallery image reveal via clip-path â”€â”€ */
+      /* ── Gallery image reveal via clip-path ── */
       (function initGalleryReveal() {
         var items = document.querySelectorAll(".awards-img-reveal");
         if (!items.length) return;
@@ -996,7 +996,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
         items.forEach(function(el) { observer.observe(el); });
       })();
 
-      /* â”€â”€ GSAP parallax on sections (if GSAP available) â”€â”€ */
+      /* ── GSAP parallax on sections (if GSAP available) ── */
       (function initParallax() {
         if (typeof gsap === "undefined") return;
 
@@ -1068,7 +1068,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
         });
       })();
 
-      /* â”€â”€ Match score count-up â”€â”€ */
+      /* ── Match score count-up ── */
       (function initScoreCount() {
         var scores = document.querySelectorAll(".match-card__score-value");
         if (!scores.length) return;
