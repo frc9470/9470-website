@@ -1,4 +1,4 @@
-﻿
+
 
 
 <!DOCTYPE html>
@@ -833,7 +833,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
     (function() {
       "use strict";
 
-      /* â”€â”€ Intersection-based scroll animations â”€â”€ */
+      /* ── Intersection-based scroll animations ── */
       $(window).on("content--show", function() {
         new $.fInview(document.querySelectorAll(".awards-fade-up.fInview, .awards-fade-in.fInview, .awards-scale-in.fInview, .awards-slide-left.fInview, .awards-stagger-parent.fInview"), {
           rootMargin: "-12% 0%",
@@ -841,7 +841,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
         });
       });
 
-      /* â”€â”€ Floating star particles in hero â”€â”€ */
+      /* ── Floating star particles in hero ── */
       (function initParticles() {
         var canvas = document.getElementById("awardsParticles");
         if (!canvas) return;
@@ -895,7 +895,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
         window.addEventListener("resize", function() { resize(); createStars(); });
       })();
 
-      /* â”€â”€ Count-up animation â”€â”€ */
+      /* ── Count-up animation ── */
       (function initCounters() {
         var els = document.querySelectorAll("[data-count-to]");
         if (!els.length) return;
@@ -959,288 +959,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
         textEls.forEach(function(el) { textObserver.observe(el); });
       })();
 
-      /* Progression cards fullscreen intro */
-      (function initProgressionIntro() {
-        var grid = document.querySelector(".progression-grid");
-        if (!grid) return;
-
-        var values = Array.prototype.slice.call(grid.querySelectorAll(".progression-card__value"));
-        if (!values.length) return;
-        if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-        if (!("IntersectionObserver" in window) || !Element.prototype.animate) return;
-
-        var steps = values.map(function(valueEl) {
-          var card = valueEl.closest(".progression-card");
-          if (!card) return null;
-          var labelEl = card.querySelector(".progression-card__label");
-          var noteEl = card.querySelector(".progression-card__note");
-          if (!labelEl || !noteEl) return null;
-          return {
-            cardEl: card,
-            labelEl: labelEl,
-            valueEl: valueEl,
-            noteEl: noteEl
-          };
-        }).filter(Boolean);
-
-        if (!steps.length) return;
-
-        var hasPlayed = false;
-        var weekText = "Week 1 \u2192 Week 2 \u2192 Week 3";
-
-        function createValueMarkup(text) {
-          var fragment = document.createDocumentFragment();
-          var parts = text.split(/\s*\u2192\s*/);
-          for (var i = 0; i < parts.length; i++) {
-            var segment = document.createElement("span");
-            segment.className = "progression-intro-item__segment";
-            segment.textContent = parts[i].trim();
-            fragment.appendChild(segment);
-            if (i < parts.length - 1) {
-              var arrow = document.createElement("span");
-              arrow.className = "progression-intro-item__arrow";
-              arrow.textContent = "\u2192";
-              fragment.appendChild(arrow);
-            }
-          }
-          return fragment;
-        }
-
-        function removeOverlay(overlay) {
-          if (overlay && overlay.parentNode) {
-            overlay.parentNode.removeChild(overlay);
-          }
-          grid.classList.remove("progression-grid--intro-lock");
-          document.body.classList.remove("progression-intro--running");
-        }
-
-        function center(rect) {
-          return {
-            x: rect.left + (rect.width / 2),
-            y: rect.top + (rect.height / 2)
-          };
-        }
-
-        function buildTransform(x, y, scale) {
-          return "translate(-50%, -50%) translate(" + x + "px, " + y + "px) scale(" + scale + ")";
-        }
-
-        function waitForAnimation(animation, duration) {
-          if (animation && animation.finished && typeof animation.finished.then === "function") {
-            return animation.finished.catch(function() {});
-          }
-          return new Promise(function(resolve) {
-            window.setTimeout(resolve, duration + 40);
-          });
-        }
-
-        function animateToTarget(item, startX, startY, targetRect, fromScale, holdScale, endOpacity, duration, filterStart, filterHold, filterEnd) {
-          var targetCenter = center(targetRect);
-          var dx = targetCenter.x - startX;
-          var dy = targetCenter.y - startY;
-          var itemRect = item.getBoundingClientRect();
-          var toScale = Math.max(0.22, Math.min(0.9, targetRect.width / Math.max(itemRect.width, 1)));
-
-          return item.animate([
-            { offset: 0, transform: buildTransform(0, 0, fromScale), opacity: 0, filter: filterStart },
-            { offset: 0.17, transform: buildTransform(0, -8, holdScale), opacity: 1, filter: filterHold },
-            { offset: 0.62, transform: buildTransform(0, -8, holdScale * 0.98), opacity: 1, filter: filterHold },
-            { offset: 1, transform: buildTransform(dx, dy, toScale), opacity: endOpacity, filter: filterEnd }
-          ], {
-            duration: duration,
-            easing: "cubic-bezier(0.22, 1, 0.36, 1)",
-            fill: "forwards"
-          });
-        }
-
-        function animateStep(overlay, bg, step, index) {
-          return new Promise(function(resolve) {
-            bg.style.opacity = "1";
-
-            var weekItem = document.createElement("div");
-            weekItem.className = "progression-intro-item progression-intro-item--week";
-            weekItem.appendChild(createValueMarkup(weekText.toUpperCase()));
-
-            var labelItem = document.createElement("div");
-            labelItem.className = "progression-intro-item progression-intro-item--label";
-            labelItem.textContent = step.labelEl.textContent.trim().toUpperCase();
-
-            var valueItem = document.createElement("div");
-            valueItem.className = "progression-intro-item progression-intro-item--value";
-            valueItem.appendChild(createValueMarkup(step.valueEl.textContent.trim()));
-
-            var noteItem = document.createElement("div");
-            noteItem.className = "progression-intro-item progression-intro-item--note";
-            noteItem.textContent = step.noteEl.textContent.trim();
-
-            overlay.appendChild(weekItem);
-            overlay.appendChild(labelItem);
-            overlay.appendChild(valueItem);
-            overlay.appendChild(noteItem);
-
-            var screenW = window.innerWidth;
-            var screenH = window.innerHeight;
-
-            var weekStartY = Math.round(screenH * 0.11);
-            var labelStartY = Math.round(screenH * 0.22);
-            var valueStartY = Math.round(screenH * 0.52);
-            var noteStartY = Math.round(screenH * 0.74);
-
-            weekItem.style.left = "50%";
-            weekItem.style.top = weekStartY + "px";
-
-            labelItem.style.left = "50%";
-            labelItem.style.top = labelStartY + "px";
-
-            valueItem.style.left = "50%";
-            valueItem.style.top = valueStartY + "px";
-            valueItem.style.filter = "hue-rotate(" + (index * 22) + "deg) saturate(1.35)";
-
-            noteItem.style.left = "50%";
-            noteItem.style.top = noteStartY + "px";
-
-            requestAnimationFrame(function() {
-              var labelTargetRect = step.labelEl.getBoundingClientRect();
-              var valueTargetRect = step.valueEl.getBoundingClientRect();
-              var noteTargetRect = step.noteEl.getBoundingClientRect();
-              var totalDuration = 2800;
-
-              var weekAnimation = animateToTarget(
-                weekItem,
-                Math.round(screenW * 0.5),
-                weekStartY,
-                noteTargetRect,
-                1.05,
-                1,
-                0.14,
-                totalDuration,
-                "blur(8px)",
-                "blur(0px)",
-                "blur(1px)"
-              );
-
-              var labelAnimation = animateToTarget(
-                labelItem,
-                Math.round(screenW * 0.5),
-                labelStartY,
-                labelTargetRect,
-                1.24,
-                1.03,
-                0.24,
-                totalDuration,
-                "blur(10px)",
-                "blur(0px)",
-                "blur(1px)"
-              );
-
-              var valueAnimation = animateToTarget(
-                valueItem,
-                Math.round(screenW * 0.5),
-                valueStartY,
-                valueTargetRect,
-                1.28,
-                1.1,
-                0.24,
-                totalDuration,
-                "blur(12px) saturate(1.45)",
-                "blur(0px) saturate(1.25)",
-                "blur(1px) saturate(1)"
-              );
-
-              var noteAnimation = animateToTarget(
-                noteItem,
-                Math.round(screenW * 0.5),
-                noteStartY,
-                noteTargetRect,
-                1.06,
-                1,
-                0.18,
-                totalDuration,
-                "blur(8px)",
-                "blur(0px)",
-                "blur(1px)"
-              );
-
-              var bgAnimation = bg.animate([
-                { offset: 0, opacity: 1 },
-                { offset: 0.58, opacity: 1 },
-                { offset: 0.84, opacity: 0.12 },
-                { offset: 1, opacity: 0.04 }
-              ], {
-                duration: totalDuration,
-                easing: "ease",
-                fill: "forwards"
-              });
-
-              Promise.all([
-                waitForAnimation(weekAnimation, totalDuration),
-                waitForAnimation(labelAnimation, totalDuration),
-                waitForAnimation(valueAnimation, totalDuration),
-                waitForAnimation(noteAnimation, totalDuration),
-                waitForAnimation(bgAnimation, totalDuration)
-              ]).then(function() {
-                step.cardEl.classList.add("progression-card--revealed");
-                bg.style.opacity = "0.04";
-                if (weekItem.parentNode) weekItem.parentNode.removeChild(weekItem);
-                if (labelItem.parentNode) labelItem.parentNode.removeChild(labelItem);
-                if (valueItem.parentNode) valueItem.parentNode.removeChild(valueItem);
-                if (noteItem.parentNode) noteItem.parentNode.removeChild(noteItem);
-                window.setTimeout(resolve, 170);
-              });
-            });
-          });
-        }
-
-        function playIntro() {
-          if (hasPlayed) return;
-          hasPlayed = true;
-          steps.forEach(function(step) {
-            step.cardEl.classList.remove("progression-card--revealed");
-          });
-          grid.classList.add("progression-grid--intro-lock");
-          document.body.classList.add("progression-intro--running");
-
-          var overlay = document.createElement("div");
-          overlay.className = "progression-intro-overlay";
-          overlay.setAttribute("aria-hidden", "true");
-          var bg = document.createElement("div");
-          bg.className = "progression-intro-overlay__bg";
-          overlay.appendChild(bg);
-          document.body.appendChild(overlay);
-
-          requestAnimationFrame(function() {
-            overlay.classList.add("is-active");
-            var chain = Promise.resolve();
-            steps.forEach(function(step, index) {
-              chain = chain.then(function() {
-                return animateStep(overlay, bg, step, index);
-              });
-            });
-
-            chain.then(function() {
-              overlay.classList.remove("is-active");
-              window.setTimeout(function() {
-                removeOverlay(overlay);
-              }, 380);
-            }).catch(function() {
-              removeOverlay(overlay);
-            });
-          });
-        }
-
-        var observer = new IntersectionObserver(function(entries) {
-          entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-              observer.unobserve(grid);
-              window.setTimeout(playIntro, 120);
-            }
-          });
-        }, { threshold: 0.35, rootMargin: "-5% 0%" });
-
-        observer.observe(grid);
-      })();
-
-      /* 3D tilt hover on cards */
+      /* ── 3D tilt hover on cards ── */
       (function initTilt() {
         var cards = document.querySelectorAll(".awards-tilt");
         cards.forEach(function(card) {
@@ -1256,7 +975,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
         });
       })();
 
-      /* â”€â”€ Gallery image reveal via clip-path â”€â”€ */
+      /* ── Gallery image reveal via clip-path ── */
       (function initGalleryReveal() {
         var items = document.querySelectorAll(".awards-img-reveal");
         if (!items.length) return;
@@ -1271,7 +990,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
         items.forEach(function(el) { observer.observe(el); });
       })();
 
-      /* â”€â”€ GSAP parallax on sections (if GSAP available) â”€â”€ */
+      /* ── GSAP parallax on sections (if GSAP available) ── */
       (function initParallax() {
         if (typeof gsap === "undefined") return;
 
@@ -1343,7 +1062,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
         });
       })();
 
-      /* â”€â”€ Match score count-up â”€â”€ */
+      /* ── Match score count-up ── */
       (function initScoreCount() {
         var scores = document.querySelectorAll(".match-card__score-value");
         if (!scores.length) return;
@@ -1379,7 +1098,6 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
       </body>
 </html>
-
 
 
 
