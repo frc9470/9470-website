@@ -4,11 +4,14 @@
     position: relative;
     padding: 16rem 0 8rem;
     text-align: center;
+    width: min(100%, 110rem);
+    margin: 0 auto;
     z-index: 1;
 }
 
 section.Main.Main--fixed#Main:has(.awards-hero) {
     background: #16213e;
+    justify-content: center;
 }
 
 section.Main.Main--fixed#Main:has(.awards-hero)::before {
