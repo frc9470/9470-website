@@ -218,6 +218,64 @@
         }
     }
 
+    class SponsorStats {
+        constructor() {
+            this.$accordionItems = $('#Occupation .c-accordion__item');
+            this.$total = $('[data-sponsor-total]');
+            this.$legendCounts = $('[data-sponsor-tier-count]');
+
+            if (!this.$accordionItems.length || !this.$total.length || !this.$legendCounts.length) {
+                return;
+            }
+
+            this.updateStats();
+        }
+
+        updateStats() {
+            const counts = {
+                platinum: 0,
+                gold: 0,
+                silver: 0,
+                bronze: 0
+            };
+
+            this.$accordionItems.each((index, item) => {
+                const $item = $(item);
+                const tier = $item.find('.summary__text').first().text().trim().toLowerCase().split(' ')[0];
+                const $sponsorList = $item.find('.detail__text__table__item').last().find('.content p').first();
+
+                if (!Object.prototype.hasOwnProperty.call(counts, tier) || !$sponsorList.length) {
+                    return;
+                }
+
+                const entries = ($sponsorList.html() || '')
+                    .split(/<br\s*\/?>/i)
+                    .map((entry) => $('<div>').html(entry).text().replace(/\s+/g, ' ').trim())
+                    .filter(Boolean);
+
+                counts[tier] = entries.length;
+            });
+
+            const total = Object.values(counts).reduce((sum, count) => sum + count, 0);
+            this.renderDigits(this.$total, total);
+
+            Object.entries(counts).forEach(([tier, count]) => {
+                this.$legendCounts.filter(`[data-sponsor-tier-count="${tier}"]`).text(count);
+            });
+        }
+
+        renderDigits($target, value) {
+            $target.empty();
+
+            String(value).split('').forEach((digit) => {
+                $('<span>', {
+                    class: 'c-numSlot__inner',
+                    text: digit
+                }).appendTo($target);
+            });
+        }
+    }
+
     class SystemScrollAnimation {
         constructor() {
             this.$container = $('#System .SectContents__block__wrapper');
@@ -226,6 +284,10 @@
             this.$slide = this.$container.find('.slide');
             this.$slideItems = this.$slide.find('.slide__item');
             this.triggerEvent = null;
+            this.cardShiftRem = 5;
+            this.cardTravelRem = 100;
+
+            this.$container[0].style.setProperty('--sponsor-card-count', this.$slideItems.length);
 
             this.initScrollAnimation();
             this.addRefreshListeners();
@@ -234,20 +296,26 @@
         initScrollAnimation() {
             app.mm.add(app.mm_conditions, (context) => {
                 const { isDesktop } = context.conditions;
-                if (isDesktop) {
+                if (isDesktop && this.$slideItems.length > 1) {
                     const tl = gsap.timeline();
 
-                    tl.fromTo(this.$slideItems.eq(1), { x: '100rem' }, { x: '0rem', ease: 'none' })
-                      .to(this.$slide, { x: '-5rem', ease: 'none' }, '<')
-                      .fromTo(this.$slideItems.eq(2), { x: '200rem' }, { x: '100rem', ease: 'none' }, '<')
-                      .fromTo(this.$slideItems.eq(3), { x: '300rem' }, { x: '200rem', ease: 'none' }, '<')
+                    for (let step = 1; step < this.$slideItems.length; step += 1) {
+                        const stepPosition = step === 1 ? 0 : '>';
 
-                      .fromTo(this.$slideItems.eq(2), { x: '100rem' }, { x: '0rem', ease: 'none' })
-                      .fromTo(this.$slideItems.eq(3), { x: '200rem' }, { x: '100rem', ease: 'none' }, '<')
-                      .to(this.$slide, { x: '-10rem', ease: 'none' }, '<')
+                        tl.to(this.$slide, {
+                            x: `-${this.cardShiftRem * step}rem`,
+                            duration: 1,
+                            ease: 'none'
+                        }, stepPosition);
 
-                      .fromTo(this.$slideItems.eq(3), { x: '100rem' }, { x: '0rem', ease: 'none' })
-                      .to(this.$slide, { x: '-15rem', ease: 'none' }, '<');
+                        this.$slideItems.slice(step).each((index, item) => {
+                            tl.to(item, {
+                                x: `${this.cardTravelRem * index}rem`,
+                                duration: 1,
+                                ease: 'none'
+                            }, '<');
+                        });
+                    }
 
                     this.triggerEvent = ScrollTrigger.create({
                         animation: tl,
@@ -264,6 +332,8 @@
                         this.triggerEvent.kill();
                         this.triggerEvent = null;
                     }
+                    gsap.set(this.$slide, { clearProps: 'transform' });
+                    gsap.set(this.$slideItems, { clearProps: 'transform' });
                 };
             });
         }
@@ -294,6 +364,7 @@
     new OfficeSlider();
     new Accordion('#Occupation .SectContents__block__main .c-accordion');
     new AccordionDeepLink();
+    new SponsorStats();
     new SystemScrollAnimation();
 
 })();

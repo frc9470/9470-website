@@ -827,7 +827,7 @@
     padding: calc((86.8rem - 100vh) / 2) 0;
 }
 .SectContents__block#System .SectContents__block__wrapper {
-    height: 320rem;
+    height: calc(var(--sponsor-card-count, 4) * 80rem);
 }
 .SectContents__block#System .SectContents__block__container {
     display: flex;
@@ -863,24 +863,9 @@
     box-shadow: 1.1rem 1.4rem 2rem 0 rgba(0, 0, 0, 0.1);
     text-align: center;
     color: #fff;
-}
-.SectContents__block#System .SectContents__block__main .slide__item:nth-of-type(1) {
-    background-color: #333;
-}
-.SectContents__block#System .SectContents__block__main .slide__item:nth-of-type(2) {
-    background-color: #c2a395;
-    transform: translateX(100rem);
-    margin-left: 5rem;
-}
-.SectContents__block#System .SectContents__block__main .slide__item:nth-of-type(3) {
-    background-color: #c52535;
-    margin-left: 10rem;
-    transform: translateX(200rem);
-}
-.SectContents__block#System .SectContents__block__main .slide__item:nth-of-type(4) {
-    background-color: #1b9171;
-    margin-left: 15rem;
-    transform: translateX(300rem);
+    margin-left: calc((var(--stack-index, 1) - 1) * 5rem);
+    transform: translateX(calc((var(--stack-index, 1) - 1) * 100rem));
+    background-color: var(--card-bg, #333);
 }
 .SectContents__block#System .SectContents__block__main .slide__item__container {
     width: 100%;
