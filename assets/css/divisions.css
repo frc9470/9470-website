@@ -179,11 +179,17 @@
     width: 70rem;
     margin: auto;
     z-index: 1;
+    perspective: 120rem;
+    perspective-origin: 50% 40%;
 }
 
 .DivisionCard {
     --accent: #c52535;
     --accent-rgb: 197, 37, 53;
+    --reveal-x: -18rem;
+    --reveal-z: -22rem;
+    --reveal-rotate: -18deg;
+    --reveal-origin: left center;
     --rx: 0deg;
     --ry: 0deg;
     --mx: 50%;
@@ -196,7 +202,15 @@
     padding: 5.8rem 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     transform-style: preserve-3d;
+    transform-origin: var(--reveal-origin);
     transition: border-color 450ms;
+    will-change: opacity, filter, transform;
+}
+
+.DivisionCard:nth-of-type(even) {
+    --reveal-x: 18rem;
+    --reveal-rotate: 18deg;
+    --reveal-origin: right center;
 }
 
 .DivisionCard:before {
@@ -230,15 +244,15 @@
 
 .division-effects .DivisionCard {
     opacity: 0;
-    filter: blur(0.9rem);
-    transform: translate3d(0, 7rem, 0) rotateX(6deg);
+    filter: blur(1.2rem);
+    transform: translate3d(var(--reveal-x), 8rem, var(--reveal-z)) rotateX(10deg) rotateY(var(--reveal-rotate)) scale(0.78);
 }
 
 .division-effects .DivisionCard.is-visible {
     opacity: 1;
     filter: blur(0);
-    transform: translate3d(0, 0, 0) rotateX(0);
-    transition: opacity 900ms cubic-bezier(0.165, 0.84, 0.44, 1), filter 900ms cubic-bezier(0.165, 0.84, 0.44, 1), transform 900ms cubic-bezier(0.165, 0.84, 0.44, 1), border-color 450ms;
+    transform: translate3d(0, 0, 0) rotateX(0) rotateY(0) scale(1);
+    transition: opacity 1150ms cubic-bezier(0.16, 1, 0.3, 1), filter 1150ms cubic-bezier(0.16, 1, 0.3, 1), transform 1150ms cubic-bezier(0.16, 1, 0.3, 1), border-color 450ms;
 }
 
 .DivisionCard.is-visible.is-pointer-active {
@@ -472,12 +486,20 @@
 
     .DivisionCard,
     .DivisionCard:nth-of-type(even) {
+        --reveal-x: -4rem;
+        --reveal-z: -10rem;
+        --reveal-rotate: -10deg;
         display: grid;
         grid-template-columns: 1fr;
         gap: 2.4rem;
         padding: 4rem 0;
         transform-style: flat;
         min-width: 0;
+    }
+
+    .DivisionCard:nth-of-type(even) {
+        --reveal-x: 4rem;
+        --reveal-rotate: 10deg;
     }
 
     .DivisionCard:before,
