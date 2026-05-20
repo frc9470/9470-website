@@ -1,0 +1,192 @@
+.DivisionsPage {
+    position: relative;
+    padding: 11rem 0 14rem;
+    background-color: #e6e6e3;
+    overflow: hidden;
+}
+
+.DivisionsPage:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #d6d6d5;
+}
+
+.DivisionsPage__intro {
+    position: relative;
+    width: 70rem;
+    margin: 0 auto 4.5rem;
+    padding-bottom: 5.6rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.DivisionsPage__eyebrow {
+    color: #c52535;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.DivisionsPage__title {
+    margin-top: 1.6rem;
+    font-size: 5.2rem;
+    font-weight: 700;
+    line-height: 1.16;
+}
+
+.DivisionsPage__lead {
+    width: 82%;
+    margin-top: 2.2rem;
+    color: #626260;
+    font-size: 1.6rem;
+    line-height: 1.8;
+}
+
+.DivisionsPage__grid {
+    position: relative;
+    width: 70rem;
+    margin: auto;
+}
+
+.DivisionCard {
+    display: grid;
+    grid-template-columns: minmax(0, 31rem) minmax(0, 1fr);
+    gap: 5.2rem;
+    align-items: center;
+    padding: 5.8rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.DivisionCard:first-of-type {
+    padding-top: 0;
+}
+
+.DivisionCard:nth-of-type(even) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 31rem);
+}
+
+.DivisionCard:nth-of-type(even) .DivisionCard__image {
+    order: 2;
+}
+
+.DivisionCard:nth-of-type(even) .DivisionCard__body {
+    order: 1;
+}
+
+.DivisionCard__image {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 0.3rem;
+    background-color: #d6d6d5;
+    box-shadow: 0 1.6rem 3.4rem rgba(0, 0, 0, 0.13);
+}
+
+.DivisionCard__image:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    pointer-events: none;
+}
+
+.DivisionCard__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.DivisionCard__body {
+    min-width: 0;
+}
+
+.DivisionCard__number {
+    color: #c52535;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.DivisionCard__title {
+    margin-top: 1.2rem;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.DivisionCard__title span {
+    display: block;
+    margin-top: 0.6rem;
+    color: #c52535;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.DivisionCard__description {
+    margin-top: 2rem;
+    color: #525250;
+    font-size: 1.5rem;
+    line-height: 1.85;
+}
+
+@media screen and (max-width: 1023px) {
+    .DivisionsPage {
+        padding: 6.5rem 0 8rem;
+    }
+
+    .DivisionsPage__intro,
+    .DivisionsPage__grid {
+        width: 92%;
+    }
+
+    .DivisionsPage__intro {
+        margin-bottom: 3.2rem;
+        padding-bottom: 3.6rem;
+    }
+
+    .DivisionsPage__eyebrow {
+        font-size: 1.1rem;
+    }
+
+    .DivisionsPage__title {
+        margin-top: 1.2rem;
+        font-size: 3rem;
+        line-height: 1.25;
+    }
+
+    .DivisionsPage__lead {
+        width: 100%;
+        margin-top: 1.5rem;
+        font-size: 1.35rem;
+        line-height: 1.75;
+    }
+
+    .DivisionCard,
+    .DivisionCard:nth-of-type(even) {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2.4rem;
+        padding: 4rem 0;
+    }
+
+    .DivisionCard:nth-of-type(even) .DivisionCard__image,
+    .DivisionCard:nth-of-type(even) .DivisionCard__body {
+        order: initial;
+    }
+
+    .DivisionCard__image {
+        box-shadow: 0 1rem 2.4rem rgba(0, 0, 0, 0.12);
+    }
+
+    .DivisionCard__title {
+        margin-top: 0.9rem;
+        font-size: 3rem;
+    }
+
+    .DivisionCard__description {
+        margin-top: 1.4rem;
+        font-size: 1.35rem;
+        line-height: 1.75;
+    }
+}
