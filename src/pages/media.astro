@@ -1,5 +1,31 @@
 ---
 import SubPageLayout from '../layouts/SubPageLayout.astro';
+
+const mediaImages = [
+  { src: '/assets/images/Media/dsc00016.jpg', alt: 'Competition Team Portrait' },
+  { src: '/assets/images/Media/dsc00089.jpg', alt: 'Focused in the Pit' },
+  { src: '/assets/images/Media/dsc00215.jpg', alt: 'The Thrill of Victory' },
+  { src: '/assets/images/Media/dsc00430.jpg', alt: 'Sprinting Across the Field' },
+  { src: '/assets/images/Media/dsc00438.jpg', alt: 'Intake Fine-Tuning' },
+  { src: '/assets/images/Media/dsc00442.jpg', alt: 'Pre-Match Loading' },
+  { src: '/assets/images/Media/dsc00460.jpg', alt: 'Behind the Glass' },
+  { src: '/assets/images/Media/dsc00536.jpg', alt: 'Mid-Match Chaos' },
+  { src: '/assets/images/Media/dsc00584.jpg', alt: 'Alliance Strategy' },
+  { src: '/assets/images/Media/dsc00592.jpg', alt: 'Back to the Pits' },
+  { src: '/assets/mediaGallery/1.JPG', alt: 'Our Team Building' },
+  { src: '/assets/images/Media/1.jpg', alt: 'Early competition team photo' },
+  { src: '/assets/images/Media/2.jpeg', alt: 'Members In Training' },
+  { src: '/assets/images/Media/3.jpg', alt: 'Members In Action Building Robot' },
+  { src: '/assets/images/Media/4.jpg', alt: 'Robot In Action!' },
+  { src: '/assets/images/Media/scoringcoral.jpg', alt: 'Our Robot Scoring Coral' },
+  { src: '/assets/images/Media/teampinnacles.jpg', alt: 'Team Photo At Pinnacles' },
+  { src: '/assets/images/Media/workingatpit.jpg', alt: 'Working At The Pit' },
+  { src: '/assets/images/Media/workingatpit2.jpg', alt: 'Working At The Pit 2' },
+  { src: '/assets/images/Media/buildingatworkshop.jpg', alt: 'Building At the Workshop' },
+  { src: '/assets/images/Media/drillinginthescrew.jpg', alt: 'Drilling In Screws!' },
+  { src: '/assets/images/Media/demowork.jpg', alt: 'Building Demo Structures' },
+  { src: '/assets/images/Media/demowork2.jpg', alt: 'Building Demo Parts' },
+];
 ---
 
 <SubPageLayout
@@ -17,215 +43,43 @@ import SubPageLayout from '../layouts/SubPageLayout.astro';
 
   <section class="SectContents MediaPage" id="SectContents">
     <div class="MediaPage__grid">
-      <div class="MediaPage__card">
-        <figure class="MediaPage__card__image c-inviewImage fInview">
-          <img src="/assets/images/Media/dsc00016.jpg" alt="Competition Team Portrait">
-        </figure>
-        <div class="MediaPage__card__body">
-          <h3 class="MediaPage__card__title">Competition Team Portrait</h3>
-          <p class="MediaPage__card__description">Team members posing proudly with the robot next to the alliance station.</p>
-        </div>
-      </div>
-      <div class="MediaPage__card">
-        <figure class="MediaPage__card__image c-inviewImage fInview">
-          <img src="/assets/images/Media/dsc00089.jpg" alt="Focused in the Pit">
-        </figure>
-        <div class="MediaPage__card__body">
-          <h3 class="MediaPage__card__title">Focused in the Pit</h3>
-          <p class="MediaPage__card__description">Analyzing telemetry data and conducting final system checks in the pit.</p>
-        </div>
-      </div>
-      <div class="MediaPage__card">
-        <figure class="MediaPage__card__image c-inviewImage fInview">
-          <img src="/assets/images/Media/dsc00215.jpg" alt="The Thrill of Victory">
-        </figure>
-        <div class="MediaPage__card__body">
-          <h3 class="MediaPage__card__title">The Thrill of Victory</h3>
-          <p class="MediaPage__card__description">Unbridled excitement and celebration after a successful high-scoring match.</p>
-        </div>
-      </div>
-      <div class="MediaPage__card">
-        <figure class="MediaPage__card__image c-inviewImage fInview">
-          <img src="/assets/images/Media/dsc00430.jpg" alt="Sprinting Across the Field">
-        </figure>
-        <div class="MediaPage__card__body">
-          <h3 class="MediaPage__card__title">Sprinting Across the Field</h3>
-          <p class="MediaPage__card__description">Our robot maneuvering at top speed to gather yellow game elements.</p>
-        </div>
-      </div>
-      <div class="MediaPage__card">
-        <figure class="MediaPage__card__image c-inviewImage fInview">
-          <img src="/assets/images/Media/dsc00438.jpg" alt="Intake Fine-Tuning">
-        </figure>
-        <div class="MediaPage__card__body">
-          <h3 class="MediaPage__card__title">Intake Fine-Tuning</h3>
-          <p class="MediaPage__card__description">Drive team members adjusting the intake rollers and sensor alignment.</p>
-        </div>
-      </div>
-      <div class="MediaPage__card">
-        <figure class="MediaPage__card__image c-inviewImage fInview">
-          <img src="/assets/images/Media/dsc00442.jpg" alt="Pre-Match Loading">
-        </figure>
-        <div class="MediaPage__card__body">
-          <h3 class="MediaPage__card__title">Pre-Match Loading</h3>
-          <p class="MediaPage__card__description">Loading game elements into the clear plastic hopper before setting up on the field.</p>
-        </div>
-      </div>
-      <div class="MediaPage__card">
-        <figure class="MediaPage__card__image c-inviewImage fInview">
-          <img src="/assets/images/Media/dsc00460.jpg" alt="Behind the Glass">
-        </figure>
-        <div class="MediaPage__card__body">
-          <h3 class="MediaPage__card__title">Behind the Glass</h3>
-          <p class="MediaPage__card__description">The drive team stands focused behind the alliance station glass during intense play.</p>
-        </div>
-      </div>
-      <div class="MediaPage__card">
-        <figure class="MediaPage__card__image c-inviewImage fInview">
-          <img src="/assets/images/Media/dsc00536.jpg" alt="Mid-Match Chaos">
-        </figure>
-        <div class="MediaPage__card__body">
-          <h3 class="MediaPage__card__title">Mid-Match Chaos</h3>
-          <p class="MediaPage__card__description">A spectacular action shot of game elements showering onto the field.</p>
-        </div>
-      </div>
-      <div class="MediaPage__card">
-        <figure class="MediaPage__card__image c-inviewImage fInview">
-          <img src="/assets/images/Media/dsc00584.jpg" alt="Alliance Strategy">
-        </figure>
-        <div class="MediaPage__card__body">
-          <h3 class="MediaPage__card__title">Alliance Strategy</h3>
-          <p class="MediaPage__card__description">Discussing real-time tactics and coordinating plays during a crucial match.</p>
-        </div>
-      </div>
-      <div class="MediaPage__card">
-        <figure class="MediaPage__card__image c-inviewImage fInview">
-          <img src="/assets/images/Media/dsc00592.jpg" alt="Back to the Pits">
-        </figure>
-        <div class="MediaPage__card__body">
-          <h3 class="MediaPage__card__title">Back to the Pits</h3>
-          <p class="MediaPage__card__description">Carrying the robot off the field after a hard-fought battle to prepare for the next round.</p>
-        </div>
-      </div>
-      <div class="MediaPage__card">
-        <figure class="MediaPage__card__image c-inviewImage fInview">
-          <img src="/assets/mediaGallery/1.JPG" alt="Our Team Building">
-        </figure>
-        <div class="MediaPage__card__body">
-          <h3 class="MediaPage__card__title">Our Team Building</h3>
-          <p class="MediaPage__card__description">Fremont workshop setup and building the chassis.</p>
-        </div>
-      </div>
-      <div class="MediaPage__card">
-        <figure class="MediaPage__card__image c-inviewImage fInview">
-          <img src="/assets/images/Media/1.jpg" alt="Early competition team photo">
-        </figure>
-        <div class="MediaPage__card__body">
-          <h3 class="MediaPage__card__title">Early Competition Team Photo</h3>
-          <p class="MediaPage__card__description">Our team with one of its first competition robots.</p>
-        </div>
-      </div>
-      <div class="MediaPage__card">
-        <figure class="MediaPage__card__image c-inviewImage fInview">
-          <img src="/assets/images/Media/2.jpeg" alt="Members In Training">
-        </figure>
-        <div class="MediaPage__card__body">
-          <h3 class="MediaPage__card__title">Members In Training</h3>
-          <p class="MediaPage__card__description">New members learning critical mechanical and programming skills.</p>
-        </div>
-      </div>
-      <div class="MediaPage__card">
-        <figure class="MediaPage__card__image c-inviewImage fInview">
-          <img src="/assets/images/Media/3.jpg" alt="Members In Action Building Robot">
-        </figure>
-        <div class="MediaPage__card__body">
-          <h3 class="MediaPage__card__title">Members In Action Building Robot</h3>
-          <p class="MediaPage__card__description">Collaborative assembly of the main chassis and superstructure.</p>
-        </div>
-      </div>
-      <div class="MediaPage__card">
-        <figure class="MediaPage__card__image c-inviewImage fInview">
-          <img src="/assets/images/Media/4.jpg" alt="Robot In Action!">
-        </figure>
-        <div class="MediaPage__card__body">
-          <h3 class="MediaPage__card__title">Robot In Action!</h3>
-          <p class="MediaPage__card__description">On-field testing and driving during practice sessions.</p>
-        </div>
-      </div>
-      <div class="MediaPage__card">
-        <figure class="MediaPage__card__image c-inviewImage fInview">
-          <img src="/assets/images/Media/scoringcoral.jpg" alt="Our Robot Scoring Coral">
-        </figure>
-        <div class="MediaPage__card__body">
-          <h3 class="MediaPage__card__title">Our Robot Scoring Coral</h3>
-          <p class="MediaPage__card__description">Precise placement of game elements during official matches.</p>
-        </div>
-      </div>
-      <div class="MediaPage__card">
-        <figure class="MediaPage__card__image c-inviewImage fInview">
-          <img src="/assets/images/Media/teampinnacles.jpg" alt="Team Photo At Pinnacles">
-        </figure>
-        <div class="MediaPage__card__body">
-          <h3 class="MediaPage__card__title">Team Photo At Pinnacles</h3>
-          <p class="MediaPage__card__description">Team bonding and retreat at Pinnacles National Park.</p>
-        </div>
-      </div>
-      <div class="MediaPage__card">
-        <figure class="MediaPage__card__image c-inviewImage fInview">
-          <img src="/assets/images/Media/workingatpit.jpg" alt="Working At The Pit">
-        </figure>
-        <div class="MediaPage__card__body">
-          <h3 class="MediaPage__card__title">Working At The Pit</h3>
-          <p class="MediaPage__card__description">Fast-paced troubleshooting and repairs between tournament matches.</p>
-        </div>
-      </div>
-      <div class="MediaPage__card">
-        <figure class="MediaPage__card__image c-inviewImage fInview">
-          <img src="/assets/images/Media/workingatpit2.jpg" alt="Working At The Pit 2">
-        </figure>
-        <div class="MediaPage__card__body">
-          <h3 class="MediaPage__card__title">Working At The Pit 2</h3>
-          <p class="MediaPage__card__description">Wiring audits and driver team briefs under pressure.</p>
-        </div>
-      </div>
-      <div class="MediaPage__card">
-        <figure class="MediaPage__card__image c-inviewImage fInview">
-          <img src="/assets/images/Media/buildingatworkshop.jpg" alt="Building At the Workshop">
-        </figure>
-        <div class="MediaPage__card__body">
-          <h3 class="MediaPage__card__title">Building At the Workshop</h3>
-          <p class="MediaPage__card__description">Machining customized brackets and structures in the off-season.</p>
-        </div>
-      </div>
-      <div class="MediaPage__card">
-        <figure class="MediaPage__card__image c-inviewImage fInview">
-          <img src="/assets/images/Media/drillinginthescrew.jpg" alt="Drilling In Screws!">
-        </figure>
-        <div class="MediaPage__card__body">
-          <h3 class="MediaPage__card__title">Drilling In Screws!</h3>
-          <p class="MediaPage__card__description">Hands-on fabrication and assembly training for newer members.</p>
-        </div>
-      </div>
-      <div class="MediaPage__card">
-        <figure class="MediaPage__card__image c-inviewImage fInview">
-          <img src="/assets/images/Media/demowork.jpg" alt="Building Demo Structures">
-        </figure>
-        <div class="MediaPage__card__body">
-          <h3 class="MediaPage__card__title">Building Demo Structures</h3>
-          <p class="MediaPage__card__description">Constructing full-scale mockups of FRC field elements.</p>
-        </div>
-      </div>
-      <div class="MediaPage__card">
-        <figure class="MediaPage__card__image c-inviewImage fInview">
-          <img src="/assets/images/Media/demowork2.jpg" alt="Building Demo Parts">
-        </figure>
-        <div class="MediaPage__card__body">
-          <h3 class="MediaPage__card__title">Building Demo Parts</h3>
-          <p class="MediaPage__card__description">Milling mock parts for design verification and fit check.</p>
-        </div>
-      </div>
+      {mediaImages.map((image, index) => (
+        <button
+          class="MediaPage__card"
+          type="button"
+          data-media-trigger
+          data-media-index={index}
+          data-media-src={image.src}
+          data-media-alt={image.alt}
+          aria-label={`Open preview for ${image.alt}`}
+        >
+          <figure class="MediaPage__card__image c-inviewImage fInview">
+            <img src={image.src} alt={image.alt} loading="lazy" />
+          </figure>
+        </button>
+      ))}
     </div>
   </section>
+
+  <dialog class="MediaLightbox" id="MediaLightbox" slot="after-contents" aria-label="Media image preview">
+    <div class="MediaLightbox__dialog">
+      <form class="MediaLightbox__closeForm" method="dialog">
+        <button class="MediaLightbox__close" type="submit" aria-label="Close image preview">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </form>
+      <button class="MediaLightbox__nav MediaLightbox__nav--prev" type="button" data-media-prev aria-label="Previous image">
+        <span aria-hidden="true">&#8592;</span>
+      </button>
+      <figure class="MediaLightbox__figure">
+        <img class="MediaLightbox__image" data-media-preview-image src="" alt="" />
+      </figure>
+      <button class="MediaLightbox__nav MediaLightbox__nav--next" type="button" data-media-next aria-label="Next image">
+        <span aria-hidden="true">&#8594;</span>
+      </button>
+      <p class="MediaLightbox__count" data-media-count aria-live="polite"></p>
+    </div>
+  </dialog>
 
   <style slot="head">
     .MediaPage {
@@ -240,20 +94,32 @@ import SubPageLayout from '../layouts/SubPageLayout.astro';
       padding: 2rem 0 6rem;
     }
     .MediaPage__card {
+      appearance: none;
+      width: 100%;
+      padding: 0;
+      text-align: left;
       background: rgba(255, 255, 255, 0.55);
       border: 1px solid rgba(0, 0, 0, 0.1);
       border-radius: 4px;
       overflow: hidden;
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+      cursor: zoom-in;
       transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
                   box-shadow 0.35s ease,
-                  border-color 0.35s ease;
+                  border-color 0.35s ease,
+                  background 0.35s ease;
     }
     .MediaPage__card:hover {
       transform: translateY(-4px);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
       border-color: rgba(var(--site-accent-rgb), 0.45);
       background: rgba(255, 255, 255, 0.82);
+    }
+    .MediaPage__card:focus-visible {
+      outline: 2px solid rgba(var(--site-accent-rgb), 0.9);
+      outline-offset: 4px;
+      border-color: rgba(var(--site-accent-rgb), 0.65);
+      box-shadow: 0 0 0 6px rgba(var(--site-accent-rgb), 0.12);
     }
     .MediaPage__card__image {
       width: 100%;
@@ -269,35 +135,328 @@ import SubPageLayout from '../layouts/SubPageLayout.astro';
       filter: saturate(0.9) contrast(1.04);
       transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .MediaPage__card:hover .MediaPage__card__image img {
+    .MediaPage__card:hover .MediaPage__card__image img,
+    .MediaPage__card:focus-visible .MediaPage__card__image img {
       transform: scale(1.05);
     }
-    .MediaPage__card__body {
-      padding: 1.4rem 1.4rem 1.6rem;
-      border-top: 1px solid rgba(0, 0, 0, 0.07);
+    .MediaLightbox {
+      width: 100%;
+      max-width: none;
+      height: 100%;
+      max-height: none;
+      border: 0;
+      background: transparent;
+      padding: 3rem 4.5rem;
+      margin: 0;
+      overflow: hidden;
     }
-    .MediaPage__card__title {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #202020;
-      margin-bottom: 0.5rem;
+    .MediaLightbox[open] {
+      display: grid;
+      place-items: center;
+    }
+    .MediaLightbox::backdrop {
+      background: rgba(6, 10, 17, 0.86);
+      backdrop-filter: blur(12px);
+    }
+    .MediaLightbox__dialog {
+      position: relative;
+      width: min(100%, 1120px);
+      min-height: min(80vh, 760px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 4rem 4.75rem;
+    }
+    .MediaLightbox__closeForm {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      margin: 0;
+    }
+    .MediaLightbox__figure {
+      margin: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .MediaLightbox__image {
+      display: block;
+      width: auto;
+      max-width: 100%;
+      max-height: calc(100vh - 7.5rem);
+      border-radius: 18px;
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.5);
+      object-fit: contain;
+      background: rgba(255, 255, 255, 0.08);
+    }
+    .MediaLightbox__close,
+    .MediaLightbox__nav {
+      appearance: none;
+      position: absolute;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 3.5rem;
+      height: 3.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      background: rgba(14, 18, 28, 0.74);
+      color: #fff;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+    .MediaLightbox__close:hover,
+    .MediaLightbox__close:focus-visible,
+    .MediaLightbox__nav:hover,
+    .MediaLightbox__nav:focus-visible {
+      transform: scale(1.04);
+      background: rgba(24, 31, 45, 0.92);
+      border-color: rgba(255, 255, 255, 0.45);
+      outline: none;
+    }
+    .MediaLightbox__close {
+      top: 0;
+      right: 0;
+      font-size: 2rem;
+      line-height: 1;
+    }
+    .MediaLightbox__nav {
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+    .MediaLightbox__nav:hover,
+    .MediaLightbox__nav:focus-visible {
+      transform: translateY(-50%) scale(1.04);
+    }
+    .MediaLightbox__nav--prev {
+      left: 0;
+    }
+    .MediaLightbox__nav--next {
+      right: 0;
+    }
+    .MediaLightbox__count {
+      position: absolute;
+      left: 50%;
+      bottom: 0.5rem;
+      transform: translateX(-50%);
+      margin: 0;
+      padding: 0.55rem 0.95rem;
+      border-radius: 999px;
+      background: rgba(14, 18, 28, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 1.2rem;
+      letter-spacing: 0.08em;
       font-family: 'Montserrat', sans-serif;
-    }
-    .MediaPage__card__description {
-      color: #626260;
-      font-size: 1.3rem;
-      line-height: 1.65;
     }
     @media (max-width: 768px) {
       .MediaPage__grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
       }
+      .MediaLightbox {
+        padding: 1.25rem;
+      }
+      .MediaLightbox__dialog {
+        min-height: min(86vh, 760px);
+        padding: 4rem 3.5rem;
+      }
+      .MediaLightbox__image {
+        max-height: calc(100vh - 9.5rem);
+        border-radius: 14px;
+      }
+      .MediaLightbox__close,
+      .MediaLightbox__nav {
+        width: 3rem;
+        height: 3rem;
+      }
+      .MediaLightbox__nav {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .MediaLightbox__nav:hover,
+      .MediaLightbox__nav:focus-visible {
+        transform: translateY(-50%) scale(1.04);
+      }
+      .MediaLightbox__nav--prev {
+        left: 0;
+      }
+      .MediaLightbox__nav--next {
+        right: 0;
+      }
+      .MediaLightbox__count {
+        bottom: 0.65rem;
+      }
     }
     @media (max-width: 480px) {
       .MediaPage__grid {
         grid-template-columns: 1fr;
       }
+      .MediaLightbox__dialog {
+        padding: 3.5rem 2.75rem;
+      }
+      .MediaLightbox__close {
+        top: 0;
+        right: 0;
+      }
+      .MediaLightbox__count {
+        font-size: 1.05rem;
+        padding: 0.5rem 0.8rem;
+      }
     }
   </style>
+
+  <script slot="scripts" is:inline>
+    (function() {
+      const lightbox = document.getElementById('MediaLightbox');
+      if (!lightbox) return;
+
+      const triggers = Array.from(document.querySelectorAll('[data-media-trigger]'));
+      const previewImage = lightbox.querySelector('[data-media-preview-image]');
+      const closeButton = lightbox.querySelector('.MediaLightbox__close');
+      const prevButton = lightbox.querySelector('[data-media-prev]');
+      const nextButton = lightbox.querySelector('[data-media-next]');
+      const counter = lightbox.querySelector('[data-media-count]');
+
+      if (!triggers.length || !previewImage || !closeButton || !prevButton || !nextButton || !counter) return;
+
+      const items = triggers.map((trigger) => ({
+        src: trigger.getAttribute('data-media-src') || '',
+        alt: trigger.getAttribute('data-media-alt') || '',
+      }));
+
+      const focusableControls = [closeButton, prevButton, nextButton];
+      let activeIndex = 0;
+      let activeTrigger = null;
+      let isOpen = false;
+      let previousHtmlOverflow = '';
+      let previousBodyOverflow = '';
+
+      function updatePreview() {
+        const item = items[activeIndex];
+        previewImage.setAttribute('src', item.src);
+        previewImage.setAttribute('alt', item.alt);
+        counter.textContent = (activeIndex + 1) + ' / ' + items.length;
+      }
+
+      function pauseBackgroundScroll() {
+        previousHtmlOverflow = document.documentElement.style.overflow;
+        previousBodyOverflow = document.body.style.overflow;
+        document.documentElement.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden';
+
+        if (window.app && window.app.locoScroll && typeof window.app.locoScroll.stop === 'function') {
+          window.app.locoScroll.stop();
+        }
+      }
+
+      function resumeBackgroundScroll() {
+        document.documentElement.style.overflow = previousHtmlOverflow;
+        document.body.style.overflow = previousBodyOverflow;
+
+        if (window.app && window.app.locoScroll && typeof window.app.locoScroll.start === 'function') {
+          window.app.locoScroll.start();
+        }
+      }
+
+      function showImage(nextIndex) {
+        activeIndex = (nextIndex + items.length) % items.length;
+        updatePreview();
+      }
+
+      function openPreview(index) {
+        activeIndex = index;
+        activeTrigger = triggers[index];
+        updatePreview();
+        pauseBackgroundScroll();
+        if (!lightbox.open) {
+          lightbox.showModal();
+        }
+        isOpen = true;
+        closeButton.focus();
+      }
+
+      function closePreview() {
+        if (!isOpen || !lightbox.open) return;
+        lightbox.close();
+      }
+
+      function trapFocus(event) {
+        const firstControl = focusableControls[0];
+        const lastControl = focusableControls[focusableControls.length - 1];
+
+        if (event.shiftKey && document.activeElement === firstControl) {
+          event.preventDefault();
+          lastControl.focus();
+        } else if (!event.shiftKey && document.activeElement === lastControl) {
+          event.preventDefault();
+          firstControl.focus();
+        }
+      }
+
+      triggers.forEach(function(trigger, index) {
+        trigger.addEventListener('click', function() {
+          openPreview(index);
+        });
+      });
+
+      prevButton.addEventListener('click', function() {
+        showImage(activeIndex - 1);
+      });
+
+      nextButton.addEventListener('click', function() {
+        showImage(activeIndex + 1);
+      });
+
+      lightbox.addEventListener('click', function(event) {
+        const clickedImage = event.target.closest('[data-media-preview-image]');
+        const clickedPrev = event.target.closest('[data-media-prev]');
+        const clickedNext = event.target.closest('[data-media-next]');
+        
+        if (!clickedImage && !clickedPrev && !clickedNext) {
+          closePreview();
+        }
+      });
+
+      lightbox.addEventListener('close', function() {
+        isOpen = false;
+        resumeBackgroundScroll();
+        previewImage.removeAttribute('src');
+        previewImage.setAttribute('alt', '');
+        if (activeTrigger) {
+          activeTrigger.focus();
+        }
+      });
+
+      window.addEventListener('keydown', function(event) {
+        if (!isOpen) return;
+
+        if (event.key === 'Escape') {
+          event.preventDefault();
+          closePreview();
+          return;
+        }
+
+        if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          showImage(activeIndex - 1);
+          return;
+        }
+
+        if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          showImage(activeIndex + 1);
+          return;
+        }
+
+        if (event.key === 'Tab') {
+          trapFocus(event);
+        }
+      });
+    })();
+  </script>
 </SubPageLayout>
