@@ -1,0 +1,55 @@
+---
+interface Props {
+  currentPage?: string;
+}
+
+const { currentPage = '' } = Astro.props;
+---
+
+<div class="MenuModal" id="MenuModal">
+  <div class="MenuModal__bg MenuModal--close"></div>
+  <div class="MenuModal__top"><a class="anchor" href="/">
+      <figure class="logo"><img src="/assets/images/ctrlaltdefeatlogo.png" alt="" />
+      </figure>
+    </a></div>
+  <div class="MenuModal__circle"></div>
+  <div class="MenuModal__container">
+    <div class="MenuModal__links">
+      <ul class="list">
+        <li class={`list__item ${currentPage === 'home' ? 'is-current' : ''}`}><a class="anchor mo_line" href="/">
+            <p class="text"><span class="text__inner">Home</span></p>
+          </a></li>
+        <li class={`list__item ${currentPage === 'about' ? 'is-current' : ''}`}><a class="anchor mo_line" href="/about/">
+            <p class="text"><span class="text__inner">About</span></p>
+          </a></li>
+        <li class={`list__item ${currentPage === 'frc' ? 'is-current' : ''}`}><a class="anchor mo_line" href="/about/#FRC">
+            <p class="text"><span class="text__inner">FRC</span></p>
+          </a></li>
+        <li class={`list__item ${currentPage === 'media' ? 'is-current' : ''}`}><a class="anchor mo_line" href="/media/">
+            <p class="text"><span class="text__inner">Media</span></p>
+          </a>
+        </li>
+        <li class={`list__item ${currentPage === 'members' ? 'is-current' : ''}`}><a class="anchor mo_line" href="/members/">
+            <p class="text"><span class="text__inner">Members</span></p>
+          </a></li>
+        <li class={`list__item ${currentPage === 'sponsors' ? 'is-current' : ''}`}><a class="anchor mo_line" href="/sponsors/">
+            <p class="text"><span class="text__inner">Sponsors</span></p>
+          </a></li>
+        <li class={`list__item ${currentPage === 'support' ? 'is-current' : ''}`}><a class="anchor mo_line" href="/support/">
+            <p class="text"><span class="text__inner">Support</span></p>
+          </a></li>
+        <li class={`list__item ${currentPage === 'awards' ? 'is-current' : ''}`}><a class="anchor mo_line" href="/awards/">
+            <p class="text"><span class="text__inner">Awards</span></p>
+          </a></li>
+        <li class={`list__item ${currentPage === 'divisions' ? 'is-current' : ''}`}><a class="anchor mo_line" href="/divisions/">
+            <p class="text"><span class="text__inner">Divisions</span></p>
+          </a></li>
+        <li class="list__item"><a class="anchor mo_line" href="https://forms.gle/9vHFEDqLXv7Q6tuF7" target="_blank" rel="noopener noreferrer">
+            <p class="text"><span class="text__inner">Join</span></p>
+          </a></li>
+      </ul>
+      <ul class="sns">
+      </ul>
+    </div>
+  </div>
+</div>

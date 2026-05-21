@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+    <title>Team 9470</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/nav.css">
+    <style>
+		input {
+			outline: none !important;
+			box-shadow: none !important;
+		}
+
+		input:focus {
+			outline: none !important;
+			box-shadow: none !important;
+		}
+
+		*:focus {
+			outline: none !important;
+			box-shadow: none !important;
+		}
+
+		input, textarea, select {
+			font-size: 16px !important;
+		}
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        html {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        }
+
+        .verification-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        body.modal-open {
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        body.modal-open .verification-modal {
+            pointer-events: all;
+        }
+
+        .verification-content {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 2rem;
+            border-radius: 0;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .verification-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .verification-buttons button {
+            padding: 0.5rem 1.5rem;
+            border: none;
+            border-radius: 0;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .verification-buttons button:hover {
+            opacity: 1;
+        }
+
+        .approve-btn {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .deny-btn {
+            background: #f44336;
+            color: white;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('mouseover', function(e) {
+            e.stopPropagation();
+        }, true);
+    </script>
+
+    <style>
+        .media-wrapper {
+            min-height: calc(100vh - 48px);
+            background-color: #060606;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px #000000;
+            -webkit-animation: rainbow 5s infinite;
+            -ms-animation: rainbow 5s infinite;
+            animation: rainbow 5s infinite;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            padding: 0.5rem;
+        }
+
+        .media-card {
+            background: #0E0E0E;
+            border: 1px solid #2a2a2a;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .media-image {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            border-bottom: 1px solid #2a2a2a;
+            background: #0a0a0a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .media-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .media-content {
+            padding: 0.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .media-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px #000000;
+            -webkit-animation: rainbow 5s infinite;
+            -ms-animation: rainbow 5s infinite;
+            animation: rainbow 5s infinite;
+            text-align: center;
+            width: 100%;
+        }
+
+        .media-description {
+            color: #b0b0b0;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            flex-grow: 1;
+            max-height: calc(1.5rem * 6);
+            overflow-y: auto !important;
+            overflow-x: hidden !important;
+            padding-right: 0.5rem;
+            padding-left: 0.5rem;
+            text-align: center;
+            width: 100%;
+            white-space: pre-line !important;
+            word-wrap: break-word !important;
+            word-break: break-word !important;
+            hyphens: auto !important;
+            scrollbar-width: thin !important;
+            -ms-overflow-style: auto !important;
+        }
+
+        .media-description::-webkit-scrollbar {
+            display: block !important;
+            width: 6px !important;
+        }
+        
+        .media-description::-webkit-scrollbar-track {
+            background: #111 !important;
+        }
+        
+        .media-description::-webkit-scrollbar-thumb {
+            background-color: #333 !important;
+            border-radius: 0 !important;
+        }
+
+        .media-description a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .media-description a:hover {
+            text-decoration: underline;
+        }
+
+        @-webkit-keyframes rainbow {
+            0%{color: red;}
+            17%{color: orange;}
+            33%{color: yellow;}
+            50%{color: green;}
+            67%{color: blue;}
+            84%{color: purple;}
+            100%{color: red;}
+        }
+        @-ms-keyframes rainbow {
+            0%{color: red;}
+            17%{color: orange;}
+            33%{color: yellow;}
+            50%{color: green;}
+            67%{color: blue;}
+            84%{color: purple;}
+            100%{color: red;}
+        }
+        @keyframes rainbow {
+            0%{color: red;}
+            17%{color: orange;}
+            33%{color: yellow;}
+            50%{color: green;}
+            67%{color: blue;}
+            84%{color: purple;}
+            100%{color: red;}
+        }
+
+        .sparkle {
+            pointer-events: none;
+            position: fixed;
+            font-family: monospace;
+            font-weight: bold;
+            font-size: 8px;
+            animation: sparkle-fade 0.8s forwards;
+            z-index: 1000;
+            text-shadow: 0 0 3px currentColor;
+        }
+
+        @keyframes sparkle-fade {
+            0% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+            50% {
+                opacity: 0.8;
+                transform: scale(0.9) translateY(-10px);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.6) translateY(-20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .media-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 1.75rem;
+            }
+
+            .media-content {
+                padding: 1rem;
+            }
+
+            .media-grid {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <link rel="stylesheet" href="../assets/css/nav.css">
+    <style>
+    /* Popup overlay styles */
+    .verifoverlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        font-family: Arial, sans-serif;
+    }
+    
+    /* Popup container styles */
+    .popup-container {
+        background-color: #111;
+        border-radius: 5px;
+        width: 90%;
+        max-width: 800px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        position: relative;
+        box-sizing: border-box;
+    }
+    
+    /* Reset some styles to prevent inheritance from main page */
+    .popup-container * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .language-selector {
+        display: inline-block;
+        background-color: #333;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 4px;
+        margin-bottom: 40px;
+        text-align: left;
+    }
+    
+    .language-selector i {
+        margin-right: 5px;
+    }
+    
+    .language-selector::after {
+        content: "▼";
+        margin-left: 5px;
+        font-size: 0.8em;
+    }
+    
+    .logo {
+        margin: 20px auto 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .logo-text {
+        color: white;
+        font-size: 36px;
+        font-weight: bold;
+    }
+    
+    .logo-box {
+        background-color: #f90;
+        color: white;
+        padding: 2px 5px;
+        border-radius: 3px;
+        font-size: 36px;
+        font-weight: bold;
+    }
+    
+    .popup-container h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        color: #fff;
+    }
+    
+    .description {
+        font-size: 16px;
+        margin-bottom: 40px;
+        line-height: 1.5;
+        color: #ccc;
+    }
+    
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        gap: 20px;
+    }
+    
+    .btn {
+        flex: 1;
+        padding: 15px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .btn-enter {
+        background-color: #f90;
+        color: #000;
+    }
+    
+    .btn-enter:hover {
+        background-color: #ffb340;
+    }
+    
+    .btn-exit {
+        background-color: #333;
+        color: white;
+    }
+    
+    .btn-exit:hover {
+        background-color: #444;
+    }
+    
+    .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        color: #777;
+        font-size: 14px;
+    }
+    
+    @media (max-width: 600px) {
+        .buttons {
+            flex-direction: column;
+        }
+        
+        .popup-container h1 {
+            font-size: 28px;
+        }
+        
+        .description {
+            font-size: 14px;
+        }
+    }
+</style>
+
+<!-- <div class="verifoverlay" id="verifPop">
+    <div class="popup-container">
+        <div class="language-selector">
+            <i>ðŸŒ</i> English
+        </div>
+        
+        <div class="logo">
+            <span class="logo-text">Team</span><span class="logo-box">9470</span>
+        </div>
+        
+        <h1>This is a robotics website.</h1>
+        
+        <p class="description">
+            This website contains many robotics pictures in a gallery and shows how passionate we are as a robotics team! Would you like to view our YouTube videos as well?
+        </p>
+        
+        <div class="buttons">
+            <button onclick='document.getElementById("verifPop").remove();window.open("https://www.youtube.com/@frc9470")' class="btn btn-enter" id="enterBtn">Yes, I would like to</button>
+            <button onclick='document.getElementById("verifPop").remove()' class="btn btn-exit" id="exitBtn">No thanks man.</button>
+        </div>
+        
+        <div class="footer">
+            © Team 9470, 2025
+        </div>
+    </div>
+</div> -->
+<nav>
+    <div class="container">
+        <div class="nav-brand">
+            <a href="/">Team 9470</a>
+            <div class="online-count mobile-only" style="display: none;">0</div>
+        </div>
+        <button class="navbar-toggler" type="button">
+            ☰
+        </button>
+        <div class="nav-wrapper">
+            <ul class="nav-menu">
+                <li ><a href="../">Home</a></li>
+                
+                <li ><a href="../about-simple">About</a></li>
+                
+                <li ><a href="../about#FRC">FRC</a></li>
+                <li class="active"><a href="#">Media</a></li>
+                <li ><a href="../members">Members</a></li>
+                <li ><a href="../sponsors">Sponsors</a></li>
+                <li ><a href="../support">Support</a></li>
+                <li ><a href="https://forms.gle/92AHNRwaKYEacL5z7" target="_blank" rel="noopener noreferrer">Join</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <div class="media-wrapper">
+        <div class="container">
+            <h1 class="page-title">Our Media</h1>
+            
+            <div class="media-grid">
+                
+                <div class="media-card">
+                    <div class="media-image">
+                        <img src="../assets/mediaGallery/1.JPG" alt="Name">
+                    </div>
+                    <div class="media-content">
+                        <h2 class="media-name">Our Team Building</h2>
+                        <div class="media-description">Description</div>
+                    </div>
+                </div>
+                
+                <div class="media-card">
+                    <div class="media-image">
+                        <img src="placeholder.jpg" alt="Name">
+                    </div>
+                    <div class="media-content">
+                        <h2 class="media-name">Name</h2>
+                        <div class="media-description">Description</div>
+                    </div>
+                </div>
+                
+                <div class="media-card">
+                    <div class="media-image">
+                        <img src="placeholder.jpg" alt="Name">
+                    </div>
+                    <div class="media-content">
+                        <h2 class="media-name">Name</h2>
+                        <div class="media-description">Description</div>
+                    </div>
+                </div>
+                
+                <div class="media-card">
+                    <div class="media-image">
+                        <img src="placeholder.jpg" alt="Name">
+                    </div>
+                    <div class="media-content">
+                        <h2 class="media-name">Name</h2>
+                        <div class="media-description">Description</div>
+                    </div>
+                </div>
+                
+                <div class="media-card">
+                    <div class="media-image">
+                        <img src="placeholder.jpg" alt="Name">
+                    </div>
+                    <div class="media-content">
+                        <h2 class="media-name">Name</h2>
+                        <div class="media-description">Description</div>
+                    </div>
+                </div>
+                
+                <div class="media-card">
+                    <div class="media-image">
+                        <img src="placeholder.jpg" alt="Name">
+                    </div>
+                    <div class="media-content">
+                        <h2 class="media-name">Name</h2>
+                        <div class="media-description">Description</div>
+                    </div>
+                </div>
+                
+                <div class="media-card">
+                    <div class="media-image">
+                        <img src="placeholder.jpg" alt="Name">
+                    </div>
+                    <div class="media-content">
+                        <h2 class="media-name">Name</h2>
+                        <div class="media-description">Description</div>
+                    </div>
+                </div>
+                
+                <div class="media-card">
+                    <div class="media-image">
+                        <img src="placeholder.jpg" alt="Name">
+                    </div>
+                    <div class="media-content">
+                        <h2 class="media-name">Name</h2>
+                        <div class="media-description">Description</div>
+                    </div>
+                </div>
+                
+                <div class="media-card">
+                    <div class="media-image">
+                        <img src="placeholder.jpg" alt="Name">
+                    </div>
+                    <div class="media-content">
+                        <h2 class="media-name">Name</h2>
+                        <div class="media-description">Description</div>
+                    </div>
+                </div>
+                
+                <div class="media-card">
+                    <div class="media-image">
+                        <img src="placeholder.jpg" alt="Name">
+                    </div>
+                    <div class="media-content">
+                        <h2 class="media-name">Name</h2>
+                        <div class="media-description">Description</div>
+                    </div>
+                </div>
+                
+                <div class="media-card">
+                    <div class="media-image">
+                        <img src="placeholder.jpg" alt="Name">
+                    </div>
+                    <div class="media-content">
+                        <h2 class="media-name">Name</h2>
+                        <div class="media-description">Description</div>
+                    </div>
+                </div>
+                
+                <div class="media-card">
+                    <div class="media-image">
+                        <img src="placeholder.jpg" alt="Name">
+                    </div>
+                    <div class="media-content">
+                        <h2 class="media-name">Name</h2>
+                        <div class="media-description">Description</div>
+                    </div>
+                </div>
+                
+                <div class="media-card">
+                    <div class="media-image">
+                        <img src="placeholder.jpg" alt="Name">
+                    </div>
+                    <div class="media-content">
+                        <h2 class="media-name">Name</h2>
+                        <div class="media-description">Description</div>
+                    </div>
+                </div>
+                
+                <div class="media-card">
+                    <div class="media-image">
+                        <img src="placeholder.jpg" alt="Name">
+                    </div>
+                    <div class="media-content">
+                        <h2 class="media-name">Name</h2>
+                        <div class="media-description">Description</div>
+                    </div>
+                </div>
+                
+                <div class="media-card">
+                    <div class="media-image">
+                        <img src="placeholder.jpg" alt="Name">
+                    </div>
+                    <div class="media-content">
+                        <h2 class="media-name">Name</h2>
+                        <div class="media-description">Description</div>
+                    </div>
+                </div>
+                
+                <div class="media-card">
+                    <div class="media-image">
+                        <img src="placeholder.jpg" alt="Name">
+                    </div>
+                    <div class="media-content">
+                        <h2 class="media-name">Name</h2>
+                        <div class="media-description">Description</div>
+                    </div>
+                </div>
+                
+                <div class="media-card">
+                    <div class="media-image">
+                        <img src="placeholder.jpg" alt="Name">
+                    </div>
+                    <div class="media-content">
+                        <h2 class="media-name">Name</h2>
+                        <div class="media-description">Description</div>
+                    </div>
+                </div>
+                
+                <div class="media-card">
+                    <div class="media-image">
+                        <img src="placeholder.jpg" alt="Name">
+                    </div>
+                    <div class="media-content">
+                        <h2 class="media-name">Name</h2>
+                        <div class="media-description">Description</div>
+                    </div>
+                </div>
+                
+                <div class="media-card">
+                    <div class="media-image">
+                        <img src="placeholder.jpg" alt="Name">
+                    </div>
+                    <div class="media-content">
+                        <h2 class="media-name">Name</h2>
+                        <div class="media-description">Description</div>
+                    </div>
+                </div>
+                
+                <div class="media-card">
+                    <div class="media-image">
+                        <img src="placeholder.jpg" alt="Name">
+                    </div>
+                    <div class="media-content">
+                        <h2 class="media-name">Name</h2>
+                        <div class="media-description">Description</div>
+                    </div>
+                </div>
+                
+                <div class="media-card">
+                    <div class="media-image">
+                        <img src="placeholder.jpg" alt="Name">
+                    </div>
+                    <div class="media-content">
+                        <h2 class="media-name">Name</h2>
+                        <div class="media-description">Description</div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            const sparkleChars = ['✦', '✧', '✯', '✬', '✫', '*'];
+            const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
+            let mouseX = 0;
+            let mouseY = 0;
+            let isMoving = false;
+            let movementTimeout = null;
+            let sparkleInterval = null;
+
+            function createSparkle() {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                
+                // random offset
+                const offsetX = (Math.random() - 0.5) * 20;
+                const offsetY = (Math.random() - 0.5) * 20;
+                
+                sparkle.style.left = (mouseX + offsetX) + 'px';
+                sparkle.style.top = (mouseY + offsetY) + 'px';
+                sparkle.style.color = colors[Math.floor(Math.random() * colors.length)];
+                sparkle.textContent = sparkleChars[Math.floor(Math.random() * sparkleChars.length)];
+                
+                document.body.appendChild(sparkle);
+                
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 800);
+            }
+
+            function updateMousePosition(e) {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                
+                if (!isMoving) {
+                    isMoving = true;
+                    sparkleInterval = setInterval(createSparkle, 50);
+                }
+                
+                // Clear any existing timeout
+                if (movementTimeout) {
+                    clearTimeout(movementTimeout);
+                }
+                
+                // Set new timeout
+                movementTimeout = setTimeout(() => {
+                    isMoving = false;
+                    if (sparkleInterval) {
+                        clearInterval(sparkleInterval);
+                        sparkleInterval = null;
+                    }
+                }, 100);
+            }
+
+            function stopSparkles() {
+                isMoving = false;
+                if (sparkleInterval) {
+                    clearInterval(sparkleInterval);
+                    sparkleInterval = null;
+                }
+                if (movementTimeout) {
+                    clearTimeout(movementTimeout);
+                    movementTimeout = null;
+                }
+            }
+
+            document.addEventListener('mousemove', updateMousePosition);
+            document.addEventListener('mouseleave', stopSparkles);
+
+            window.addEventListener('beforeunload', () => {
+                document.removeEventListener('mousemove', updateMousePosition);
+                document.removeEventListener('mouseleave', stopSparkles);
+                stopSparkles();
+            });
+        })();
+    </script>
+</body>
+</html>

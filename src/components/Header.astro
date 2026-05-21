@@ -1,0 +1,82 @@
+---
+interface Props {
+  currentPage?: string;
+}
+
+const { currentPage = '' } = Astro.props;
+---
+
+<header class="Header is-active" id="Header">
+  <div class="Header__links">
+    <ul class="list">
+      <li class={`list__item list__item--subPage ${currentPage === 'about' ? 'is-current' : ''}`}>
+        <a class="anchor mo_crop" href="/about/">
+          <p class="text" data-text="About"><span class="text__inner">About</span></p>
+        </a>
+        <div class="subPage">
+          <ul class="subPage__list">
+            <li class="subPage__list__item"><a class="subPage__anchor mo_lineView" href="/about/"><p class="text">Overview</p></a></li>
+            <li class="subPage__list__item"><a class="subPage__anchor mo_lineView" href="/divisions/"><p class="text">Divisions</p></a></li>
+          </ul>
+        </div>
+      </li>
+      {/* FRC link temporarily hidden
+      <li class={`list__item ${currentPage === 'frc' ? 'is-current' : ''}`}>
+        <a class="anchor mo_crop" href="/about/#FRC">
+          <p class="text" data-text="FRC"><span class="text__inner">FRC</span></p>
+        </a>
+      </li>
+      */}
+      <li class={`list__item list__item--subPage ${currentPage === 'media' ? 'is-current' : ''}`}>
+        <a class="anchor mo_crop" href="/media/">
+          <p class="text" data-text="Media"><span class="text__inner">Media</span></p>
+        </a>
+        <div class="subPage">
+          <ul class="subPage__list">
+            <li class="subPage__list__item"><a class="subPage__anchor mo_lineView" target="_blank" href="https://www.youtube.com/@frc9470"><p class="text">YouTube Videos</p></a></li>
+            <li class="subPage__list__item"><a class="subPage__anchor mo_lineView" href="/media/"><p class="text">Gallery</p></a></li>
+            <li class="subPage__list__item"><a class="subPage__anchor mo_lineView" href="/media/"><p class="text">Workshop Photos</p></a></li>
+          </ul>
+        </div>
+      </li>
+      {/* Members link temporarily hidden
+      <li class={`list__item ${currentPage === 'members' ? 'is-current' : ''}`}>
+        <a class="anchor mo_crop" href="/members/">
+          <p class="text" data-text="Members"><span class="text__inner">Members</span></p>
+        </a>
+      </li>
+      */}
+      <li class={`list__item ${currentPage === 'support' ? 'is-current' : ''}`}>
+        <a class="anchor mo_crop" href="/support/">
+          <p class="text" data-text="Support"><span class="text__inner">Support</span></p>
+        </a>
+      </li>
+      <li class="list__item list__item--logo"></li>
+      <li class={`list__item ${currentPage === 'sponsors' ? 'is-current' : ''}`}>
+        <a class="anchor mo_crop" href="/sponsors/">
+          <p class="text" data-text="Sponsors"><span class="text__inner">Sponsors</span></p>
+        </a>
+      </li>
+      <li class={`list__item ${currentPage === 'awards' ? 'is-current' : ''}`}>
+        <a class="anchor mo_crop" href="/awards/">
+          <p class="text" data-text="Awards"><span class="text__inner">Awards</span></p>
+        </a>
+      </li>
+      <li class="list__item">
+        <a class="anchor mo_crop" href="https://forms.gle/9vHFEDqLXv7Q6tuF7" target="_blank" rel="noopener noreferrer">
+          <p class="text" data-text="Join"><span class="text__inner">Join</span></p>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="Header__logo">
+    <a class="anchor" href="/">
+      <figure class="initLogo">
+        <img src="/assets/images/ctrlaltdefeatlogo.png" alt="Logo"/>
+      </figure>
+      <h1 class="logo">
+        <img src="/assets/images/ctrlaltdefeatlogo.png" alt="Logo"/>
+      </h1>
+    </a>
+  </div>
+</header>

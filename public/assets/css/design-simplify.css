@@ -1,0 +1,2193 @@
+/*
+ * design-simplify.css
+ * ──────────────────────────────────────────────
+ * Comprehensive Visual Redesign Overhaul stylesheet.
+ * Makes the entire site static, premium, content-first,
+ * and extremely readable with premium dark glass theme.
+ *
+ * Loaded LAST in <head> to override all pages.
+ */
+
+
+/* ═══════════════════════════════════════════════
+   A. FORCE ALL SCROLL-REVEAL CONTENT VISIBLE
+   ═══════════════════════════════════════════════ */
+
+/* Force main Wrapper and Container to be visible immediately (prevent white screen bug if transition JS lags or fails) */
+.Wrapper,
+.Container {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Common fInview elements — show immediately, no animation */
+.c-inviewImage,
+.c-inviewImage.fInview,
+.fInview > .c-inviewImage {
+  opacity: 1 !important;
+}
+
+.c-inviewImage img,
+.c-inviewImage.fInview img {
+  transform: none !important;
+}
+
+/* Number slots — show in final position immediately */
+.c-numSlot__inner {
+  transform: translateY(0) !important;
+  transition: none !important;
+}
+
+/* Slot text reveals — show immediately */
+.c-slot {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.c-slot__text {
+  transform: translateY(-120%) !important;
+}
+
+.c-slot__text:before {
+  opacity: 0 !important;
+}
+
+/* Work list images — show immediately */
+.c-worksList__item .image.fInview img {
+  clip-path: none !important;
+}
+
+/* Sponsor page boxes fInview — show immediately */
+.boxes__item.fInview {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Hero heading — show immediately, no char-by-char reveal */
+.Main--static .Main__heading {
+  opacity: 1 !important;
+}
+
+.Main--static .Main__heading .title-ja .char {
+  opacity: 1 !important;
+}
+
+.Main--static .Main__heading .title-en__inner {
+  display: inline-block;
+  transform: translate3d(0, 0, 0) !important;
+}
+
+/* Hero sub-title chars — show immediately */
+.Main--fixed .Main__title__sub .char {
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) scaleY(1) !important;
+}
+
+
+/* ═══════════════════════════════════════════════
+   B. AWARDS PAGE — FORCE ALL VISIBLE
+   ═══════════════════════════════════════════════ */
+
+/* Awards scroll animations — all visible immediately */
+.awards-fade-up,
+.awards-fade-in,
+.awards-scale-in,
+.awards-slide-left {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.awards-stagger-child {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Awards hero elements — visible immediately */
+.awards-hero__badge,
+.awards-hero__title,
+.awards-hero__subtitle {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Remove shimmer, badge pulse, badge shine, match-card sweep */
+.awards-shimmer,
+.event-card__winner-badge::before,
+.match-card::before {
+  display: none !important;
+}
+
+/* Remove 3D tilt */
+.awards-tilt {
+  transform: none !important;
+  will-change: auto !important;
+}
+
+/* Remove hero particles canvas */
+.awards-hero__particles {
+  display: none !important;
+}
+
+/* Remove hero marquee */
+.awards-hero__marquee {
+  display: none !important;
+}
+
+/* Gallery images — show immediately without clip-path reveal */
+.awards-img-reveal .gallery-item__image {
+  transform: none !important;
+}
+
+
+/* ═══════════════════════════════════════════════
+   C. ABOUT-SIMPLE PAGE — FORCE ALL VISIBLE & SERIOUS DOCUMENT OVERHAUL
+   ═══════════════════════════════════════════════ */
+
+/* Kill all scroll-reveal blur/rotate/translate */
+.about-simple-effects .SimpleAboutReveal,
+.about-simple-effects .SimpleStepList__item,
+.about-simple-effects .SimpleAboutAction__item {
+  opacity: 1 !important;
+  filter: none !important;
+  transform: none !important;
+}
+
+/* Remove the scanning beam animation */
+.SimpleAboutFx {
+  display: none !important;
+}
+
+/* Remove pulsing eyebrow animation */
+.SimpleAboutPage__eyebrow {
+  animation: none !important;
+  opacity: 1 !important;
+}
+
+/* Remove the background grid pattern */
+.SimpleAboutPage:after {
+  display: none !important;
+}
+
+/* Remove 3D perspective tilt on hero image */
+.SimpleAboutHero__image {
+  transform: none !important;
+}
+
+/* Remove image shine/glint animations */
+.SimpleAboutHero__image:before,
+.SimpleAboutImage:before,
+.SimpleAboutImpact__image:before {
+  display: none !important;
+}
+
+/* Remove text shadow on titles */
+.SimpleAboutPage__title,
+.SimpleAboutHero__title {
+  text-shadow: none !important;
+}
+
+/* Slow down / hide the word ticker */
+.SimpleAboutLoop {
+  display: none !important;
+}
+
+/* Remove the cream gradient line under hero */
+.SimpleAboutHero:after {
+  display: none !important;
+}
+
+/* Remove border-glow on step cards */
+.SimpleStepList__item:before,
+.SimpleStepList__item:after {
+  display: none !important;
+}
+
+/* Flatten the step card hover to simple lift */
+.SimpleStepList__item {
+  transform-style: flat !important;
+  perspective: none !important;
+}
+
+.SimpleStepList__item.is-pointer-active {
+  transform: translateY(-0.3rem) !important;
+}
+
+/* Tighten margins, paddings, and align elements for high density and serious document style */
+.SimpleAboutPage {
+  padding: 3rem 0 6rem !important;
+  background-color: #e6e6e3 !important; /* Match about-simple light theme */
+}
+
+/* Block structures */
+.SimpleAboutHero,
+.SimpleAboutSplit,
+.SimpleAboutWork,
+.SimpleAboutImpact {
+  width: min(85rem, 92%) !important; /* Slightly wider content area for density */
+  margin: 0 auto !important;
+  padding: 3.5rem 0 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Remove spacing grids */
+.SimpleAboutHero {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 18rem) !important; /* smaller image column */
+  gap: 3.5rem !important;
+}
+
+.SimpleAboutSplit,
+.SimpleAboutImpact {
+  grid-template-columns: minmax(0, 18rem) minmax(0, 1fr) !important; /* smaller image column */
+  gap: 3.5rem !important;
+}
+
+/* Typography styles — restored original large text sizes for premium readability */
+.SimpleAboutHero__title,
+.SimpleAboutPage__title {
+  font-size: 4.8rem !important;
+  font-weight: 700 !important;
+  line-height: 1.14 !important;
+  margin-top: 1.4rem !important;
+  color: #202020 !important;
+}
+
+.SimpleAboutPage__eyebrow {
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.15em !important;
+  color: var(--site-accent-on-light) !important;
+}
+
+.SimpleAboutHero__lead {
+  font-size: 1.75rem !important;
+  line-height: 1.75 !important;
+  margin-top: 2.4rem !important;
+  color: #383836 !important;
+}
+
+.SimpleAboutPage__body {
+  font-size: 1.55rem !important;
+  line-height: 1.85 !important;
+  margin-top: 2rem !important;
+  color: #4f4f4d !important;
+}
+
+.SimpleAboutHero__note {
+  font-size: 1.55rem !important;
+  line-height: 1.85 !important;
+  margin-top: 1.8rem !important;
+  padding-left: 1.8rem !important;
+  border-left: 0.4rem solid var(--site-accent-on-light) !important;
+  color: #4f4f4d !important;
+}
+
+/* Simplify buttons to clean rectangular layouts */
+.SimpleAboutHero__actions {
+  margin-top: 2rem !important;
+  gap: 1rem !important;
+}
+
+.SimpleAboutButton {
+  min-height: 3.6rem !important;
+  padding: 0 1.6rem !important;
+  font-size: 1.2rem !important;
+  font-weight: 600 !important;
+  border-radius: 3px !important;
+  box-shadow: none !important;
+  transform: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.SimpleAboutButton:not(.SimpleAboutButton--quiet) {
+  color: var(--site-accent-ink) !important;
+}
+
+.SimpleAboutButton--quiet {
+  color: var(--site-accent-on-light) !important;
+}
+
+.SimpleAboutButton:hover {
+  background-color: #202020 !important;
+  border-color: #202020 !important;
+  color: #ffffff !important;
+  transform: none !important;
+}
+
+/* Image styles simplified (flat, serious, no glows/animations) */
+.SimpleAboutHero__image,
+.SimpleAboutImage,
+.SimpleAboutImpact__image {
+  border-radius: 4px !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.SimpleAboutHero__image {
+  aspect-ratio: 4 / 5 !important;
+}
+
+.SimpleAboutHero.is-pointer-active .SimpleAboutHero__image,
+.SimpleAboutSplit.is-pointer-active .SimpleAboutImage,
+.SimpleAboutImpact.is-pointer-active .SimpleAboutImpact__image {
+  transform: none !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+.SimpleAboutHero.is-pointer-active .SimpleAboutHero__image img,
+.SimpleAboutSplit.is-pointer-active .SimpleAboutImage img,
+.SimpleAboutImpact.is-pointer-active .SimpleAboutImpact__image img {
+  transform: none !important;
+  filter: saturate(0.95) contrast(1.02) !important;
+}
+
+/* Plain text stacked Action items (No "DTM" card border-boxes/shadows/background panels) */
+.SimpleAboutAction {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2rem !important;
+  margin-top: 2.5rem !important;
+}
+
+.SimpleAboutAction__item {
+  min-height: auto !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.SimpleAboutAction__item:before {
+  display: none !important; /* hide decorative shapes */
+}
+
+.SimpleAboutAction__item p {
+  font-size: 1.55rem !important;
+  line-height: 1.85 !important;
+  color: #4f4f4d !important;
+  font-weight: 400 !important;
+  margin: 0 !important;
+}
+
+.SimpleAboutAction__item.is-pointer-active {
+  transform: none !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Plain text training steps list (No "DTM" card border-boxes/shadows/background panels) */
+.SimpleAboutWork__intro {
+  max-width: 100% !important;
+}
+
+.SimpleStepList {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 3.5rem !important;
+  margin-top: 3.5rem !important;
+}
+
+.SimpleStepList__item {
+  min-height: auto !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+  transform-style: flat !important;
+  perspective: none !important;
+  transition: none !important;
+  margin-bottom: 0 !important;
+}
+
+.SimpleStepList__item.is-pointer-active {
+  transform: none !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+.SimpleStepList__number {
+  display: inline !important;
+  border: none !important;
+  padding: 0 !important;
+  margin-right: 1.2rem !important;
+  font-size: 2.6rem !important; /* Match title size */
+  font-weight: 700 !important;
+  color: var(--site-accent-on-light) !important;
+  background: transparent !important;
+  font-family: 'Montserrat', sans-serif !important;
+  min-height: auto !important;
+}
+
+.SimpleStepList__title {
+  display: inline !important;
+  font-size: 2.6rem !important; /* Original desktop size */
+  font-weight: 700 !important;
+  line-height: 1.18 !important;
+  color: #202020 !important;
+  margin-top: 0 !important;
+}
+
+.SimpleStepList__body {
+  display: block !important;
+  font-size: 1.55rem !important; /* Original desktop body size */
+  line-height: 1.85 !important;
+  margin-top: 1.2rem !important;
+  color: #4f4f4d !important;
+}
+
+/* Impact summary block simplified as editorial paragraph with left warm accent line */
+.SimpleAboutImpact__summary {
+  margin-top: 2.2rem !important;
+  padding: 0 0 0 1.8rem !important;
+  background: transparent !important;
+  border: none !important;
+  border-left: 0.4rem solid var(--site-accent-on-light) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  font-size: 1.55rem !important; /* Original desktop size */
+  line-height: 1.85 !important;
+  color: #4f4f4d !important;
+  font-weight: 600 !important;
+}
+
+/* Mobile responsive refinements for density and original mobile typography sizes */
+@media screen and (max-width: 1023px) {
+  .SimpleAboutPage {
+    padding: 2rem 0 4rem !important;
+  }
+  .SimpleAboutHero,
+  .SimpleAboutSplit,
+  .SimpleAboutWork,
+  .SimpleAboutImpact {
+    width: calc(100% - 3rem) !important;
+    padding: 2.2rem 0 !important;
+    grid-template-columns: 1fr !important;
+    gap: 2.2rem !important;
+  }
+  .SimpleAboutHero__image {
+    order: -1 !important;
+    aspect-ratio: 16 / 10 !important;
+  }
+  .SimpleAboutHero__title,
+  .SimpleAboutPage__title {
+    font-size: 3rem !important; /* Original mobile heading size */
+  }
+  .SimpleAboutPage__eyebrow {
+    font-size: 1.1rem !important;
+  }
+  .SimpleAboutHero__lead {
+    font-size: 1.5rem !important;
+    line-height: 1.75 !important;
+    margin-top: 1.8rem !important;
+  }
+  .SimpleAboutPage__body,
+  .SimpleAboutHero__note,
+  .SimpleAboutAction__item p,
+  .SimpleStepList__body,
+  .SimpleAboutImpact__summary {
+    font-size: 1.35rem !important;
+    line-height: 1.75 !important;
+  }
+  .SimpleStepList__number,
+  .SimpleStepList__title {
+    font-size: 2.2rem !important; /* Original mobile title/step number size */
+  }
+  .SimpleStepList {
+    gap: 2.5rem !important;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════
+   D. REMOVE MARQUEE HEROES & RESTORE STATIC TITLES
+   ═══════════════════════════════════════════════ */
+
+/* Make marquee into a clean, static, centered heading */
+.Main--fixed .Main__title__list {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 5rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  animation: none !important;
+  will-change: auto !important;
+  white-space: normal !important;
+  margin: 0 auto !important;
+}
+
+.Main--fixed .Main__title__list .box {
+  animation: none !important;
+  padding: 0 !important;
+  transform: none !important;
+}
+
+/* Hide duplicate marquee text boxes (keep only the first one) */
+.Main--fixed .Main__title__list .box:nth-child(n+2) {
+  display: none !important;
+}
+
+/* Hide the secondary scrolling sub-list too */
+.Main--fixed .Main__title__listSub {
+  display: none !important;
+}
+
+/* Restore the Team 9470 subtitle back as a premium cream accent subtitle */
+.Main--fixed .Main__title__sub {
+  margin-top: 1.2rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.25em !important;
+  text-transform: uppercase !important;
+  color: var(--site-accent) !important;
+}
+
+
+/* ═══════════════════════════════════════════════
+   E. REMOVE BACKGROUND VIDEOS & REDUCE WHITESPACE GAPS
+   ═══════════════════════════════════════════════ */
+
+.FixedMv {
+  display: none !important;
+}
+
+/* Sub-page top heading layout styling (for all pages) */
+.Main--fixed {
+  position: relative;
+  height: auto !important;
+  min-height: auto !important;
+  padding: 12rem 0 3.5rem !important;
+  background-color: #e6e6e3 !important;
+}
+
+/* Support and unify Main--static page headers (Members, Divisions, Media) */
+.Main--static.is-index,
+.Main--static.is-sub {
+  padding-top: 12rem !important;
+  padding-bottom: 3.5rem !important;
+  background-color: #e6e6e3 !important;
+}
+
+.Main--static .Main__heading {
+  opacity: 1 !important;
+  text-align: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.Main--static .Main__heading .title-ja {
+  color: var(--site-accent-on-light) !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.25em !important;
+  margin-bottom: 1.2rem !important;
+  display: block !important;
+}
+
+.Main--static .Main__heading .title-ja .char {
+  opacity: 1 !important;
+  display: inline !important;
+}
+
+.Main--static .Main__heading .title-en {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 5rem !important;
+  font-weight: 700 !important;
+  color: #202020 !important;
+  margin: 0 !important;
+}
+
+.Main--static .Main__heading .title-en__inner {
+  display: inline !important;
+  transform: none !important;
+  color: #202020 !important;
+}
+
+
+/* ═══════════════════════════════════════════════
+   F. REMOVE DOME / CIRCLE SECTION BORDERS
+   ═══════════════════════════════════════════════ */y: none !important;
+}
+
+/* Hide the secondary scrolling sub-list too */
+.Main--fixed .Main__title__listSub {
+  display: none !important;
+}
+
+/* Make the subtitle into the main heading */
+.Main--fixed .Main__title__sub {
+  margin-top: 0;
+  font-size: 3.2rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+
+/* ═══════════════════════════════════════════════
+   E. REMOVE BACKGROUND VIDEOS ON SUB-PAGES
+   ═══════════════════════════════════════════════ */
+
+.FixedMv {
+  display: none !important;
+}
+
+/* Since FixedMv is gone, remove the fixed-height hero constraint */
+.Main--fixed {
+  position: relative;
+  height: auto !important;
+  min-height: auto !important;
+  padding: 18rem 0 6rem;
+  background-color: #1a1a1a;
+}
+
+
+/* ═══════════════════════════════════════════════
+   F. REMOVE DOME / CIRCLE SECTION BORDERS
+   ═══════════════════════════════════════════════ */
+
+.SectContents .overlay-circle {
+  border-radius: 0 !important;
+}
+
+
+/* ═══════════════════════════════════════════════
+   G. TYPOGRAPHY & READABILITY
+   ═══════════════════════════════════════════════ */
+
+/* Body text — larger, roomier, constrained width */
+.SectContents__block__main .detail {
+  font-size: 1.5rem;
+  line-height: 2;
+  color: #333;
+  max-width: 60ch;
+}
+
+.SectContents__block__main .heading {
+  font-size: 2.4rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.2rem;
+  color: #222;
+}
+
+/* Wider content area */
+.SectContents__block__container {
+  width: min(75rem, 90%);
+}
+
+
+/* ═══════════════════════════════════════════════
+   H. CALMER VISUAL ELEMENTS
+   ═══════════════════════════════════════════════ */
+
+/* Side navigation — less dominant */
+.SectContents__nav {
+  opacity: 0.5;
+}
+.SectContents__nav:hover {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.SectContents__nav .innerNav__list__item .arrow {
+  opacity: 0.3;
+}
+
+/* Value section ticker text — hide entirely */
+.Value .list {
+  display: none !important;
+}
+
+/* Parallax images in about page — reduce intensity */
+.SectContents__block__intro .images {
+  opacity: 0.5;
+}
+
+/* Sponsor parallax logos — tone down */
+.SectContents__parallaxImages {
+  opacity: 0.65;
+}
+
+/* Divisions page — remove scan/rail effects */
+.DivisionsPage__scanline,
+.DivisionsPage__rail {
+  display: none !important;
+}
+
+/* Sponsors page — disable animated number slots */
+.c-numSlot__container {
+  animation: none !important;
+}
+
+/* Hide clunky animated clip-art windmills */
+.windmill {
+  display: none !important;
+}
+
+
+/* ═══════════════════════════════════════════════
+   I. READ MORE BUTTON (About page)
+   ═══════════════════════════════════════════════ */
+
+.read-more-btn {
+  background-color: var(--site-accent);
+  color: var(--site-accent-ink);
+  border: none;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 1rem 2.4rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 2rem;
+  display: inline-block;
+  transition: background-color 0.2s ease;
+}
+.read-more-btn:hover {
+  background-color: #a01e2c;
+}
+
+
+/* ═══════════════════════════════════════════════
+   J. MOBILE LAYOUT REFINEMENTS
+   ═══════════════════════════════════════════════ */
+
+@media screen and (max-width: 1023px) {
+  .Main--fixed {
+    padding: 14rem 0 4rem;
+  }
+
+  .Main--fixed .Main__title__sub {
+    font-size: 2.4rem;
+  }
+
+  .Main--static.is-index {
+    padding-top: 16rem;
+  }
+
+  .Main--static.is-sub .Main__top {
+    padding-top: 14rem;
+  }
+
+  .SectContents__block__container {
+    width: 92%;
+    padding: 0 1rem;
+  }
+
+  .SectContents__block__main .detail {
+    font-size: 1.4rem;
+    line-height: 1.8;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════
+   K. FIXED FULL-WIDTH GLASSY NAVBAR
+   Overhauls floating pill menu to standard high-end top bar.
+   ═══════════════════════════════════════════════ */
+
+@media screen and (min-width: 1024px) {
+  /* Lock Header to the top of viewport permanently, no translations */
+  .Header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 7.5rem !important;
+    transform: none !important;
+    transition: none !important;
+    background: rgba(15, 15, 15, 0.85) !important;
+    backdrop-filter: blur(12px) !important;
+    border-bottom: 2px solid var(--site-accent) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+  }
+
+  .Header.is-hidden {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  /* Make links stretch and balance across the bar */
+  .Header__links {
+    width: 100% !important;
+    max-width: 1200px !important;
+    height: 100% !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    transform: none !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    padding: 0 !important;
+  }
+
+  .Header__links .list {
+    width: 100% !important;
+    height: 100% !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) 13rem repeat(3, minmax(0, 1fr)) !important;
+    align-items: center !important;
+    padding: 0 4rem !important;
+  }
+
+  /* Consistent layout and spacing for links */
+  .Header__links .list__item:not(.list__item--logo) {
+    width: auto !important;
+    min-width: 0 !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transform: none !important;
+  }
+
+  .Header__links .list__item:not(.list__item--logo) .anchor {
+    color: rgba(255, 255, 255, 0.82) !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 1.35rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.12em !important;
+    padding: 0 1.5rem !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: color 0.3s ease !important;
+  }
+
+  /* Cream underline/text hover effects */
+  .Header__links .list__item:not(.list__item--logo) .anchor:hover {
+    color: var(--site-accent) !important;
+  }
+
+  /* Remove default lines */
+  .Header__links .list__item:not(.list__item--logo) .anchor:before,
+  .Header__links .list__item:not(.list__item--logo) .anchor:after {
+    display: none !important;
+  }
+
+  .Header__links .list__item.is-current .anchor .text {
+    color: var(--site-accent) !important;
+  }
+
+  .Header__links .list__item.is-current .anchor .text:after {
+    display: none !important;
+  }
+
+  .Header__links .list__item.is-current:not(.list__item--logo) > .anchor:after {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    left: 1.5rem !important;
+    right: 1.5rem !important;
+    bottom: 1.65rem !important;
+    height: 2px !important;
+    background-color: var(--site-accent) !important;
+    pointer-events: none !important;
+  }
+
+  /* Symmetric center logo badge spacing */
+  .Header__links .list__item--logo {
+    width: 13rem !important;
+    height: 100% !important;
+  }
+
+  /* Badge styling for the center logo */
+  .Header__logo {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 8rem !important;
+    height: 8rem !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 10000 !important;
+  }
+
+  .Header__logo .anchor {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .Header__logo .logo {
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+    background-color: var(--site-accent) !important;
+    border: 3px solid #121212 !important;
+    box-shadow: none !important;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  }
+
+  .Header__logo .logo:hover {
+    transform: scale(1.08) !important;
+  }
+
+  .Header__logo .logo img {
+    width: 65% !important;
+    height: auto !important;
+  }
+
+  .Header__logo .initLogo {
+    display: none !important;
+  }
+
+  /* Sub-page Dropdown Lists styled globally */
+  .Header__links .list__item--subPage .subPage {
+    top: 100% !important;
+    margin-top: 0 !important;
+  }
+
+  .Header__links .list__item--subPage .subPage__list {
+    background-color: #121212 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 4px !important;
+    padding: 1.2rem 0 !important;
+    margin-top: 0 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .Header__links .list__item--subPage .subPage__anchor {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 1.25rem !important;
+    padding: 0.8rem 2.4rem !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .Header__links .list__item--subPage .subPage__anchor:hover {
+    color: var(--site-accent) !important;
+    background-color: rgba(255, 255, 255, 0.04) !important;
+  }
+}
+
+/* Mobile top bar styling */
+@media screen and (max-width: 1023px) {
+  .Header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+    height: 6rem !important;
+    background: rgba(15, 15, 15, 0.9) !important;
+    backdrop-filter: blur(10px) !important;
+    border-bottom: 2px solid var(--site-accent) !important;
+    opacity: 1 !important;
+    z-index: 9999 !important;
+    transform: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    pointer-events: auto !important;
+    margin: 0 !important;
+  }
+
+  .Header.is-hidden {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  .Header__logo {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    margin: 0 !important;
+    width: 5rem !important;
+    height: 5rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .Header__logo .initLogo {
+    position: static !important;
+    width: 4rem !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    margin: 0 !important;
+  }
+
+  .Header__logo .logo {
+    display: none !important;
+  }
+
+  .Header__links {
+    display: none !important;
+  }
+
+  /* Move the page content down slightly on mobile so mobile bar doesn't overlay sub-page hero text */
+  .Container {
+    padding-top: 6rem !important;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════
+   L. HOMEPAGE OVERHAUL
+   ═══════════════════════════════════════════════ */
+
+/* Clean, premium home intro sequence — hide the ugly spinning text */
+.MvTitle__logo img {
+  opacity: 0 !important;
+}
+
+/* Hide the giant spinning logos completely */
+.MvTitle__logo .logos__item {
+  background-color: transparent !important;
+}
+
+/* Show a beautiful, elegant, static white logo in the center instead */
+.MvTitle__mark {
+  width: 120px !important;
+  height: 120px !important;
+  opacity: 1 !important;
+  animation: none !important; /* disable glitched blinking animation */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.MvTitle__mark img {
+  opacity: 1 !important;
+  width: 100% !important;
+  height: auto !important;
+  filter: drop-shadow(0 2px 10px rgba(var(--site-accent-rgb), 0.4)) !important;
+  transition: opacity 0.8s ease-in-out !important;
+}
+
+/* Make split screens slide away more elegantly with dark background */
+.MvTitle:before,
+.MvTitle:after {
+  background-color: #0f0f0f !important; /* Premium dark background instead of plain white */
+}
+
+/* Prevent layout shift during homepage load */
+.Main.is-opening .Main__visual__bottom {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Hide confusing small instagram and fullscreen menu corner links on hero video */
+.Main__visual__bottom .link,
+.Main__visual__bottom .menu {
+  display: none !important;
+}
+
+/* Scroll Invitation Arrow */
+.ScrollInvitation {
+  position: absolute;
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.ScrollInvitation:hover {
+  opacity: 1;
+}
+
+.ScrollInvitation__text {
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.ScrollInvitation__arrow {
+  width: 2.2rem;
+  height: 2.2rem;
+  color: var(--site-accent); /* Cream theme color */
+  animation: bounceArrow 2s infinite;
+}
+
+@keyframes bounceArrow {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Disable disorienting homepage youtube hover video overlay and dimming effects */
+.ProjectMovie,
+.ProjectMovie__info {
+  display: none !important;
+}
+
+.Contents.is-movie_play > *:not(#Project) {
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+.Header.is-active.is-movie_play {
+  opacity: 1 !important;
+  background: rgba(15, 15, 15, 0.85) !important;
+}
+
+.Project.is-movie_play .Project__top,
+.Project.is-movie_play .Project__link {
+  opacity: 1 !important;
+}
+
+.Project.is-movie_play .Project__list__item .anchor:not(.mHover) {
+  opacity: 0.95 !important;
+}
+
+.Project.is-movie_play .Project__list__item .anchor:not(.mHover) .image {
+  opacity: 1 !important;
+}
+
+/* Beautiful custom card styling for homepage Media list */
+.Project__list__item .anchor {
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+  background-color: #1a1a1a !important;
+}
+
+.Project__list__item .anchor:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 10px 25px rgba(var(--site-accent-rgb), 0.25) !important;
+}
+
+.Project__list__item .anchor .image img {
+  transition: transform 0.5s ease !important;
+}
+
+.Project__list__item .anchor:hover .image img {
+  transform: scale(1.04) !important;
+}
+
+/* Symmetrical grids for homepage About cards */
+.About__images {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 3rem !important;
+  width: min(100rem, 90%) !important;
+  margin: 6rem auto 0 !important;
+  transform: none !important;
+}
+
+.About__images .card {
+  position: static !important;
+  width: 100% !important;
+  transform: none !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+.About__images .card:nth-of-type(n) {
+  position: static !important;
+  width: 100% !important;
+  transform: none !important;
+}
+
+.About__images .card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 12px 30px rgba(var(--site-accent-rgb), 0.2) !important;
+}
+
+/* Symmetrical Business (Support) section — light background */
+.Business__list {
+  background-color: #e6e6e3 !important;
+  color: #202020 !important;
+}
+
+.Business__list__item {
+  background-color: #e6e6e3 !important;
+  color: #202020 !important;
+}
+
+.Business__list__item .info__title {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 1.4rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.15em !important;
+  color: var(--site-accent-on-light) !important;
+  font-weight: 700 !important;
+}
+
+.Business__list__item .info__en {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 3.2rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  color: #202020 !important;
+  margin-top: 1rem !important;
+}
+
+.Business__list__item .info__caption {
+  font-size: 1.5rem !important;
+  line-height: 1.9 !important;
+  color: #4f4f4d !important;
+  margin-top: 2.2rem !important;
+  max-width: 55ch !important;
+}
+
+
+/* ═══════════════════════════════════════════════
+   M. GLOBAL SUBPAGE LIGHT THEME — MATCHES ABOUT-SIMPLE
+   ═══════════════════════════════════════════════ */
+
+/* Base light background for all sub-pages */
+body:not(.page-home),
+body:not(.page-home) .Wrapper,
+body:not(.page-home) .Container,
+body:not(.page-home) .Contents,
+body:not(.page-home) .SectContents,
+body:not(.page-home) .SectContents__top,
+body:not(.page-home) .SectContents__mid,
+body:not(.page-home) .SectContents__bottom,
+body:not(.page-home) .SectContents__block {
+  background-color: #e6e6e3 !important;
+  color: #4f4f4d !important;
+}
+
+/* Suppress dome effects */
+body:not(.page-home) .overlay-circle,
+body:not(.page-home) .overlay-circle:before,
+body:not(.page-home) .overlay-circle:after {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+}
+
+/* Global divider lines — subtle warm dark */
+body:not(.page-home) .SectContents__block:before,
+body:not(.page-home) .SectContents__block:after,
+body:not(.page-home) .SectContents__block__container:before,
+body:not(.page-home) .SectContents__block__container:after {
+  background-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Body text — dark on light (exclude Header so navbar links stay white) */
+body:not(.page-home) p:not(.Header *),
+body:not(.page-home) li:not(.Header *),
+body:not(.page-home) span:not(.Header *),
+body:not(.page-home) .detail:not(.Header *) {
+  color: #4f4f4d !important;
+}
+
+/* Headings — near-black (exclude Header) */
+body:not(.page-home) h1:not(.Header *),
+body:not(.page-home) h2:not(.Header *),
+body:not(.page-home) h3:not(.Header *),
+body:not(.page-home) h4:not(.Header *),
+body:not(.page-home) h5:not(.Header *),
+body:not(.page-home) h6:not(.Header *),
+body:not(.page-home) .heading:not(.Header *),
+body:not(.page-home) .c-blockHeading .text {
+  color: #202020 !important;
+  font-family: 'Montserrat', 'Noto Sans JP', sans-serif !important;
+  text-shadow: none !important;
+}
+
+/* Side nav — visible on light background */
+body:not(.page-home) .SectContents__nav {
+  opacity: 0.7;
+}
+
+body:not(.page-home) .SectContents__nav .innerNav__list__item .anchor {
+  color: #9d9d9b !important;
+}
+
+body:not(.page-home) .SectContents__nav .innerNav__list__item .anchor:hover {
+  color: #202020 !important;
+}
+
+body:not(.page-home) .SectContents__nav .innerNav__list__item.is-current .anchor {
+  color: #333 !important;
+}
+
+body:not(.page-home) .SectContents__nav .innerNav__list__item .arrow {
+  border-left-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+body:not(.page-home) .SectContents__nav .innerNav__list__item.is-current .arrow {
+  border-left-color: var(--site-accent-on-light) !important;
+}
+
+
+/* ═══════════════════════════════════════════════
+   N. MEMBERS PAGE — LIGHT THEME GRID
+   ═══════════════════════════════════════════════ */
+
+body.page-members .SectContents__list {
+  background-color: transparent !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 2.4rem !important;
+  padding: 0 2rem !important;
+  margin-top: 4.8rem !important;
+}
+
+body.page-members .SectContents__list:before,
+body.page-members .SectContents__list:after {
+  display: none !important;
+}
+
+/* Light cards — white with subtle border */
+body.page-members .SectContents__list__item {
+  width: calc(33.333% - 1.6rem) !important;
+  margin: 0 !important;
+  background-color: rgba(255, 255, 255, 0.55) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  border-radius: 4px !important;
+  overflow: hidden !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08) !important;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+              border-color 0.4s ease,
+              box-shadow 0.4s ease !important;
+}
+
+body.page-members .SectContents__list__item:before,
+body.page-members .SectContents__list__item:after {
+  display: none !important;
+}
+
+body.page-members .SectContents__list__item:hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(var(--site-accent-rgb), 0.5) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+  background-color: rgba(255, 255, 255, 0.82) !important;
+}
+
+body.page-members .SectContents__list__item .anchor {
+  padding-top: 3.6rem !important;
+  padding-bottom: 3.6rem !important;
+  background-color: transparent !important;
+  color: #4f4f4d !important;
+}
+
+body.page-members .SectContents__list__item .anchor.mHover {
+  background-color: transparent !important;
+}
+
+body.page-members .SectContents__list__item .name-en {
+  display: none !important;
+}
+
+body.page-members .SectContents__list__item .image .hoverImage {
+  display: none !important;
+}
+
+body.page-members .SectContents__list__item .image {
+  width: 17rem !important;
+  border-radius: 4px !important;
+  overflow: hidden !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12) !important;
+  margin: 2.2rem auto 0 !important;
+  background-color: #d6d6d5 !important;
+}
+
+body.page-members .SectContents__list__item .image .portrait {
+  border-radius: 4px !important;
+  transform: none !important;
+}
+
+body.page-members .SectContents__list__item .image .portrait__inner {
+  transform: none !important;
+}
+
+body.page-members .SectContents__list__item:hover .image img {
+  transform: scale(1.04) !important;
+  transition: transform 0.4s ease !important;
+}
+
+body.page-members .SectContents__list__item .occupation {
+  color: var(--site-accent-on-light) !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.12em !important;
+  font-size: 1.25rem !important;
+  opacity: 0.95 !important;
+}
+
+body.page-members .SectContents__list__item .name {
+  color: #202020 !important;
+  font-size: 2.1rem !important;
+  font-weight: 700 !important;
+  margin-top: 0.8rem !important;
+}
+
+body.page-members .SectContents__list__item .name .text:after {
+  display: none !important;
+}
+
+@media screen and (max-width: 1023px) {
+  body.page-members .SectContents__list {
+    gap: 1.6rem !important;
+    padding: 0 1rem !important;
+  }
+
+  body.page-members .SectContents__list:before {
+    display: none !important;
+  }
+
+  body.page-members .SectContents__list__item {
+    width: calc(50% - 0.8rem) !important;
+  }
+
+  body.page-members .SectContents__list__item .image {
+    width: 13rem !important;
+  }
+
+  body.page-members .SectContents__list__item .name {
+    font-size: 1.8rem !important;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  body.page-members .SectContents__list__item {
+    width: 100% !important;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════
+   O. SPONSORS & SUPPORT — LIGHT THEME CARDS
+   ═══════════════════════════════════════════════ */
+
+body.page-sponsors .boxes__item,
+body.page-support .boxes__item {
+  background-color: rgba(255, 255, 255, 0.55) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07) !important;
+  padding: 3rem 2rem !important;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+body.page-sponsors .boxes__item:hover,
+body.page-support .boxes__item:hover {
+  transform: translateY(-3px) !important;
+  border-color: rgba(var(--site-accent-rgb), 0.5) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1) !important;
+  background-color: rgba(255, 255, 255, 0.82) !important;
+}
+
+body.page-sponsors .heading__en,
+body.page-support .heading__en {
+  display: none !important;
+}
+
+body.page-sponsors .attribute__item .heading,
+body.page-support .attribute__item .heading {
+  height: auto !important;
+  margin-bottom: 2rem !important;
+}
+
+body.page-sponsors .heading__ja,
+body.page-support .heading__ja {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 2.8rem !important;
+  font-weight: 700 !important;
+  color: #202020 !important;
+  padding: 0 !important;
+}
+
+body.page-sponsors .boxes__item .title__top__en,
+body.page-support .boxes__item .title__top__en {
+  color: var(--site-accent-on-light) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+}
+
+body.page-sponsors .boxes__item .title__main,
+body.page-support .boxes__item .title__main {
+  color: #202020 !important;
+  font-weight: 700 !important;
+}
+
+
+/* ═══════════════════════════════════════════════
+   P. HOMEPAGE OVERHAUL: QUICK HERO REVEAL, CENTERED TEXT & NAVBAR LINK CLICK OVERRIDES & GALLERY UPGRADE
+   ═══════════════════════════════════════════════ */
+
+/* 1. Permanent Navbar Visibility & Clicks on Homepage */
+.Header .Header__links .list__item,
+.Header .Header__links .list__item .anchor,
+.Header .Header__logo .logo,
+.Header .Header__logo .logo img {
+  pointer-events: auto !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* 2. Rapid Loading Panel Transitions (Video Reveal Less Delay) */
+.MvTitle.is-opening:before,
+.MvTitle.is-opening:after {
+  transition-delay: 100ms !important;
+  transition-duration: 400ms !important;
+}
+
+.MvTitle.is-opening .MvTitle__logo .logos--3 {
+  transition-delay: 100ms !important;
+  transition-duration: 400ms !important;
+}
+
+.MvTitle__mark {
+  display: none !important; /* Hide the random loading logo in the center completely */
+}
+
+/* 3. Center-Centered Premium Hero Content */
+.Main__visual .subTitle,
+.Main__visual .catch,
+.Main__visual .link,
+.Main__visual .menu {
+  display: none !important; /* Hide old fragmented text components */
+}
+
+.HeroContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.HeroContent__badge {
+  background: rgba(var(--site-accent-rgb), 0.2);
+  border: 1px solid rgba(var(--site-accent-rgb), 0.6);
+  color: var(--site-accent);
+  padding: 0.6rem 1.6rem;
+  border-radius: 100px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  animation: pulse-border 2s infinite;
+  font-family: 'Montserrat', sans-serif;
+}
+
+@keyframes pulse-border {
+  0% {
+    box-shadow: 0 0 0 0 rgba(var(--site-accent-rgb), 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(var(--site-accent-rgb), 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(var(--site-accent-rgb), 0);
+  }
+}
+
+.HeroContent__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(3.2rem, 7vw, 7.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  background: linear-gradient(135deg, #ffffff 30%, #e0e0e0 70%, var(--site-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.HeroContent__tagline {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 400;
+  color: #e0e0e0;
+  margin-bottom: 4rem;
+  line-height: 1.5;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+.HeroContent__actions {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.HeroContent__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.4rem 3.2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.HeroContent__btn--primary {
+  background: var(--site-accent);
+  color: var(--site-accent-ink);
+  border: 1px solid var(--site-accent);
+  box-shadow: 0 4px 15px rgba(var(--site-accent-rgb), 0.4);
+}
+
+.HeroContent__btn--primary:hover {
+  background: var(--site-accent-hover);
+  border-color: var(--site-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(var(--site-accent-rgb), 0.6);
+}
+
+.HeroContent__btn--secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.HeroContent__btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.instagram-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* 4. Enlarge Media Gallery grid (3 items per row instead of 4) */
+@media screen and (min-width: 1024px) {
+  .Project__list {
+    width: 120rem !important;
+  }
+  
+  .Project__list__item {
+    width: 30% !important;
+    margin-right: 5% !important;
+    opacity: 0;
+  }
+  
+  .Project__list__item:nth-of-type(3n) {
+    margin-right: 0 !important;
+  }
+  
+  .Project__list__item:nth-of-type(4n) {
+    margin-right: 5% !important; /* override top.css reset */
+  }
+  
+  .Project__list__item:nth-of-type(3n+1) {
+    clear: left !important;
+  }
+
+  .Project__list__item:nth-of-type(n+4) {
+    margin-top: 5rem !important;
+  }
+  
+  .Project__list__item:nth-of-type(1),
+  .Project__list__item:nth-of-type(2),
+  .Project__list__item:nth-of-type(3) {
+    margin-top: 0 !important;
+  }
+}
+
+
+/* 5. Subtitle Style for Minimalist Hero Banner */
+.HeroContent__subtitle {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: clamp(1.4rem, 2.5vw, 2.4rem) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.35em !important;
+  text-transform: uppercase !important;
+  color: #ffffff !important; /* Premium FRC Team White */
+  margin-top: 1.5rem !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6) !important;
+  opacity: 0.95 !important;
+}
+
+/* 6. Remove any remaining glows, shadows, or filters on the header/navbar logo and its descendants globally */
+.Header__logo,
+.Header__logo .logo,
+.Header__logo .logo img,
+.Header__logo .initLogo,
+.Header__logo .initLogo img,
+.Header__logo .anchor {
+  box-shadow: none !important;
+  text-shadow: none !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+
+/* Awards light surfaces - restore contrast after global dark-theme overrides. */
+body.page-awards :is(.awards-season, .matches-section, .gallery-section, .awards-cta) {
+  color: #2c2a28 !important;
+}
+
+body.page-awards :is(.awards-season, .matches-section, .gallery-section, .awards-cta) :is(h1, h2, h3, h4, h5, h6, p, li, span, strong, th, td, summary) {
+  color: #2c2a28 !important;
+}
+
+body.page-awards :is(.awards-season__record, .progression-card__note, .event-accordion__meta, .award-item__desc, .alliance-table .role-cell, .match-card__teams, .awards-cta__text) {
+  color: #5f5b56 !important;
+}
+
+body.page-awards :is(.stat-card__label, .progression-card__label, .alliance-table thead th, .points-card__label, .match-card__label, .match-card__score-divider) {
+  color: #77736e !important;
+}
+
+body.page-awards :is(.awards-season__year, .stat-card__number, .event-accordion__week, .points-card__value, .team-highlight, .gallery-section__label, .match-card__score-value--red) {
+  color: var(--site-accent-on-light) !important;
+}
+
+body.page-awards .match-card__score-value--blue {
+  color: #2563eb !important;
+}
+
+body.page-awards .match-card__result--win {
+  color: #166534 !important;
+}
+
+body.page-awards :is(.event-card__header, .rankings-section) {
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+
+body.page-awards :is(.event-card__header, .rankings-section) :is(p, li, span, strong, div, h1, h2, h3, h4, h5, h6) {
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+
+body.page-awards :is(.event-card__winner-badge, .event-card__winner-badge *, .event-card__event-name, .rankings-section__heading, .rankings-section__progress strong, .podium-card__team) {
+  color: #ffffff !important;
+}
+
+body.page-awards .event-card__winner-badge,
+body.page-awards .event-card__winner-badge * {
+  color: var(--site-accent-ink) !important;
+  fill: var(--site-accent-ink) !important;
+}
+
+body.page-awards :is(.event-card__event-meta, .event-card__event-meta span, .rankings-section__progress, .podium-card__name, .podium-card__epa) {
+  color: rgba(255, 255, 255, 0.68) !important;
+}
+
+body.page-awards .podium-card__rank {
+  color: rgba(255, 255, 255, 0.18) !important;
+}
+
+body.page-awards .podium-card--highlight .podium-card__rank,
+body.page-awards .rankings-section__label {
+  color: var(--site-accent) !important;
+}
+
+body.page-awards .awards-cta__link,
+body.page-awards .awards-cta__link :is(span, strong, div) {
+  color: var(--site-accent-ink) !important;
+}
+
+body.page-awards .awards-season :is(.awards-season__year, .stat-card__number, .event-accordion__week, .points-card__value, .team-highlight),
+body.page-awards .gallery-section .gallery-section__label,
+body.page-awards .matches-section .match-card__score-value--red,
+body.page-awards .rankings-section .rankings-section__label {
+  color: var(--site-accent-on-light) !important;
+}
+
+body.page-awards .gallery-section .gallery-item__caption {
+  color: #ffffff !important;
+}
+
+body.page-awards .matches-section .match-card__score-value--blue {
+  color: #2563eb !important;
+}
+
+body.page-awards .matches-section .match-card__result--win {
+  color: #166534 !important;
+}
+
+body.page-awards .awards-season :is(.awards-season__record, .progression-card__note, .event-accordion__meta, .award-item__desc, .alliance-table .role-cell),
+body.page-awards .matches-section .match-card__teams,
+body.page-awards .awards-cta .awards-cta__text {
+  color: #5f5b56 !important;
+}
+
+body.page-awards .awards-season :is(.stat-card__label, .progression-card__label, .alliance-table thead th, .points-card__label),
+body.page-awards .matches-section :is(.match-card__label, .match-card__score-divider) {
+  color: #77736e !important;
+}
+
+body.page-awards .awards-season .points-card--total .points-card__label {
+  color: rgba(255, 255, 255, 0.68) !important;
+}
+
+body.page-awards .event-card__header :is(.event-card__winner-badge, .event-card__winner-badge *, .event-card__event-name),
+body.page-awards .rankings-section :is(.rankings-section__heading, .rankings-section__progress strong, .podium-card__team) {
+  color: #ffffff !important;
+}
+
+body.page-awards .event-card__header :is(.event-card__winner-badge, .event-card__winner-badge *) {
+  color: var(--site-accent-ink) !important;
+  fill: var(--site-accent-ink) !important;
+}
+
+body.page-awards .event-card__header :is(.event-card__event-meta, .event-card__event-meta span),
+body.page-awards .rankings-section :is(.rankings-section__progress, .podium-card__name, .podium-card__epa) {
+  color: rgba(255, 255, 255, 0.68) !important;
+}
+
+/* Footer — override legacy common.css styles for redesigned dark footer */
+.Footer {
+  background-color: #1a1917 !important;
+  padding-bottom: 0 !important;
+  color: #d4cfc4 !important;
+}
+
+.Footer :is(p, li, span, a, div) {
+  color: #d4cfc4 !important;
+}
+
+.Footer .Footer__copy {
+  color: #8a8578 !important;
+}
+
+.Footer .Footer__social-link {
+  color: #d4cfc4 !important;
+  border-color: rgba(227,220,200,0.22) !important;
+}
+
+.Footer .Footer__social-link:hover {
+  color: #f0ede7 !important;
+  border-color: var(--site-accent, #c6303e) !important;
+}
+
+.Footer .Footer__nav-item a:hover {
+  color: #f0ede7 !important;
+}
+
+.Footer__top,
+.Footer__bottom,
+.Footer__links,
+.Footer__home,
+.Footer__sns {
+  display: none !important;
+}
+
+body:not(.page-home) .Footer {
+  color: #d4cfc4 !important;
+}
+
+body:not(.page-home) .Footer :is(p, li, span, a, div) {
+  color: #d4cfc4 !important;
+}
+
+/* About overview: plainer reading page with less top space. */
+body.page-about .Main--static.is-index {
+  padding-top: 8.8rem !important;
+  padding-bottom: 1.8rem !important;
+  background: #f3f2ee !important;
+}
+
+body.page-about .Main--static .Main__heading {
+  width: min(82rem, calc(100% - 4rem)) !important;
+  margin: 0 auto !important;
+  text-align: left !important;
+}
+
+body.page-about .Main--static .Main__heading .title-ja {
+  margin-bottom: 0.8rem !important;
+  color: #7c6336 !important;
+  font-size: 1.2rem !important;
+  letter-spacing: 0.12em !important;
+}
+
+body.page-about .Main--static .Main__heading .title-en {
+  color: #1f1f1d !important;
+  font-size: clamp(3.8rem, 5vw, 5.2rem) !important;
+  line-height: 1.05 !important;
+  letter-spacing: 0 !important;
+}
+
+body.page-about .Main--static .Main__heading .title-en__inner {
+  color: #1f1f1d !important;
+}
+
+body.page-about .SimpleAboutPage {
+  padding: 7rem 0 7rem !important;
+  background: #f3f2ee !important;
+  color: #1f1f1d !important;
+}
+
+body.page-about .SimpleAboutPage:before {
+  background: rgba(31, 31, 29, 0.12) !important;
+}
+
+body.page-about .SimpleAboutPage:after,
+body.page-about .SimpleAboutLoop,
+body.page-about .SimpleAboutPage > .SectContents__nav {
+  display: none !important;
+}
+
+body.page-about .SimpleAboutHero,
+body.page-about .SimpleAboutSection,
+body.page-about .SimpleAboutWork,
+body.page-about .SimpleAboutImpact {
+  width: min(82rem, calc(100% - 4rem)) !important;
+  margin: 0 auto !important;
+  padding: 3.2rem 0 !important;
+  border-bottom: 1px solid rgba(31, 31, 29, 0.16) !important;
+  background-color: #f3f2ee !important;
+  color: #1f1f1d !important;
+}
+
+body.page-about .SimpleAboutSection--last {
+  border-bottom: 0 !important;
+}
+
+body.page-about .SimpleAboutHero {
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 22rem) !important;
+  gap: 3.2rem !important;
+  align-items: start !important;
+}
+
+body.page-about .SimpleAboutSplit,
+body.page-about .SimpleAboutImpact {
+  grid-template-columns: 1fr !important;
+  gap: 0 !important;
+}
+
+body.page-about .SimpleAboutPage__eyebrow {
+  color: #7c6336 !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+body.page-about .SimpleAboutHero__title,
+body.page-about .SimpleAboutPage__title {
+  max-width: 72rem !important;
+  margin-top: 1rem !important;
+  color: #1f1f1d !important;
+  font-size: clamp(3rem, 4vw, 4.2rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.16 !important;
+  letter-spacing: 0 !important;
+  text-shadow: none !important;
+}
+
+body.page-about .SimpleAboutHero__lead,
+body.page-about .SimpleAboutPage__body,
+body.page-about .SimpleAboutHero__note,
+body.page-about .SimpleStepList__body,
+body.page-about .SimpleAboutImpact__summary {
+  max-width: 72rem !important;
+  color: #4a4945 !important;
+  font-size: 1.65rem !important;
+  line-height: 1.78 !important;
+}
+
+body.page-about .SimpleAboutHero__lead,
+body.page-about .SimpleAboutPage__body {
+  margin-top: 1.6rem !important;
+}
+
+body.page-about .SimpleAboutHero__note,
+body.page-about .SimpleAboutImpact__summary {
+  margin-top: 1.8rem !important;
+  padding: 0 0 0 1.4rem !important;
+  border: 0 !important;
+  border-left: 3px solid #9f8550 !important;
+  background: transparent !important;
+  color: #4a4945 !important;
+  font-weight: 500 !important;
+}
+
+body.page-about .SimpleAboutHero__actions {
+  margin-top: 2.2rem !important;
+  gap: 2rem !important;
+}
+
+body.page-about .SimpleAboutButton {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 4rem !important;
+  padding: 0 1.8rem !important;
+  border: 1.5px solid #9f8550 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: #9f8550 !important;
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+  transition: background 220ms ease, border-color 220ms ease, color 220ms ease !important;
+}
+
+body.page-about .SimpleAboutButton:hover {
+  background: #9f8550 !important;
+  border-color: #9f8550 !important;
+  color: #ffffff !important;
+}
+
+body.page-about .SimpleAboutHero__image,
+body.page-about .SimpleAboutImage,
+body.page-about .SimpleAboutImpact__image {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: 1px solid rgba(31, 31, 29, 0.14) !important;
+  background: #ddd9cf !important;
+}
+
+body.page-about .SimpleAboutHero__image {
+  aspect-ratio: 4 / 5 !important;
+}
+
+body.page-about .SimpleAboutHero__image img,
+body.page-about .SimpleAboutImage img,
+body.page-about .SimpleAboutImpact__image img {
+  filter: none !important;
+  transform: none !important;
+}
+
+body.page-about .SimpleStepList {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 2.2rem !important;
+  max-width: 72rem !important;
+  margin-top: 2.6rem !important;
+}
+
+body.page-about .SimpleStepList__item {
+  display: grid !important;
+  grid-template-columns: 4.2rem minmax(0, 1fr) !important;
+  column-gap: 1.4rem !important;
+  min-height: auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+body.page-about .SimpleStepList__number {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  color: #8a713f !important;
+  font-size: 1.45rem !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+}
+
+body.page-about .SimpleStepList__title {
+  display: block !important;
+  margin: 0 !important;
+  color: #1f1f1d !important;
+  font-size: 2.1rem !important;
+  line-height: 1.25 !important;
+}
+
+body.page-about .SimpleStepList__body {
+  grid-column: 2 !important;
+  margin-top: 0.5rem !important;
+}
+
+@media screen and (max-width: 1023px) {
+  body.page-about .Main--static.is-index {
+    padding-top: 3rem !important;
+    padding-bottom: 1.2rem !important;
+  }
+
+  body.page-about .Main--static .Main__heading .title-ja {
+    display: none !important;
+  }
+
+  body.page-about .Main--static .Main__heading,
+  body.page-about .SimpleAboutHero,
+  body.page-about .SimpleAboutSection,
+  body.page-about .SimpleAboutWork,
+  body.page-about .SimpleAboutImpact {
+    width: calc(100% - 3.2rem) !important;
+  }
+
+  body.page-about .SimpleAboutPage {
+    padding-top: 1rem !important;
+  }
+
+  body.page-about .SimpleAboutHero,
+  body.page-about .SimpleAboutSection,
+  body.page-about .SimpleAboutWork,
+  body.page-about .SimpleAboutImpact {
+    padding: 2.6rem 0 !important;
+  }
+
+  body.page-about .SimpleAboutHero {
+    grid-template-columns: 1fr !important;
+    gap: 2.4rem !important;
+  }
+
+  body.page-about .SimpleAboutHero__image {
+    order: -1 !important;
+    aspect-ratio: 16 / 10 !important;
+  }
+
+  body.page-about .SimpleAboutHero__lead,
+  body.page-about .SimpleAboutPage__body,
+  body.page-about .SimpleAboutHero__note,
+  body.page-about .SimpleStepList__body,
+  body.page-about .SimpleAboutImpact__summary {
+    font-size: 1.45rem !important;
+    line-height: 1.72 !important;
+  }
+
+  body.page-about .SimpleStepList__item {
+    grid-template-columns: 3.4rem minmax(0, 1fr) !important;
+  }
+
+  body.page-about .SimpleStepList__title {
+    font-size: 1.9rem !important;
+  }
+}

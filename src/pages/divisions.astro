@@ -1,0 +1,110 @@
+---
+import SubPageLayout from '../layouts/SubPageLayout.astro';
+---
+
+<SubPageLayout
+  title="Divisions | Team 9470"
+  description="Meet the student divisions that design, build, wire, program, fundraise for, and share Team 9470's robots."
+  canonicalUrl="https://team9470.com/divisions"
+  currentPage="divisions"
+  extraScripts={["/assets/js/divisions.js"]}
+>
+  <link slot="head" href="/assets/css/divisions.css" rel="stylesheet" type="text/css"/>
+
+        <section class="Main Main--static is-index" id="Main">
+          <div class="Main__heading">
+            <h1 class="title-ja"><span class="char">T</span><span class="char">E</span><span class="char">A</span><span class="char">M</span></h1>
+            <h2 class="title-en"><span class="title-en__inner">Divisions</span></h2>
+          </div>
+        </section>
+
+        <section class="SectContents DivisionsPage" id="SectContents">
+
+
+          <div class="SectContents__nav f-gen no-pageNav" data-scroll="data-scroll" data-scroll-sticky="data-scroll-sticky" data-scroll-target="#SectContents">
+            <div class="SectContents__nav__container">
+              <div class="innerNav">
+                <ul class="innerNav__list">
+                  <li class="innerNav__list__item is-current"><a class="anchor mScroll mo_line" href="#Design"><div class="anchor__inner"><p class="text">Design</p><figure class="arrow"></figure></div></a></li>
+                  <li class="innerNav__list__item"><a class="anchor mScroll mo_line" href="#Fabrication"><div class="anchor__inner"><p class="text">Fabrication</p><figure class="arrow"></figure></div></a></li>
+                  <li class="innerNav__list__item"><a class="anchor mScroll mo_line" href="#Electrical"><div class="anchor__inner"><p class="text">Electrical</p><figure class="arrow"></figure></div></a></li>
+                  <li class="innerNav__list__item"><a class="anchor mScroll mo_line" href="#Software"><div class="anchor__inner"><p class="text">Software</p><figure class="arrow"></figure></div></a></li>
+                  <li class="innerNav__list__item"><a class="anchor mScroll mo_line" href="#Business"><div class="anchor__inner"><p class="text">Business</p><figure class="arrow"></figure></div></a></li>
+                  <li class="innerNav__list__item"><a class="anchor mScroll mo_line" href="#Media"><div class="anchor__inner"><p class="text">Media</p><figure class="arrow"></figure></div></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="DivisionsPage__grid">
+            <section class="SectContents__block DivisionCard" id="Design" style="--accent: var(--site-accent); --accent-rgb: var(--site-accent-rgb);">
+              <figure class="DivisionCard__image c-inviewImage fInview">
+                <img src="/assets/images/divisions/fabrication.jpg" alt="A student fabricating a robot part with shop tooling">
+              </figure>
+              <div class="DivisionCard__body">
+                <p class="DivisionCard__number">01</p>
+                <h3 class="DivisionCard__title">Design <span>[DSN]</span></h3>
+                <p class="DivisionCard__description">Design turns strategy into CAD, prototypes mechanisms, and works with fabrication and electrical to make the robot reliable and serviceable.</p>
+              </div>
+            </section>
+
+            <section class="SectContents__block DivisionCard" id="Fabrication" style="--accent: #e08a10; --accent-rgb: 224, 138, 16;">
+              <figure class="DivisionCard__image c-inviewImage fInview">
+                <img src="/assets/images/divisions/business.jpg" alt="Team members together at an event">
+              </figure>
+              <div class="DivisionCard__body">
+                <p class="DivisionCard__number">02</p>
+                <h3 class="DivisionCard__title">Fabrication <span>[FAB]</span></h3>
+                <p class="DivisionCard__description">Fabrication machines, cuts, assembles, and repairs the parts that become the competition robot.</p>
+              </div>
+            </section>
+
+            <section class="SectContents__block DivisionCard" id="Electrical" style="--accent: #1f7a8c; --accent-rgb: 31, 122, 140;">
+              <figure class="DivisionCard__image c-inviewImage fInview">
+                <img src="/assets/images/divisions/electrical.jpg" alt="Two students wearing safety glasses working on robot wiring and components in the pit">
+              </figure>
+              <div class="DivisionCard__body">
+                <p class="DivisionCard__number">03</p>
+                <h3 class="DivisionCard__title">Electrical <span>[ELC]</span></h3>
+                <p class="DivisionCard__description">Electrical builds clean, maintainable control systems so mechanical designs can run reliably under match pressure.</p>
+              </div>
+            </section>
+
+            <section class="SectContents__block DivisionCard" id="Software" style="--accent: #2d6cdf; --accent-rgb: 45, 108, 223;">
+              <figure class="DivisionCard__image c-inviewImage fInview">
+                <img src="/assets/images/divisions/software.jpg" alt="Team 9470 robot competing on the field">
+              </figure>
+              <div class="DivisionCard__body">
+                <p class="DivisionCard__number">04</p>
+                <h3 class="DivisionCard__title">Software <span>[PRO]</span></h3>
+                <p class="DivisionCard__description">Software writes Java robot code for autonomous and teleoperated control, integrates sensors, and builds team tools for scouting and operations.</p>
+              </div>
+            </section>
+
+            <section class="SectContents__block DivisionCard" id="Business" style="--accent: #5f7d28; --accent-rgb: 95, 125, 40;">
+              <figure class="DivisionCard__image c-inviewImage fInview">
+                <img src="/assets/images/divisions/business_new.jpg" alt="Team 9470 student smiling and fist-bumping a member of Team 254 (The Cheesy Poofs) at a competition arena">
+              </figure>
+              <div class="DivisionCard__body">
+                <p class="DivisionCard__number">05</p>
+                <h3 class="DivisionCard__title">Business <span>[BIZ]</span></h3>
+                <p class="DivisionCard__description">Business manages sponsorships, grants, budgeting, donor communication, and the planning that keeps the season funded.</p>
+              </div>
+            </section>
+
+            <section class="SectContents__block DivisionCard" id="Media" style="--accent: #b83280; --accent-rgb: 184, 50, 128;">
+              <figure class="DivisionCard__image c-inviewImage fInview">
+                <img src="/assets/images/divisions/media.jpg" alt="Team members representing Ctrl-Alt-Defeat at an outreach event">
+              </figure>
+              <div class="DivisionCard__body">
+                <p class="DivisionCard__number">06</p>
+                <h3 class="DivisionCard__title">Media <span>[MDA]</span></h3>
+                <p class="DivisionCard__description">Media documents events, maintains public channels, designs team materials, and helps sponsors and families see the work students are doing.</p>
+              </div>
+            </section>
+          </div>
+        </section>
+
+</SubPageLayout>

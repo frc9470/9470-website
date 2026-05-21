@@ -1,0 +1,128 @@
+---
+import SubPageLayout from '../layouts/SubPageLayout.astro';
+---
+
+<SubPageLayout
+  title="About Team 9470"
+  description="A clear overview of Team 9470, Ctrl-Alt-Defeat: who we are, how FIRST Robotics Competition works, what students learn, time commitment, and how to join."
+  ogImage="../assets/images/ctrlaltdefeatlogo.png"
+  canonicalUrl="https://team9470.com/about"
+  currentPage="about"
+>
+  <link slot="head" href="/assets/css/about-simple.css" rel="stylesheet" type="text/css"/>
+
+        <section class="SectContents SimpleAboutPage" id="SectContents">
+
+          <div class="SectContents__nav f-gen no-pageNav" data-scroll="data-scroll" data-scroll-sticky="data-scroll-sticky" data-scroll-target="#SectContents">
+            <div class="SectContents__nav__container">
+              <div class="innerNav">
+                <ul class="innerNav__list">
+                  <li class="innerNav__list__item is-current"><a class="anchor mScroll mo_line" href="#Overview"><div class="anchor__inner"><p class="text">Overview</p><figure class="arrow"></figure></div></a></li>
+                  <li class="innerNav__list__item"><a class="anchor mScroll mo_line" href="#Learn"><div class="anchor__inner"><p class="text">Learn</p><figure class="arrow"></figure></div></a></li>
+                  <li class="innerNav__list__item"><a class="anchor mScroll mo_line" href="#Commitment"><div class="anchor__inner"><p class="text">Schedule</p><figure class="arrow"></figure></div></a></li>
+                  <li class="innerNav__list__item"><a class="anchor mScroll mo_line" href="#Divisions"><div class="anchor__inner"><p class="text">Divisions</p><figure class="arrow"></figure></div></a></li>
+                  <li class="innerNav__list__item"><a class="anchor mScroll mo_line" href="#Join"><div class="anchor__inner"><p class="text">Why Join</p><figure class="arrow"></figure></div></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Overview / Hero -->
+          <section class="SectContents__block SimpleAboutHero" id="Overview">
+            <div class="SimpleAboutHero__copy">
+              <p class="SimpleAboutPage__eyebrow">Ctrl-Alt-Defeat / Bay Area, California</p>
+              <h2 class="SimpleAboutHero__title">About Team 9470</h2>
+              <p class="SimpleAboutHero__lead">Team 9470 is based around <strong>BASIS Independent Fremont</strong> and open to students from the surrounding community. Every year, students <strong>design, build, program, and compete</strong> with a new robot.</p>
+              <p class="SimpleAboutHero__note">The team is <strong>student-led</strong> — mentors and parents support, but students own the work and learn by doing real engineering under real deadlines.</p>
+              <div class="SimpleAboutHero__actions">
+                <a class="SimpleAboutButton" href="/divisions/">Divisions</a>
+                <a class="SimpleAboutButton" href="/members/">Members</a>
+              </div>
+            </div>
+            <figure class="SimpleAboutHero__image c-inviewImage fInview">
+              <img src="/assets/images/Media/teamphoto4.jpg" alt="Team 9470 members together at an event">
+            </figure>
+          </section>
+
+          <!-- What Is FRC -->
+          <section class="SectContents__block SimpleAboutSection" id="FRC">
+            <p class="SimpleAboutPage__eyebrow">FIRST Robotics Competition</p>
+            <h2 class="SimpleAboutPage__title">About FRC</h2>
+            <p class="SimpleAboutPage__body">Every <strong>January</strong>, FRC teams are given a new game. Over the following weeks, students design mechanisms, manufacture parts, wire electronics, write code, test systems, fundraise, document, and compete. The work goes beyond the robot — students also handle scouting, match strategy, sponsor communication, budgeting, media, outreach, and pit operations.</p>
+            <p class="SimpleAboutPage__body">That is what makes FRC different from a class project: <strong>the robot has to work in public, under time pressure, with other teams depending on it.</strong></p>
+          </section>
+
+          <!-- What Students Learn -->
+          <section class="SectContents__block SimpleAboutWork" id="Learn">
+            <div class="SimpleAboutWork__intro">
+              <p class="SimpleAboutPage__eyebrow">What Students Learn</p>
+              <h2 class="SimpleAboutPage__title">What Students Learn</h2>
+              <p class="SimpleAboutPage__body">Depending on their division, members may learn CAD, machining, wiring, Java, sensor integration, autonomous control, fundraising, budgeting, photography, graphic design, public speaking, or event planning. Just as importantly, they learn to <strong>communicate clearly, ask for help early, teach others, take responsibility, and solve problems under pressure.</strong></p>
+            </div>
+            <ol class="SimpleStepList">
+              <li class="SimpleStepList__item" style="--delay: 0ms">
+                <span class="SimpleStepList__number">01</span>
+                <h3 class="SimpleStepList__title">Engineering & Build</h3>
+                <p class="SimpleStepList__body">CAD, machining, wiring, Java programming, sensor integration, autonomous control, prototyping, assembly, and testing.</p>
+              </li>
+              <li class="SimpleStepList__item" style="--delay: 90ms">
+                <span class="SimpleStepList__number">02</span>
+                <h3 class="SimpleStepList__title">Business & Outreach</h3>
+                <p class="SimpleStepList__body">Fundraising, budgeting, sponsor communication, grant writing, community outreach, and event planning.</p>
+              </li>
+              <li class="SimpleStepList__item" style="--delay: 180ms">
+                <span class="SimpleStepList__number">03</span>
+                <h3 class="SimpleStepList__title">Media & Design</h3>
+                <p class="SimpleStepList__body">Photography, graphic design, video production, social media, team documentation, and brand identity.</p>
+              </li>
+              <li class="SimpleStepList__item" style="--delay: 270ms">
+                <span class="SimpleStepList__number">04</span>
+                <h3 class="SimpleStepList__title">Teamwork & Leadership</h3>
+                <p class="SimpleStepList__body">Clear communication, ownership of responsibilities, teaching others, and working under real deadlines with real stakes.</p>
+              </li>
+            </ol>
+          </section>
+
+          <!-- Time Commitment -->
+          <section class="SectContents__block SimpleAboutSection" id="Commitment">
+            <p class="SimpleAboutPage__eyebrow">Time Commitment</p>
+            <h2 class="SimpleAboutPage__title">Time Commitment</h2>
+            <p class="SimpleAboutPage__body">During the off-season, the team meets <strong>Saturdays 9 AM – 4 PM</strong>, with some Sundays added for extra training or project work. During build season, meetings expand to <strong>weekdays 4 – 9 PM</strong> and <strong>weekends 9 AM – 5 PM</strong>, when the robot is being designed, built, programmed, and tested under a tight deadline.</p>
+            <p class="SimpleAboutPage__body">Spring competitions are <strong>full-day weekend events</strong> that may involve early mornings and overnight travel. Competition attendance is <strong>earned</strong> through consistent attendance, completed training, meaningful contribution, safety, and reliability.</p>
+            <div class="SimpleAboutAction">
+              <div class="SimpleAboutAction__item SimpleAboutReveal">
+                <p>Off-Season<br>Saturdays 9 AM – 4 PM<br>Some Sundays added as needed</p>
+              </div>
+              <div class="SimpleAboutAction__item SimpleAboutReveal">
+                <p>Build Season<br>Weekdays 4 – 9 PM<br>Weekends 9 AM – 5 PM</p>
+              </div>
+              <div class="SimpleAboutAction__item SimpleAboutReveal">
+                <p>Spring Competitions<br>Full-day weekend events<br>May include overnight travel</p>
+              </div>
+              <div class="SimpleAboutAction__item SimpleAboutReveal">
+                <p>Earning Competition Spots<br>Consistent attendance & training<br>Meaningful contribution & safety</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Team Divisions -->
+          <section class="SectContents__block SimpleAboutSection" id="Divisions">
+            <p class="SimpleAboutPage__eyebrow">Team Divisions</p>
+            <h2 class="SimpleAboutPage__title">Team Divisions</h2>
+            <p class="SimpleAboutPage__body">Students join <strong>one primary division</strong> — mechanical design, fabrication, electrical, software, business, outreach, media, or demo/testing — but are not limited to it. It is common for design students to learn fabrication, software students to help test, and business students to support competition operations.</p>
+            <div class="SimpleAboutHero__actions SimpleAboutReveal">
+              <a class="SimpleAboutButton" href="/divisions/">Read about our divisions</a>
+            </div>
+          </section>
+
+          <!-- Why Join -->
+          <section class="SectContents__block SimpleAboutSection SimpleAboutSection--last" id="Join">
+            <p class="SimpleAboutPage__eyebrow">Why Join</p>
+            <h2 class="SimpleAboutPage__title">Why Join</h2>
+            <p class="SimpleAboutPage__body">Students do not just <em>learn about</em> engineering, software, manufacturing, business, or leadership — <strong>they use those skills to build something real.</strong> Members leave with practical skills, competition experience, leadership opportunities, and a much clearer understanding of what real engineering and teamwork look like.</p>
+            <p class="SimpleAboutImpact__summary SimpleAboutReveal">No prior robotics experience is required. What matters most is <strong>commitment, curiosity, maturity, and willingness to learn.</strong></p>
+          </section>
+
+        </section>
+
+</SubPageLayout>

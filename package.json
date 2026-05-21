@@ -1,0 +1,15 @@
+{
+  "name": "9470-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "build": "astro build",
+    "preview": "astro preview --host 127.0.0.1"
+  },
+  "devDependencies": {
+    "astro": "^6.3.6",
+    "typescript": "^5.0.0"
+  }
+}

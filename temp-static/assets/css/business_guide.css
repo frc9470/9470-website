@@ -1,0 +1,334 @@
+.Main--static.is-sub .Main__visual {
+    margin-top: 3.8rem;
+    overflow: hidden;
+}
+.Main--static.is-sub .Main__visual .image {
+    position: relative;
+    height: 0;
+    padding-bottom: 51.4705882353%;
+    will-change: transform;
+}
+.Main--static.is-sub .Main__visual .image__inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-11%);
+}
+.Main--static.is-sub .Main__visual .image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 111%;
+    object-fit: cover;
+}
+.Main--static.is-sub .Main__lead {
+    margin-top: 14.2rem;
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+.SectContents {
+    margin-top: 3.2rem;
+}
+.SectContents #SectContents__blocks {
+    position: relative;
+    margin-bottom: 30rem;
+    padding-top: 11rem;
+}
+.SectContents__block#Flow .SectContents__block__main {
+    margin-top: 7.7rem;
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item {
+    position: relative;
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item.fInview--enter .icon {
+    opacity: 1;
+    transition: opacity 400ms;
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item.fInview--enter .icon:before {
+    transform: scale(1);
+    transition: transform 800ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item.fInview--enter .icon:after {
+    opacity: 0;
+    transform: scale(1.2);
+    transition: opacity 800ms, transform 800ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item:nth-of-type(n + 2) {
+    margin-top: 4.5rem;
+    padding-top: 2.9rem;
+    overflow: hidden;
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item:nth-of-type(n + 2):before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    transform: translateY(-90%);
+    height: 90rem;
+    background: -webkit-radial-gradient(50% 50%, circle farthest-corner, rgba(0, 0, 0, 0.22) 15.31%, rgba(0, 0, 0, 0.21) 23.64%, rgba(0, 0, 0, 0) 72.69%);
+    pointer-events: none;
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item:nth-of-type(n + 2):after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 1.3rem;
+    height: 1.3rem;
+    background-color: #e6e6e3;
+    transform: rotate(45deg) translateX(-34%) translateY(-34%);
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item:nth-of-type(1) .icon:before {
+    background-color: #c1b126;
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item:nth-of-type(1) .icon:after {
+    border-color: #c1b126;
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item:nth-of-type(2) .icon:before {
+    background-color: #c59a25;
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item:nth-of-type(2) .icon:after {
+    border-color: #c59a25;
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item:nth-of-type(3) .icon:before {
+    background-color: #c57f25;
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item:nth-of-type(3) .icon:after {
+    border-color: #c57f25;
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item:nth-of-type(4) .icon:before {
+    background-color: #c56525;
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item:nth-of-type(4) .icon:after {
+    border-color: #c56525;
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item:nth-of-type(5) .icon:before {
+    background-color: #c54325;
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item:nth-of-type(5) .icon:after {
+    border-color: #c54325;
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item:nth-of-type(6) .icon:before {
+    background-color: #c52535;
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item:nth-of-type(6) .icon:after {
+    border-color: #c52535;
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item:nth-of-type(7) .icon:before {
+    background-color: #0dbe00;
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item:nth-of-type(7) .icon:after {
+    border-color: #0dbe00;
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item:nth-of-type(8) .icon:before {
+    background-color: #0073ff;
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item:nth-of-type(8) .icon:after {
+    border-color: #0073ff;
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item:nth-of-type(9) .icon:before {
+    background-color: #0097b5;
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item:nth-of-type(9) .icon:after {
+    border-color: #0097b5;
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item .icon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+    height: 8rem;
+    margin: auto;
+    color: #fff;
+    opacity: 0;
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item .icon:before,
+.SectContents__block#Flow .SectContents__block__main .boxes__item .icon:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: scale(0.5);
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item .icon:after {
+    border-width: 0.1rem;
+    border-style: solid;
+    box-sizing: border-box;
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item .icon__inner {
+    position: relative;
+    z-index: 1;
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item .icon__num {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item .icon__image {
+    width: 3.8rem;
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item .title {
+    margin-top: 2.7rem;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+.SectContents__block#Flow .SectContents__block__main .boxes__item .detail {
+    margin-top: 0.8571428571em;
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+.SectContents__block#Faq {
+    margin-top: 17.5rem;
+}
+.SectContents__block#Faq .SectContents__block__title {
+    z-index: 1;
+}
+.SectContents__block#Faq .SectContents__block__main .c-accordion__item__main .summary__prefix {
+    color: #ff3045;
+    font-size: 2rem;
+}
+.SectContents__block#Faq .SectContents__block__main .c-accordion__item__main .summary__text {
+    font-size: 1.6rem;
+}
+@media screen and (max-width: 1023px) {
+    .Main--static.is-sub {
+        position: relative;
+        padding-bottom: 6rem;
+    }
+    .Main--static.is-sub:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 92%;
+        height: 1px;
+        background-color: #ccc;
+    }
+    .Main--static.is-sub .Main__top {
+        padding-top: 21.25rem;
+    }
+    .Main--static.is-sub .Main__visual {
+        margin-top: 6rem;
+    }
+    .Main--static.is-sub .Main__visual .image {
+        padding-bottom: 66.6666666667%;
+    }
+    .Main--static.is-sub .Main__lead {
+        width: 92%;
+        margin: 2.6rem auto 0;
+        font-size: 1.3rem;
+        line-height: 1.7;
+    }
+    .SectContents {
+        margin-top: 6rem;
+        padding-bottom: 10rem;
+    }
+    .SectContents #SectContents__blocks {
+        margin-bottom: 0;
+        padding-top: 0;
+    }
+    .SectContents__block#Flow .SectContents__block__main {
+        margin-top: 3.75rem;
+    }
+    .SectContents__block#Flow .SectContents__block__main .boxes__item:nth-of-type(n + 2) {
+        margin-top: 3.5rem;
+        padding-top: 3.25rem;
+    }
+    .SectContents__block#Flow .SectContents__block__main .boxes__item:nth-of-type(n + 2):before {
+        height: 120vw;
+    }
+    .SectContents__block#Flow .SectContents__block__main .boxes__item:nth-of-type(n + 2):after {
+        width: 0.9rem;
+        height: 0.9rem;
+    }
+    .SectContents__block#Flow .SectContents__block__main .boxes__item .icon {
+        width: 7rem;
+        height: 7rem;
+    }
+    .SectContents__block#Flow .SectContents__block__main .boxes__item .icon__num {
+        font-size: 1.1rem;
+    }
+    .SectContents__block#Flow .SectContents__block__main .boxes__item .icon__image {
+        width: 3.4rem;
+    }
+    .SectContents__block#Flow .SectContents__block__main .boxes__item .title {
+        position: relative;
+        margin-top: 1.5rem;
+        font-size: 1.5rem;
+    }
+    .SectContents__block#Flow .SectContents__block__main .boxes__item .detail {
+        position: relative;
+        margin-top: 0.8571428571em;
+        font-size: 1.2rem;
+        line-height: 1.8;
+    }
+    .SectContents__block#Faq {
+        margin-top: 13.6rem;
+        padding-bottom: 7.25rem;
+    }
+    .SectContents__block#Faq .SectContents__block__main {
+        margin-top: 3.75rem;
+    }
+    .SectContents__block#Faq .SectContents__block__main .c-accordion__item__main .summary__prefix {
+        font-size: 1.8rem;
+    }
+    .SectContents__block#Faq .SectContents__block__main .c-accordion__item__main .summary__text {
+        font-size: 1.3rem;
+        line-height: 1.7;
+    }
+    .SectContents__block#Faq .SectContents__block__main .c-accordion__item__main .detail__text {
+        padding-top: 1.3rem;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .SectContents__block#Flow:not(.has-scroll-smooth #Flow) {
+        margin-top: -20.2rem;
+    }
+}
+#whypg {
+    display: block;
+
+    max-width: 900px;
+
+    /*
+    The 'margin: 0 auto' trick is a common way to center a block-level element.
+    It will now work because of 'display: block'.
+  */
+    margin-left: auto;
+    margin-right: auto;
+
+    /*
+    Centers the text inside the element.
+  */
+    text-align: center;
+
+    /*
+    Adds some padding on the left and right so the text doesn't touch the
+    edges of the screen on mobile devices.
+  */
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#mainTitle {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}

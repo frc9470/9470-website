@@ -1,0 +1,276 @@
+---
+---
+
+<footer class="Footer" id="Footer">
+  <div class="Footer__inner">
+    <div class="Footer__brand">
+      <a class="Footer__logo-link" href="/">
+        <img class="Footer__logo-img" src="/assets/images/ctrlaltdefeatlogo.png" alt="Ctrl+Alt+Defeat" />
+      </a>
+      <span class="Footer__brand-divider"></span>
+      <a class="Footer__logo-link Footer__logo-link--first" href="https://www.firstinspires.org/programs/frc/" target="_blank" rel="noopener noreferrer">
+        <img class="Footer__logo-img" src="/assets/images/frc.png" alt="FIRST Robotics Competition" />
+      </a>
+    </div>
+
+    <nav class="Footer__nav" aria-label="Footer navigation">
+      <ul class="Footer__nav-list">
+        <li class="Footer__nav-item"><a href="/about/">About</a></li>
+        <li class="Footer__nav-item"><a href="/divisions/">Divisions</a></li>
+        <li class="Footer__nav-item"><a href="/media/">Media</a></li>
+        <li class="Footer__nav-item"><a href="/support/">Support</a></li>
+        <li class="Footer__nav-item"><a href="/sponsors/">Sponsors</a></li>
+        <li class="Footer__nav-item"><a href="/awards/">Awards</a></li>
+        <li class="Footer__nav-item"><a href="https://forms.gle/9vHFEDqLXv7Q6tuF7" target="_blank" rel="noopener noreferrer">Join</a></li>
+      </ul>
+    </nav>
+
+    <div class="Footer__social">
+      <a class="Footer__social-link" href="mailto:tctrlaltdefeat@gmail.com" aria-label="Email" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" ry="2"></rect><path d="m3 7 9 6 9-6"></path></svg>
+      </a>
+      <a class="Footer__social-link Footer__social-link--discord" href="https://discord.gg/QCJZGjbp2P" aria-label="Discord" target="_blank" rel="noopener noreferrer">
+        <video class="Footer__social-video" autoplay muted loop playsinline aria-hidden="true"><source src="/media/discord.webm" type="video/webm"></video>
+      </a>
+      <a class="Footer__social-link" href="https://www.instagram.com/frc_9470/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37a4 4 0 1 1-7.9 1.2 4 4 0 0 1 7.9-1.2z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+      </a>
+      <a class="Footer__social-link" href="https://www.youtube.com/@frc9470" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.56 49.56 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg>
+      </a>
+      <a class="Footer__social-link" href="https://github.com/frc9470/" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="Footer__bottom-bar">
+    <p class="Footer__copy">&copy; 2025 Ctrl+Alt+Defeat &middot; FRC 9470</p>
+  </div>
+</footer>
+
+<style>
+  .Footer {
+    position: relative;
+    background-color: #1a1917;
+    color: #b8b5ae;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+  }
+
+  .Footer__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 82rem;
+    margin: 0 auto;
+    padding: 3.6rem 3.5rem 3rem;
+    gap: 2.4rem;
+  }
+
+  /* ── Brand ── */
+  .Footer__brand {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .Footer__brand-divider {
+    width: 1px;
+    height: 3.2rem;
+    background-color: rgba(227,220,200,0.25);
+    flex-shrink: 0;
+  }
+
+  .Footer__logo-link {
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    transition: opacity 0.2s ease;
+  }
+
+  .Footer__logo-link:hover {
+    opacity: 0.75;
+  }
+
+  .Footer__logo-link--first {
+    width: auto;
+    height: 4rem;
+  }
+
+  .Footer__logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /* ── Navigation ── */
+  .Footer__nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .Footer__nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 2.4rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .Footer__nav-item a {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #d4cfc4;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    padding: 0.3rem 0;
+    position: relative;
+    transition: color 0.2s ease;
+  }
+
+  .Footer__nav-item a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--site-accent, #c6303e);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .Footer__nav-item a:hover {
+    color: #f0ede7;
+  }
+
+  .Footer__nav-item a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* ── Social icons ── */
+  .Footer__social {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+  }
+
+  .Footer__social-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.8rem;
+    height: 3.8rem;
+    border: 1px solid rgba(227,220,200,0.22);
+    border-radius: 50%;
+    color: #d4cfc4;
+    overflow: hidden;
+    transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+  }
+
+  .Footer__social-link:hover {
+    border-color: var(--site-accent, #c6303e);
+    color: #f0ede7;
+    background-color: rgba(255,255,255,0.05);
+  }
+
+  .Footer__social-link svg {
+    width: 1.9rem;
+    height: 1.9rem;
+  }
+
+  .Footer__social-link--discord {
+    padding: 0;
+  }
+
+  .Footer__social-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transform: scale(1.65);
+    transform-origin: center;
+    background-color: #5865F2;
+  }
+
+  /* ── Bottom bar ── */
+  .Footer__bottom-bar {
+    border-top: 1px solid rgba(227,220,200,0.15);
+    text-align: center;
+    padding: 1.4rem 3.5rem;
+  }
+
+  .Footer__copy {
+    font-size: 1.2rem;
+    color: #8a8578;
+    letter-spacing: 0.04em;
+    margin: 0;
+  }
+
+  /* ── Responsive ── */
+  @media screen and (max-width: 1023px) {
+    .Footer__inner {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 3rem 2rem 2.4rem;
+      gap: 1.8rem;
+    }
+
+    .Footer__brand {
+      gap: 1rem;
+    }
+
+    .Footer__brand-divider {
+      height: 2.4rem;
+    }
+
+    .Footer__logo-link {
+      width: 4.2rem;
+      height: 4.2rem;
+    }
+
+    .Footer__logo-link--first {
+      width: auto;
+      height: 3.2rem;
+    }
+
+    .Footer__nav-list {
+      gap: 0.4rem 1.6rem;
+    }
+
+    .Footer__nav-item a {
+      font-size: 1.25rem;
+    }
+
+    .Footer__social {
+      gap: 0.8rem;
+    }
+
+    .Footer__social-link {
+      width: 3.4rem;
+      height: 3.4rem;
+    }
+
+    .Footer__social-link svg {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+
+    .Footer__bottom-bar {
+      padding: 1rem 2rem;
+    }
+
+    .Footer__copy {
+      font-size: 1.1rem;
+    }
+  }
+</style>

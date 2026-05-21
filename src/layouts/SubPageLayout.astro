@@ -1,0 +1,74 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import SpNav from '../components/SpNav.astro';
+import Footer from '../components/Footer.astro';
+import MenuModal from '../components/MenuModal.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  canonicalUrl?: string;
+  currentPage?: string;
+  extraScripts?: string[];
+}
+
+const {
+  title = 'Team 9470',
+  description,
+  ogImage,
+  canonicalUrl,
+  currentPage = '',
+  extraScripts = [],
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <BaseHead title={title} description={description} ogImage={ogImage} canonicalUrl={canonicalUrl}>
+    <link href="/assets/css/sub-page.css" rel="stylesheet" type="text/css"/>
+    <slot name="head" />
+    <link href="/assets/css/design-simplify.css" rel="stylesheet" type="text/css"/>
+  </BaseHead>
+</head>
+
+<body class={`page-${currentPage}`}>
+  <!-- Start .Wrapper -->
+  <div class="Wrapper" data-barba="wrapper">
+
+    <Header currentPage={currentPage} />
+    <SpNav />
+
+    <!-- Start .Container -->
+    <div class="Container">
+      <!-- Start .Contents -->
+      <div class="Contents" data-scroll-container="data-scroll-container">
+
+        <slot />
+
+        <Footer />
+        <span class="headerObserver"></span>
+      </div>
+      <!-- End .Contents -->
+
+      <slot name="after-contents" />
+
+      <MenuModal currentPage={currentPage} />
+
+      <!-- End Modal -->
+    </div>
+    <!-- End .Container -->
+
+  </div>
+  <!-- End .Wrapper -->
+
+  <script is:inline src="/assets/js/common.js?v=1.0.2"></script>
+  <script is:inline src="/assets/js/sub-page.js?v=1.0.2"></script>
+  {extraScripts.map((src) => (
+    <script is:inline src={src}></script>
+  ))}
+  <slot name="scripts" />
+</body>
+</html>

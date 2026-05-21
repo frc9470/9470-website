@@ -1,0 +1,156 @@
+---
+import SubPageLayout from '../layouts/SubPageLayout.astro';
+---
+
+<SubPageLayout currentPage="about" extraScripts={["/assets/js/about.js"]}>
+  <link slot="head" href="/assets/css/about.css" rel="stylesheet" type="text/css"/>
+
+  <section class="Main Main--fixed" id="Main">
+    <h1 class="Main__title">
+      <div class="Main__title__container">
+        <ul class="Main__title__list">
+          <li class="box">Team Story. </li>
+          <li class="box">Team Story. </li>
+        </ul>
+      </div>
+      <p class="Main__title__sub"><span class="char">T</span><span class="char">e</span><span class="char">a</span><span class="char">m</span><span class="char"></span><span class="char">9</span><span class="char">4</span><span class="char">7</span><span class="char">0</span>
+      </p>
+    </h1>
+  </section>
+  <div class="SectContents" id="SectContents">
+    <div class="SectContents__nav f-gen no-pageNav" data-scroll="data-scroll" data-scroll-sticky="data-scroll-sticky" data-scroll-target="#SectContents">
+      <div class="SectContents__nav__container">
+        <div class="innerNav">
+          <ul class="innerNav__list">
+            <li class="innerNav__list__item is-current"><a class="anchor mScroll mo_line" href="#Mission">
+                <div class="anchor__inner">
+                  <p class="text">Mission</p>
+                  <figure class="arrow"></figure>
+                </div></a></li>
+            <li class="innerNav__list__item"><a class="anchor mScroll mo_line" href="#Vision">
+                <div class="anchor__inner">
+                  <p class="text">Team History</p>
+                  <figure class="arrow"></figure>
+                </div></a></li>
+            <li class="innerNav__list__item"><a class="anchor mScroll mo_line" href="#ValueContainer">
+                <div class="anchor__inner">
+                  <p class="text">Growth</p>
+                  <figure class="arrow"></figure>
+                </div></a></li>
+            <li class="innerNav__list__item"><a class="anchor mScroll mo_line" href="#FRC">
+                <div class="anchor__inner">
+                  <p class="text">About FRC</p>
+                  <figure class="arrow"></figure>
+                </div></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="SectContents__top overlay-circle overlay-circle--gray">
+      <section class="SectContents__block Mission" id="Mission">
+        <div class="SectContents__block__container">
+          <h2 class="SectContents__block__title c-blockHeading c-blockHeading--horizontal">
+            <p class="text">Mission & Goals</p>
+          </h2>
+          <div class="SectContents__block__main">
+            <h3 class="heading">Our Statement</h3>
+            <p class="detail">We build competitive robots and a stronger STEM community by giving students real responsibility in engineering, software, fabrication, business, outreach, and leadership.</p>
+            <h3 class="heading" style="margin-top: 2.5rem;">Our Goals</h3>
+            <p class="detail">Ctrl-Alt-Defeat is student-led. Members learn by designing, building, testing, fundraising, presenting, and competing under real deadlines, with mentors helping students raise the quality of their own work.</p>
+          </div>
+        </div>
+      </section>
+      <section class="SectContents__block Vision" id="Vision">
+        <div class="SectContents__block__container">
+          <h2 class="SectContents__block__title c-blockHeading c-blockHeading--horizontal">
+            <p class="text">Team History</p>
+          </h2>
+          <div class="SectContents__block__main">
+            <figure class="image c-inviewImage fInview">
+              <picture>
+                <source srcset="/assets/images/media/teamhistory.jpeg" type="image/webp"/><img class="lazy" data-original="/assets/images/media/teamhistory.jpeg"/>
+              </picture>
+            </figure>
+            <h3 class="heading">How it Started</h3>
+            <p class="detail">Team 9470 began in Spring 2023 when Tycho Young and Krish Mangrolia set out to create a robotics program for students around BASIS Independent Fremont. They spent the summer recruiting members, planning the program, and choosing FIRST Robotics Competition as the team's main challenge.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <section class="SectContents__block Value" id="Value">
+      <div class="SectContents__block__intro">
+
+        <ul class="images">
+          <li class="images__item">
+            <figure class="image" data-parallax="-30">
+              <picture>
+                <source srcset="/assets/images/media/teamphoto1.jpg"/>
+              </picture>
+            </figure>
+            <figure class="image" data-parallax="-20">
+              <picture>
+                <source srcset="/assets/images/media/teamphoto2.jpg" type="image/webp"/><img class="lazy_custom" data-original="/assets/images/media/teamphoto2.jpg"/>
+              </picture>
+            </figure>
+            <figure class="image" data-parallax="-40">
+              <picture>
+                <source srcset="/assets/images/media/teamphoto3.jpg" type="image/webp"/><img class="lazy_custom" data-original="/assets/images/media/teamphoto3.jpg"/>
+              </picture>
+            </figure>
+          </li>
+          <li class="images__item">
+            <figure class="image" data-parallax="-30">
+              <picture>
+                <source srcset="/assets/images/media/teamphoto1.jpg"/>
+              </picture>
+            </figure>
+            <figure class="image" data-parallax="-20">
+              <picture>
+                <source srcset="/assets/images/media/teamphoto2.jpg" type="image/webp"/><img class="lazy_custom" data-original="/assets/images/media/teamphoto2.jpg"/>
+              </picture>
+            </figure>
+            <figure class="image" data-parallax="-40">
+              <picture>
+                <source srcset="/assets/images/media/teamphoto3.jpg" type="image/webp"/><img class="lazy_custom" data-original="/assets/images/media/teamphoto3.jpg"/>
+              </picture>
+            </figure>
+          </li>
+        </ul>
+      </div>
+      <div class="SectContents__block__container" id="ValueContainer">
+        <h2 class="SectContents__block__title c-blockHeading c-blockHeading--horizontal">
+          <p class="text">From Startup to Contender</p>
+        </h2>
+        <div class="SectContents__block__main">
+          <h3 class="heading">From Startup to Contender</h3>
+          <p class="detail">After launching in 2024, Ctrl-Alt-Defeat grew quickly into a serious California District competitor. In 2026, Team 9470 won the Half Moon Bay and Silicon Valley district events, captained the finalist alliance at the FIRST California Northern State Championship, won the Archimedes Division at FIRST Championship, and reached Einstein.</p>
+        </div>
+      </div>
+    </section>
+    <section class="SectContents__block Message" id="FRC">
+      <div class="SectContents__block__container">
+        <h2 class="SectContents__block__title c-blockHeading c-blockHeading--horizontal">
+          <p class="text f-gen">About FIRST Robotics Competition (FRC)</p>
+        </h2>
+        <div class="SectContents__block__main">
+          <figure class="image c-inviewImage fInview">
+            <picture>
+              <source srcset="/assets/images/frc.webp" type="image/webp"/><img class="lazy_custom" data-original="/assets/images/frc.webp"/>
+            </picture>
+          </figure>
+          <p class="detail">FIRST Robotics Competition (FRC) is an international high school robotics program from FIRST. Each season, teams design, build, program, and operate a robot for a new game, then compete at live events with alliance partners. The work combines engineering, software, manufacturing, strategy, fundraising, media, and communication.</p>
+          <div id="more-text" style="max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out;">
+          <p class="detail">
+            FIRST was founded in 1989 by Dean Kamen and now runs several robotics programs, including FIRST Robotics Competition, FIRST Tech Challenge, and FIRST LEGO League. FRC gives high school students a place to practice technical skill, teamwork, leadership, and gracious professionalism in a competitive setting. Learn more at FIRSTInspires.org.
+          </p>
+        </div>
+        <button class="read-more-btn" onclick="toggleText(this)">
+          Read More
+        </button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+</SubPageLayout>

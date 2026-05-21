@@ -1,0 +1,154 @@
+---
+import SubPageLayout from '../layouts/SubPageLayout.astro';
+---
+
+<SubPageLayout currentPage="support" extraScripts={["/assets/js/support.js"]}>
+  <link slot="head" href="/assets/css/business_guide.css" rel="stylesheet" type="text/css"/>
+
+<section class="Main Main--static is-sub" id="Main">
+  <div class="Main__top">
+    <div class="Main__heading">
+      <h1 class="title-ja">Team 9470
+      </h1>
+      <h2 class="title-en"><span class="title-en__inner">Support Us</span></h2>
+    </div>
+    <div class="Main__visual">
+      <figure class="image">
+        <div class="image__inner">
+          <picture>
+            <source media="(min-width:1024px)" srcset="/assets/images/support.JPG" type="image/webp"/>
+            <source media="(max-width:1023px)" srcset="/assets/images/support.JPG" type="image/webp"/>
+            <source media="(max-width:1023px)" srcset="/assets/images/support.JPG"/><img src="/assets/images/support.JPG"/>
+          </picture>
+        </div>
+      </figure>
+    </div>
+  </div>
+  <div class="Main__lead">
+    <center><h1 id="mainTitle"><strong>Why Support Team 9470</strong></h1></center>
+    <span id="whypg" class="text">FRC is expensive because students are building real competition machines. Support helps pay for registration, robot parts, tooling, practice materials, travel, outreach, and training.
+    <br><br>
+    Team 9470 runs lean, and every contribution turns directly into more student time with engineering, software, fabrication, business, media, and leadership work.</span>
+    <div class="NonprofitCallout">
+      <p class="NonprofitCallout__eyebrow">Our Nonprofit</p>
+      <h2>Fremont Institute of Robotics Education</h2>
+      <p>Team 9470 is supported by Fremont Institute of Robotics Education (FIRE), a Fremont-based nonprofit that expands access to hands-on robotics and STEM programs. Donations through FIRE support Ctrl-Alt-Defeat and related community education work.</p>
+      <p class="NonprofitCallout__meta">Donation receipt name: Fremont Institute of Robotics Education &middot; EIN: 93-3114186</p>
+      <a class="NonprofitCallout__link" href="https://www.fremontinstitute.org/" target="_blank" rel="noopener noreferrer">Visit fremontinstitute.org</a>
+    </div>
+  </div>
+</section>
+<div class="SectContents" id="SectContents">
+  <div class="SectContents__wrapper">
+    <div id="SectContents__blocks">
+      <section class="SectContents__block Flow" id="Flow">
+        <div class="SectContents__block__container">
+          <h3 class="SectContents__block__title c-blockHeading c-blockHeading--horizontal">
+            <p class="text f-gen">How You Can Support</p>
+          </h3>
+          <div class="SectContents__block__main">
+            <ul class="boxes">
+              <li class="boxes__item fInview">
+                <div class="icon">
+                  <div class="icon__inner">
+                    <p class="icon__num">01</p>
+                    <figure class="icon__image"><img class="lazy" data-original="/assets/icons/company.svg" alt=""/></figure>
+                  </div>
+                </div>
+                <p class="title f-gen">Companies</p>
+                <p class="detail">Companies can sponsor the team through FIRE. Sponsor benefits include logo placement, public recognition, and collaboration opportunities.</p>
+              </li>
+              <li class="boxes__item fInview">
+                <div class="icon">
+                  <div class="icon__inner">
+                    <p class="icon__num">02</p>
+                    <figure class="icon__image"><img class="lazy" data-original="/assets/icons/flow_ico_2.svg" alt=""/></figure>
+                  </div>
+                </div>
+                <p class="title f-gen">Team Members</p>
+                <p class="detail">Students and families support the team through attendance, build work, event volunteering, parent mentoring, transportation, food, and donations.</p>
+              </li>
+              <li class="boxes__item fInview">
+                <div class="icon">
+                  <div class="icon__inner">
+                    <p class="icon__num">03</p>
+                    <figure class="icon__image"><img class="lazy" data-original="/assets/icons/individual.svg" alt=""/></figure>
+                  </div>
+                </div>
+                <p class="title f-gen">Individuals</p>
+                <p class="detail">Individuals can donate, mentor, connect us with sponsors, or share technical and professional expertise.</p>
+              </li>
+              <li class="boxes__item fInview">
+                <div class="icon">
+                  <div class="icon__inner">
+                    <p class="icon__num">04</p>
+                    <figure class="icon__image"><img class="lazy" data-original="/assets/icons/mentor.svg" alt=""/></figure>
+                  </div>
+                </div>
+                <p class="title f-gen">Mentors</p>
+                <p class="detail">Mentors help students improve robot design, manufacturing, controls, software, strategy, safety, fundraising, and project execution.</p>
+              </li>
+              <li class="boxes__item fInview">
+                <div class="icon">
+                  <div class="icon__inner">
+                    <p class="icon__num"></p>
+                    <figure class="icon__image"><img class="lazy" data-original="/assets/icons/questionmark.svg" alt=""/></figure>
+                  </div>
+                </div>
+                <p class="title f-gen">Donation Methods</p>
+                <p class="detail"></p>
+              </li>
+              <li class="boxes__item fInview">
+                <div class="icon">
+                  <div class="icon__inner">
+                    <p class="icon__num">01</p>
+                    <figure class="icon__image"><img class="lazy" data-original="/assets/icons/moneyCheck.svg" alt=""/></figure>
+                  </div>
+                </div>
+                <p class="title f-gen">Check</p>
+                <p class="detail">Memo: Team Support for Robotics Team #9470<br>
+Recipient Name: Fremont Institute of Robotics Education<br>
+Mailing Address: 4285 Santa Monica Terrace, Fremont, California</p>
+              </li>
+              <li class="boxes__item fInview">
+                <div class="icon">
+                  <div class="icon__inner">
+                    <p class="icon__num">02</p>
+                    <figure class="icon__image"><img class="lazy" data-original="/assets/icons/zelle.png" alt=""/></figure>
+                  </div>
+                </div>
+                <p class="title f-gen">Zelle</p>
+                <p class="detail">Address: give@fremontinstitute.org<br>Open your mobile banking app and give via Zelle. Please note "Ctrl-Alt-Defeat, Team 9470."</p>
+              </li>
+              <li class="boxes__item fInview">
+                <div class="icon">
+                  <div class="icon__inner">
+                    <p class="icon__num">03</p>
+                    <figure class="icon__image"><img class="lazy" data-original="/assets/icons/donation.svg" alt=""/></figure>
+                  </div>
+                </div>
+                <p class="title f-gen">Employer Donation Portal</p>
+                <p class="detail">Ask your employer about matching gifts.<br>Donation receipt: Fremont Institute of Robotics Education, EIN 93-3114186<br>Please note "Ctrl-Alt-Defeat, Team 9470."</p>
+              </li>
+              <li class="boxes__item fInview">
+                <div class="icon">
+                  <div class="icon__inner">
+                    <p class="icon__num">04</p>
+                    <figure class="icon__image"><img class="lazy" data-original="/assets/icons/stock.svg" alt=""/></figure>
+                  </div>
+                </div>
+                <p class="title f-gen">Appreciated Stock & In-Kind Donations</p>
+                <p class="detail">Please contact tctrlaltdefeat@gmail.com to discuss instructions.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+  <div slot="after-contents" id="SpInnerNavObserver">
+    <div id="SpInnerNavObserver__bottom"></div>
+  </div>
+</SubPageLayout>
