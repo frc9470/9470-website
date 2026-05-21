@@ -1096,46 +1096,6 @@
   transition-delay: 500ms !important;
 }
 
-.HeroMovie {
-  overflow: hidden;
-  background-color: #141414;
-}
-
-.HeroMovie__poster,
-.HeroMovie__video {
-  position: absolute;
-  inset: 0;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover;
-}
-
-.HeroMovie__poster {
-  z-index: 1;
-  opacity: 1;
-  transition: opacity 480ms ease;
-}
-
-.HeroMovie__video {
-  z-index: 0;
-  opacity: 0;
-  transition: opacity 480ms ease;
-}
-
-.HeroMovie.is-video-ready .HeroMovie__poster {
-  opacity: 0 !important;
-  visibility: hidden;
-}
-
-.HeroMovie.is-video-ready .HeroMovie__video {
-  opacity: 1 !important;
-}
-
-.Main__visual .HeroMovie:after {
-  z-index: 2;
-  pointer-events: none;
-}
-
 /* Hide confusing small instagram and fullscreen menu corner links on hero video */
 .Main__visual__bottom .link,
 .Main__visual__bottom .menu {

@@ -22,6 +22,14 @@
         transform: rotate(360deg);
     }
 }
+:root {
+    --site-accent: #f4e6c8;
+    --site-accent-rgb: 244, 230, 200;
+    --site-accent-bright: #fff0cc;
+    --site-accent-hover: #c8a96a;
+    --site-accent-on-light: #8f6b2f;
+    --site-accent-ink: #20180f;
+}
 html {
     background: #fff;
 }
@@ -974,7 +982,7 @@ html.has-scroll-dragging {
     margin: auto;
     width: 0.4rem;
     height: 37.7777777778%;
-    background-color: #ff3045;
+    background-color: var(--site-accent-bright);
     border-radius: 0 0.3rem 0.3rem 0;
 }
 .c-subHeading {
@@ -994,7 +1002,7 @@ html.has-scroll-dragging {
     margin: auto;
     width: 0.4rem;
     height: 41.6666666667%;
-    background-color: #ff3045;
+    background-color: var(--site-accent-bright);
     border-radius: 0.2rem;
 }
 .c-subHeading:after {
@@ -1528,7 +1536,7 @@ body.device-pc .c-accordion .c-accordion__item .anchor.is-open:before {
 }
 .c-worksList__item .info__tag__item {
     padding: 0.3rem;
-    color: #c52535;
+    color: var(--site-accent);
     word-break: break-all;
     font-size: 1.1rem;
     transition: color 200ms;
@@ -1664,7 +1672,7 @@ body.device-pc .c-accordion .c-accordion__item .anchor.is-open:before {
 }
 .c-categoryNav .tagList__item .anchor {
     padding: 0.45rem 0.3rem;
-    color: #c52535;
+    color: var(--site-accent);
 }
 .c-categoryNav .tagView {
     position: relative;
@@ -2165,7 +2173,7 @@ body.device-pc .c-accordion .c-accordion__item .anchor.is-open:before {
     max-width: 1100px;
     height: 72rem;
     max-height: 1100px;
-    background-color: #c52535;
+    background-color: var(--site-accent);
     border-radius: 36rem;
     transform: scale(0.06);
     transform-origin: center calc(77.95vh - 4rem);
@@ -2188,7 +2196,7 @@ body.device-pc .c-accordion .c-accordion__item .anchor.is-open:before {
     pointer-events: none;
     margin: 9rem auto 11rem;
     padding-bottom: 22.0588235294vh;
-    color: #fff;
+    color: var(--site-accent-ink);
 }
 .MenuModal__links a {
     pointer-events: initial;
@@ -2256,7 +2264,7 @@ body.device-pc .c-accordion .c-accordion__item .anchor.is-open:before {
     justify-content: center;
     align-items: center;
     height: 3.5rem;
-    border: 1px solid #fff;
+    border: 1px solid rgba(32, 24, 15, 0.35);
     border-radius: 50%;
 }
 .MenuModal__links .sns__item .ico {
@@ -2266,7 +2274,7 @@ body.device-pc .c-accordion .c-accordion__item .anchor.is-open:before {
     position: relative;
     margin-top: 2.5rem;
     text-align: center;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(32, 24, 15, 0.62);
     font-size: 1.2rem;
     opacity: 0;
     transition: opacity 200ms;
@@ -2437,10 +2445,10 @@ body.device-pc .c-accordion .c-accordion__item .anchor.is-open:before {
     pointer-events: none;
 }
 .CommonPaging .list__item:not(.list__item--arrow).is-current .anchor {
-    color: #fff;
+    color: var(--site-accent-ink);
 }
 .CommonPaging .list__item:not(.list__item--arrow).is-current .anchor:before {
-    background-color: #c52535;
+    background-color: var(--site-accent);
 }
 .CommonPaging .list__item:not(.list__item--arrow) .anchor {
     display: flex;
@@ -2632,7 +2640,7 @@ body.device-pc .CommonPaging .list__item--arrow .anchor {
 }
 .SpNav__links .list__item.is-current {
     background-color: #ededea;
-    color: #c52535;
+    color: var(--site-accent);
 }
 .SpNav__links .list__item.is-current .anchor:after {
     content: "";
@@ -2644,7 +2652,7 @@ body.device-pc .CommonPaging .list__item--arrow .anchor {
     background-color: currentColor;
 }
 .SpNav__links .list__item.is-current .ico svg .cls-2 {
-    fill: #c52535;
+    fill: var(--site-accent);
 }
 .SpNav__links .list__item.is-current:before,
 .SpNav__links .list__item.is-current:after,
@@ -2695,8 +2703,8 @@ body.device-pc .CommonPaging .list__item--arrow .anchor {
     width: 5.5rem;
     height: 5.5rem;
     margin: -1.35rem auto 0;
-    background-color: #c52535;
-    color: #fff;
+    background-color: var(--site-accent);
+    color: var(--site-accent-ink);
     border-radius: 50%;
     transition-duration: 200ms;
     transition-property: background-color;
@@ -2739,7 +2747,7 @@ body.device-pc .CommonPaging .list__item--arrow .anchor {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #c52535;
+    background-color: var(--site-accent);
     transition-duration: 580ms;
     transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
     transition-property: transform;
@@ -3531,7 +3539,7 @@ body.device-pc .CommonPaging .list__item--arrow .anchor {
         margin: auto;
         width: 0.8rem;
         height: 0.8rem;
-        background-color: #ff3045;
+        background-color: var(--site-accent-bright);
         border-radius: 50%;
     }
     .c-blockHeading--horizontal .text {
@@ -3612,7 +3620,7 @@ body.device-pc .CommonPaging .list__item--arrow .anchor {
         pointer-events: initial;
     }
     .Header__links .list__item.is-current .anchor .text {
-        color: #c52535;
+        color: var(--site-accent);
     }
     .Header__links .list__item.is-current .anchor .text:after {
         content: "";
@@ -3624,7 +3632,7 @@ body.device-pc .CommonPaging .list__item--arrow .anchor {
         margin: auto;
         width: calc(100% - 2.8rem);
         height: 1px;
-        background-color: #c52535;
+        background-color: var(--site-accent);
         pointer-events: none;
     }
     .Header__links .list__item--logo {
@@ -3634,7 +3642,7 @@ body.device-pc .CommonPaging .list__item--arrow .anchor {
         z-index: 2;
     }
     .Header__links .list__item--subPage.is-open {
-        color: #c52535;
+        color: var(--site-accent);
     }
     .Header__links .list__item--subPage.is-open .subPage {
         opacity: 1;
@@ -3680,7 +3688,7 @@ body.device-pc .CommonPaging .list__item--arrow .anchor {
         transition: color 130ms;
     }
     .Header__links .list__item--subPage .subPage__anchor.mHover {
-        color: #c52535;
+        color: var(--site-accent);
     }
     .Header__links .list__item:not(.list__item--logo) {
         position: relative;
@@ -3732,7 +3740,7 @@ body.device-pc .CommonPaging .list__item--arrow .anchor {
         padding: 2rem 0;
     }
     .Header__links .list__item:not(.list__item--logo) .anchor.mHover {
-        color: #c52535;
+        color: var(--site-accent);
     }
     .Header__links .list__item:not(.list__item--logo) .anchor:before,
     .Header__links .list__item:not(.list__item--logo) .anchor:after {
@@ -3769,7 +3777,7 @@ body.device-pc .CommonPaging .list__item--arrow .anchor {
         justify-content: center;
         align-items: center;
         height: 100%;
-        background-color: #c52535;
+        background-color: var(--site-accent);
         border-radius: 50%;
         opacity: 0;
         pointer-events: none;

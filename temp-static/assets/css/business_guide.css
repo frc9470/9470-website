@@ -30,6 +30,49 @@
     font-size: 1.4rem;
     line-height: 1.6;
 }
+.NonprofitCallout {
+    max-width: 76rem;
+    margin: 5rem auto 0;
+    padding: 3.2rem;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: 0.4rem solid var(--site-accent-on-light);
+    border-radius: 4px;
+}
+.NonprofitCallout__eyebrow {
+    margin-bottom: 1rem;
+    color: var(--site-accent-on-light);
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.NonprofitCallout h2 {
+    margin-bottom: 1.4rem;
+    color: #202020;
+    font-size: 2.4rem;
+    line-height: 1.2;
+}
+.NonprofitCallout p {
+    color: #4f4f4d;
+    font-size: 1.4rem;
+    line-height: 1.7;
+}
+.NonprofitCallout__meta {
+    margin-top: 1.4rem;
+    color: #383836 !important;
+    font-weight: 700;
+}
+.NonprofitCallout__link {
+    display: inline-block;
+    margin-top: 1.8rem;
+    color: var(--site-accent-on-light);
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
+}
 .SectContents {
     margin-top: 3.2rem;
 }
@@ -118,10 +161,10 @@
     border-color: #c54325;
 }
 .SectContents__block#Flow .SectContents__block__main .boxes__item:nth-of-type(6) .icon:before {
-    background-color: #c52535;
+    background-color: var(--site-accent);
 }
 .SectContents__block#Flow .SectContents__block__main .boxes__item:nth-of-type(6) .icon:after {
-    border-color: #c52535;
+    border-color: var(--site-accent);
 }
 .SectContents__block#Flow .SectContents__block__main .boxes__item:nth-of-type(7) .icon:before {
     background-color: #0dbe00;
@@ -199,7 +242,7 @@
     z-index: 1;
 }
 .SectContents__block#Faq .SectContents__block__main .c-accordion__item__main .summary__prefix {
-    color: #ff3045;
+    color: var(--site-accent-bright);
     font-size: 2rem;
 }
 .SectContents__block#Faq .SectContents__block__main .c-accordion__item__main .summary__text {
@@ -235,6 +278,13 @@
         margin: 2.6rem auto 0;
         font-size: 1.3rem;
         line-height: 1.7;
+    }
+    .NonprofitCallout {
+        margin-top: 3rem;
+        padding: 2.4rem;
+    }
+    .NonprofitCallout h2 {
+        font-size: 2rem;
     }
     .SectContents {
         margin-top: 6rem;

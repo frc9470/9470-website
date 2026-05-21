@@ -22,16 +22,10 @@ const { currentPage = '' } = Astro.props;
         <li class={`list__item ${currentPage === 'about' ? 'is-current' : ''}`}><a class="anchor mo_line" href="/about/">
             <p class="text"><span class="text__inner">About</span></p>
           </a></li>
-        <li class={`list__item ${currentPage === 'frc' ? 'is-current' : ''}`}><a class="anchor mo_line" href="/about/#FRC">
-            <p class="text"><span class="text__inner">FRC</span></p>
-          </a></li>
         <li class={`list__item ${currentPage === 'media' ? 'is-current' : ''}`}><a class="anchor mo_line" href="/media/">
             <p class="text"><span class="text__inner">Media</span></p>
           </a>
         </li>
-        <li class={`list__item ${currentPage === 'members' ? 'is-current' : ''}`}><a class="anchor mo_line" href="/members/">
-            <p class="text"><span class="text__inner">Members</span></p>
-          </a></li>
         <li class={`list__item ${currentPage === 'sponsors' ? 'is-current' : ''}`}><a class="anchor mo_line" href="/sponsors/">
             <p class="text"><span class="text__inner">Sponsors</span></p>
           </a></li>

@@ -420,6 +420,7 @@
             this.$movie_info_item.each(function() {
                 $(this).find(".cloneTarget").each(function() {
                     const currentWidth = $(this).width();
+                    if (currentWidth < 1) return; // Prevent infinite loop / browser freeze if hidden
                     if (currentWidth < targetWidth) {
                         const cloneCount = Math.ceil(targetWidth / currentWidth) - 1;
                         const originalHtml = $(this).html();

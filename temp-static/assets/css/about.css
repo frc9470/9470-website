@@ -154,18 +154,18 @@
 .SectContents__block#Value .SectContents__block__title {
     margin-top: 7.5rem;
 }
-.SectContents__block#Message {
+.SectContents__block#FRC {
     padding-top: 15rem;
     background-color: #e6e6e3;
 }
-.SectContents__block#Message .SectContents__block__main {
+.SectContents__block#FRC .SectContents__block__main {
     margin-top: 7.7rem;
 }
-.SectContents__block#Message .SectContents__block__main .detail {
+.SectContents__block#FRC .SectContents__block__main .detail {
     margin-top: 5.4rem;
     text-align: left;
 }
-.SectContents__block#Message .SectContents__block__main .detail .signature {
+.SectContents__block#FRC .SectContents__block__main .detail .signature {
     display: block;
     margin-top: 4.2rem;
     text-align: right;
@@ -301,18 +301,18 @@
     .SectContents__block#Value .SectContents__block__title {
         margin-top: 3.25rem;
     }
-    .SectContents__block#Message {
+    .SectContents__block#FRC {
         padding-top: 5.8rem;
         padding-bottom: 7.25rem;
     }
-    .SectContents__block#Message .SectContents__block__main {
+    .SectContents__block#FRC .SectContents__block__main {
         margin-top: 3.85rem;
     }
-    .SectContents__block#Message .SectContents__block__main .detail {
+    .SectContents__block#FRC .SectContents__block__main .detail {
         width: 92%;
         margin: 3.4rem auto 0;
     }
-    .SectContents__block#Message .SectContents__block__main .detail .signature {
+    .SectContents__block#FRC .SectContents__block__main .detail .signature {
         margin-top: 4.25rem;
     }
 }

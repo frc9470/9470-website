@@ -19,8 +19,8 @@
 .SectContents__nav .innerNav__entry .anchor {
     padding: 1.7rem 0 2.2rem;
     border-radius: 0.5rem;
-    background-color: #c52535;
-    color: #fff;
+    background-color: var(--site-accent);
+    color: var(--site-accent-ink);
     text-align: center;
 }
 .SectContents__nav .innerNav__entry .anchor.mHover .arrow:after {
@@ -293,7 +293,7 @@
 .SectContents__block#Member .SectContents__block__main .attribute__item .heading__ja {
     position: relative;
     padding-top: 2.8rem;
-    color: #c52535;
+    color: var(--site-accent);
     text-align: center;
     font-size: 2rem;
     font-weight: 700;
@@ -309,7 +309,7 @@
     margin: auto;
     width: 0.8rem;
     height: 0.8rem;
-    background-color: #ff3045;
+    background-color: var(--site-accent-bright);
     border-radius: 50%;
     background-color: currentColor;
 }
@@ -434,7 +434,7 @@
 }
 .SectContents__block#Member .SectContents__block__main .attribute__item--hobby .boxes__item:nth-of-type(1) .title__main {
     margin-top: 2.7rem;
-    color: #c52535;
+    color: var(--site-accent);
     font-size: 7rem;
 }
 .SectContents__block#Member .SectContents__block__main .attribute__item--hobby .boxes__item:nth-of-type(1) .image {
@@ -539,7 +539,7 @@
 }
 .SectContents__block#Member .SectContents__block__main .attribute__item--hometown .boxes__item:nth-of-type(1) .title__main {
     margin-top: 1rem;
-    color: #c52535;
+    color: var(--site-accent);
     font-size: 12rem;
 }
 .SectContents__block#Member .SectContents__block__main .attribute__item--hometown .boxes__item:nth-of-type(1) .title__main .c-numSlot__inner {
@@ -618,7 +618,7 @@
     border-radius: 50%;
 }
 .SectContents__block#Member .SectContents__block__main .attribute__item--gender .chart:before {
-    background-image: radial-gradient(#f0f0ed 0% 68.1%, transparent 68.2%), conic-gradient(#1b9171 59.9%, #c52535 60% 100%);
+    background-image: radial-gradient(#f0f0ed 0% 68.1%, transparent 68.2%), conic-gradient(#1b9171 59.9%, var(--site-accent) 60% 100%);
     box-shadow: 0.8rem 1.5rem 1.3rem 0 rgba(0, 0, 0, 0.05) inset;
     transform: scale(1.142);
 }
@@ -672,7 +672,7 @@
     margin-right: 2.6rem;
 }
 .SectContents__block#Member .SectContents__block__main .attribute__item--gender .boxes__item:nth-of-type(1) .title__main {
-    color: #c52535;
+    color: var(--site-accent);
 }
 .SectContents__block#Member .SectContents__block__main .attribute__item--gender .boxes__item:nth-of-type(2) .title__main {
     color: #1b9171;
@@ -975,15 +975,15 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    background-color: #c52535;
+    background-color: var(--site-accent);
     border-radius: 0.5rem;
-    color: #fff;
+    color: var(--site-accent-ink);
 }
 .SectContents__block#MoreContents .SectContents__block__main .entry__link .anchor.mHover .arrow {
     background-color: #fff;
 }
 .SectContents__block#MoreContents .SectContents__block__main .entry__link .anchor.mHover .arrow:before {
-    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #c52535;
+    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) var(--site-accent);
     animation: business_more_arrow 900ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 .SectContents__block#MoreContents .SectContents__block__main .entry__link .anchor .text {
@@ -1668,7 +1668,7 @@
 .SectContents__block#Member .SectContents__block__main .attribute__item--sponsors .heading__ja {
     position: relative;
     padding-top: 2.8rem;
-    color: #c52535;
+    color: var(--site-accent);
     text-align: center;
     font-size: 2rem;
     font-weight: 700;
@@ -1685,7 +1685,7 @@
     margin: auto;
     width: 0.8rem;
     height: 0.8rem;
-    background-color: #ff3045;
+    background-color: var(--site-accent-bright);
     border-radius: 50%;
     background-color: currentColor;
 }

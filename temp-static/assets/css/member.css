@@ -65,8 +65,8 @@
     transition-property: background-color, color;
 }
 .SectContents__list__item .anchor.mHover {
-    background-color: #c52535;
-    color: #fff;
+    background-color: var(--site-accent);
+    color: var(--site-accent-ink);
 }
 .SectContents__list__item .anchor.mHover .name-en {
     opacity: 1;

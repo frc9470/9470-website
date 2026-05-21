@@ -152,8 +152,8 @@
 }
 .Business__list {
     width: 50%;
-    background-color: #c52535;
-    color: #fff;
+    background-color: var(--site-accent);
+    color: var(--site-accent-ink);
     transition-duration: 500ms;
     transition-property: background-color, color;
 }
@@ -882,7 +882,7 @@
     min-width: 152vw;
     height: 265vh;
     min-height: 152vw;
-    background-color: #c52535;
+    background-color: var(--site-accent);
     border-radius: 50%;
     transform: scale(0) translate3d(-50%, -50%, 0);
     transform-origin: left top;
@@ -911,10 +911,10 @@
     text-align: center;
 }
 .PcMenuModal__links.is-hover .list {
-    color: #e3aaae;
+    color: rgba(32, 24, 15, 0.45);
 }
 .PcMenuModal__links .list {
-    color: #fff;
+    color: var(--site-accent-ink);
 }
 .PcMenuModal__links .list__item {
     font-size: 7rem;
@@ -944,7 +944,7 @@
     transition: color 400ms;
 }
 .PcMenuModal__links .list__item .anchor.mHover {
-    color: #fff;
+    color: var(--site-accent-ink);
     transition: color 120ms;
 }
 .PcMenuModal__links .list__item .anchor .text {
@@ -1028,7 +1028,7 @@
     align-items: center;
     width: 2.6rem;
     height: 2.6rem;
-    border: 1px solid #e3aaae;
+    border: 1px solid rgba(32, 24, 15, 0.3);
     border-radius: 50%;
     transition-duration: 120ms;
     transition-property: background-color, border-color;
@@ -1051,12 +1051,12 @@
     margin-top: 5%;
 }
 .PcMenuModal__bottom .list__item--sns .anchor .ico svg .cls-2 {
-    fill: #fff;
+    fill: var(--site-accent-ink);
     transition: fill 120ms;
 }
 .PcMenuModal__bottom .list__item--copy {
     margin-left: 0.8rem;
-    color: #dd959a;
+    color: rgba(32, 24, 15, 0.62);
     font-size: 1rem;
 }
 .PcMenuModal__bottom .closeButton {
@@ -1065,9 +1065,9 @@
 .PcMenuModal__bottom .closeButton .anchor {
     width: 9.7rem;
     padding: 0.45em 0 0.5em;
-    border: 1px solid #fff;
+    border: 1px solid rgba(32, 24, 15, 0.45);
     border-radius: 0.15em;
-    color: #fff;
+    color: var(--site-accent-ink);
     text-align: center;
     font-size: 2rem;
     font-weight: 600;

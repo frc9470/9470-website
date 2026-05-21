@@ -225,7 +225,7 @@ body {
     opacity: 0;
 }
 .Main--static .Main__heading .title-ja {
-    color: #c52535;
+    color: var(--site-accent);
     font-size: 1.4rem;
     font-weight: 700;
 }
@@ -353,7 +353,7 @@ body {
     margin: auto;
     width: 1px;
     height: 1rem;
-    background-color: #ff3045;
+    background-color: var(--site-accent-bright);
     transition: background-color 300ms;
 }
 .SectContents__nav .pageNav__list {
@@ -366,7 +366,7 @@ body {
     margin-top: 1.6rem;
 }
 .SectContents__nav .pageNav__list__item.is-current {
-    color: #c52535;
+    color: var(--site-accent);
     font-weight: 700;
 }
 .SectContents__nav .pageNav__list__item .anchor {
@@ -547,7 +547,7 @@ body {
     right: 0;
     margin: auto;
     height: 1px;
-    background-color: #c52535;
+    background-color: var(--site-accent);
     transition: opacity 160ms;
 }
 .SpInnerNav__list__item.is-current:after {
