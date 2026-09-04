@@ -71,6 +71,12 @@ import SubPageLayout from '../layouts/SubPageLayout.astro';
           <h3 class="heading">How Our Sponsorship is Organized</h3>
           <p class="detail">Sponsors make Team 9470 possible. Funding goes directly into robot materials, registration, tooling, travel, outreach, and student training. Donations are received through Fremont Institute of Robotics Education, the nonprofit that supports Ctrl-Alt-Defeat and local robotics education.<br><br><strong>We offer four sponsorship tiers with recognition scaled to the contribution level:</strong>
           </p>
+          <div class="manufacturing-partner" id="fabworks">
+            <h3 class="heading">Manufacturing Partner</h3>
+            <a class="manufacturing-partner__link" href="https://www.fabworks.com/" aria-label="Visit Fabworks">
+              <img src="/assets/images/fabworks.svg" alt="Fabworks" width="316" height="50" />
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -741,3 +747,29 @@ FIRST NorCal &ndash; $500</p>
 
 
 </SubPageLayout>
+
+<style>
+  .manufacturing-partner {
+    margin-top: 2.5rem;
+  }
+
+  .manufacturing-partner__link {
+    display: inline-flex;
+    max-width: 100%;
+    margin-top: 1rem;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background: #fff;
+  }
+
+  .manufacturing-partner__link img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .manufacturing-partner__link:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+  }
+</style>
