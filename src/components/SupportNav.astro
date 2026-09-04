@@ -1,0 +1,10 @@
+---
+interface Props {
+  current: 'support' | 'sponsors';
+}
+const { current } = Astro.props;
+---
+<nav class="giving-nav" aria-label="Support and sponsors">
+  <a href="/support/" aria-current={current === 'support' ? 'page' : undefined}>Support Us</a>
+  <a href="/sponsors/" aria-current={current === 'sponsors' ? 'page' : undefined}>Our Sponsors</a>
+</nav>

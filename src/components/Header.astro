@@ -48,13 +48,13 @@ const { currentPage = '' } = Astro.props;
       */}
       <li class={`list__item ${currentPage === 'support' ? 'is-current' : ''}`}>
         <a class="anchor mo_crop" href="/support/">
-          <p class="text" data-text="Support"><span class="text__inner">Support</span></p>
+          <p class="text" data-text="Support Us"><span class="text__inner">Support Us</span></p>
         </a>
       </li>
       <li class="list__item list__item--logo"></li>
       <li class={`list__item ${currentPage === 'sponsors' ? 'is-current' : ''}`}>
         <a class="anchor mo_crop" href="/sponsors/">
-          <p class="text" data-text="Sponsors"><span class="text__inner">Sponsors</span></p>
+          <p class="text" data-text="Our Sponsors"><span class="text__inner">Our Sponsors</span></p>
         </a>
       </li>
       <li class={`list__item ${currentPage === 'awards' ? 'is-current' : ''}`}>
@@ -81,4 +81,7 @@ const { currentPage = '' } = Astro.props;
   </div>
 </header>
 
+<style>
+  .Header__links .text { white-space: nowrap; }
+</style>
 
