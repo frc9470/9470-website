@@ -1,0 +1,16 @@
+/* Closed applications are visible, but have no destination or interaction. */
+.applications-closed[aria-disabled='true'] {
+  pointer-events: none;
+  cursor: default;
+  filter: grayscale(1);
+  opacity: .6;
+  text-decoration: none !important;
+}
+.SimpleAboutButton.applications-closed {
+  background: #dededb !important;
+  border-color: #c7c7c3 !important;
+  color: #60605e !important;
+  box-shadow: none !important;
+  opacity: 1;
+}
+.NavCard.applications-closed .NavCard__arrow { display: none; }
