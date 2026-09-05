@@ -5,12 +5,14 @@ import '../styles/giving.css';
 const featured = [
   { tier: 'Platinum', sponsors: [
     { name: 'FIRST', note: 'FRC Grant · $6,000', logo: 'frc_crop.png' },
+    { name: 'METIS IP', note: '$6,000', logo: 'metis-ip.svg' },
     { name: 'Shokz', note: '$5,000', logo: 'Shokz.png' },
     { name: 'DreamFace', note: '$5,000', logo: 'DreamFace.png' },
   ] },
   { tier: 'Gold', sponsors: [
     { name: 'NASA', note: 'NASA Grant · $4,000', logo: 'NASA_crop.png' },
     { name: 'BASIS Independent Fremont Upper', note: '$3,000', logo: 'basis.png' },
+    { name: 'Minerva IP Law LLC', note: '$3,000', logo: null },
     { name: 'Gene Haas Foundation', note: '$2,750', logo: 'genehaas_crop.png' },
     { name: 'Google', note: '$2,600', logo: 'google.png' },
   ] },
@@ -18,8 +20,6 @@ const featured = [
 const community = [
   { tier: 'Silver', sponsors: [
     { name: 'Argosy Foundation', amount: '$2,000' },
-    { name: 'Minerva IP Law LLC', amount: '$1,000' },
-    { name: 'Metis IP LLC', amount: '$1,000' },
     { name: 'PG&E', amount: '$750' },
     { name: 'FIRST NorCal', amount: '$500' },
   ] },
@@ -37,12 +37,12 @@ const community = [
       </header>
 
       {featured.map((group) => (
-        <section class="sponsor-group" aria-label={`${group.tier} sponsors`}>
+        <section class="sponsor-group sponsor-group--featured" data-tier={group.tier.toLowerCase()} aria-label={`${group.tier} sponsors`}>
           <h2>{group.tier}</h2>
           <ul class="sponsor-grid">
             {group.sponsors.map((sponsor) => (
-              <li class="sponsor-card">
-                <div class="sponsor-logo"><img src={`/assets/images/${sponsor.logo}`} alt={`${sponsor.name} logo`} loading="lazy" width="280" height="120" /></div>
+              <li class:list={['sponsor-card', { 'sponsor-card--text': !sponsor.logo }]}>
+                {sponsor.logo && <div class="sponsor-logo"><img src={`/assets/images/${sponsor.logo}`} alt={`${sponsor.name} logo`} loading="lazy" width="280" height="120" /></div>}
                 <h3>{sponsor.name}</h3>
                 <p>{sponsor.note}</p>
               </li>
@@ -53,7 +53,7 @@ const community = [
 
       <div class="sponsor-community">
         {community.map((group) => (
-          <section class="sponsor-group" aria-label={`${group.tier} sponsors`}>
+          <section class="sponsor-group" data-tier={group.tier.toLowerCase()} aria-label={`${group.tier} sponsors`}>
             <h2>{group.tier}</h2>
             <ul class="sponsor-list">
               {group.sponsors.map((sponsor) => (<li><h3>{sponsor.name}</h3><p>{sponsor.amount}</p></li>))}
