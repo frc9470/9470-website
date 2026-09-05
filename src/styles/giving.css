@@ -49,18 +49,15 @@
 .GivingPage .giving-volunteer a { margin-top: 20px; }
 .GivingPage .giving-hero--simple { display: block; padding: 40px 0; }
 .GivingPage .giving-hero--simple a { margin-top: 22px; }
+.GivingPage--sponsors { background: #fff; }
 .GivingPage .sponsor-group {
   --tier-ink: #545e68;
   --tier-line: #c7cdd2;
-  --tier-surface: #eeeff0;
-  padding: 28px;
-  border: 1px solid var(--tier-line);
-  border-radius: 12px;
-  background: var(--tier-surface);
+  padding: 28px 0;
 }
-.GivingPage .sponsor-group[data-tier='platinum'] { --tier-ink: #425d70; --tier-line: #bacbd6; --tier-surface: #eaf0f4; }
-.GivingPage .sponsor-group[data-tier='gold'] { --tier-ink: #7c5c23; --tier-line: #d9c799; --tier-surface: #f6f1e4; }
-.GivingPage .sponsor-group[data-tier='bronze'] { --tier-ink: #86573c; --tier-line: #d8c2b2; --tier-surface: #f2eae4; }
+.GivingPage .sponsor-group[data-tier='platinum'] { --tier-ink: #425d70; --tier-line: #bacbd6; }
+.GivingPage .sponsor-group[data-tier='gold'] { --tier-ink: #7c5c23; --tier-line: #d9c799; }
+.GivingPage .sponsor-group[data-tier='bronze'] { --tier-ink: #86573c; --tier-line: #d8c2b2; }
 .GivingPage .sponsor-group--featured { margin-bottom: 28px; }
 .GivingPage .sponsor-group > h2 {
   display: flex;
@@ -71,31 +68,31 @@
   font-weight: 600;
   letter-spacing: .12em;
   text-transform: uppercase;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 .GivingPage .sponsor-group > h2::after { content: ''; flex: 1; height: 1px; background: var(--tier-line); }
-.GivingPage .sponsor-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
-.GivingPage [data-tier='platinum'] .sponsor-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
-.GivingPage .sponsor-card { min-width: 0; }
-.GivingPage .sponsor-logo { height: 140px; display: flex; align-items: center; justify-content: center; padding: 30px; background: #fff; border: 1px solid var(--tier-line); border-radius: 8px; }
+.GivingPage .sponsor-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 32px; }
+.GivingPage [data-tier='platinum'] .sponsor-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; }
+.GivingPage .sponsor-card { min-width: 0; text-align: center; }
+.GivingPage .sponsor-logo { height: 140px; display: flex; align-items: center; justify-content: center; padding: 30px; }
 .GivingPage .sponsor-logo img { width: auto; height: auto; max-width: 100%; max-height: 80px; object-fit: contain; }
 .GivingPage [data-tier='platinum'] .sponsor-logo { height: 170px; padding: 36px; }
 .GivingPage [data-tier='platinum'] .sponsor-logo img { max-height: 98px; }
 .GivingPage .sponsor-card h3 { font-size: 15px; margin-top: 16px; }
-.GivingPage .sponsor-card p { font-size: 13px; margin-top: 4px; color: var(--tier-ink); font-variant-numeric: tabular-nums; }
-.GivingPage .sponsor-card--text { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 28px; background: #fff; border: 1px solid var(--tier-line); border-radius: 8px; text-align: center; }
+.GivingPage .sponsor-card p { font-size: 13px; margin-top: 4px; color: #68645c; font-variant-numeric: tabular-nums; }
+.GivingPage .sponsor-card--text { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 28px; }
 .GivingPage .sponsor-card--text h3 { margin-top: 0; font-family: Georgia, serif; font-size: 23px; font-weight: 400; }
 .GivingPage .sponsor-card--text p { margin-top: 12px; }
-.GivingPage .sponsor-community { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 48px; }
+.GivingPage .sponsor-community { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; margin-bottom: 48px; }
 .GivingPage .sponsor-list li { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 12px 0; }
-.GivingPage .sponsor-list li + li { border-top: 1px solid var(--tier-line); }
+.GivingPage .sponsor-list li + li { border-top: 1px solid #eeece7; }
 .GivingPage .sponsor-list h3 { font-size: 14px; }
-.GivingPage .sponsor-list p { font-size: 13px; margin: 0; white-space: nowrap; color: var(--tier-ink); font-variant-numeric: tabular-nums; }
+.GivingPage .sponsor-list p { font-size: 13px; margin: 0; white-space: nowrap; color: #68645c; font-variant-numeric: tabular-nums; }
 .GivingPage .sponsor-partner { align-items: center; padding-bottom: 64px; }
-.GivingPage .sponsor-partner-link { display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 32px; background: #fff; border: 1px solid #e7e3da; }
-.GivingPage .sponsor-partner-link img { width: min(100%, 260px); height: auto; }
+.GivingPage .sponsor-partner-link { display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 32px; }
+.GivingPage .sponsor-partner-link img { width: min(100%, 340px); height: auto; }
 .GivingPage .sponsor-partner-link span { font-size: 12px; text-decoration: underline; text-underline-offset: 4px; }
-.GivingPage .sponsor-partner-link:hover { border-color: #8f6b2f; }
+.GivingPage .sponsor-partner-link:hover span { color: #8f6b2f; }
 @media (max-width: 1023px) {
   .GivingPage { padding-top: 32px; }
   .GivingPage .giving-hero { gap: 32px; }
@@ -113,7 +110,7 @@
   .GivingPage .giving-section-heading { align-items: flex-start; flex-direction: column; }
   .GivingPage .giving-tier { grid-template-columns: 1fr; gap: 10px; padding: 20px 0; }
   .GivingPage .giving-tier > div { display: flex; justify-content: space-between; gap: 16px; }
-  .GivingPage .sponsor-group { padding: 22px 18px; }
+  .GivingPage .sponsor-group { padding: 22px 0; }
   .GivingPage .sponsor-grid, .GivingPage [data-tier] .sponsor-grid { grid-template-columns: 1fr; gap: 24px; }
   .GivingPage .sponsor-logo { height: 135px; padding: 24px; }
   .GivingPage [data-tier='platinum'] .sponsor-logo { height: 155px; padding: 28px; }
