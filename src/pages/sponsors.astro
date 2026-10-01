@@ -4,6 +4,7 @@ import SupportNav from '../components/SupportNav.astro';
 import '../styles/giving.css';
 const featured = [
   { tier: 'Platinum', sponsors: [
+    { name: 'Apple', note: null, logo: 'apple-black.svg', logoOnly: true },
     { name: 'FIRST', note: 'FRC Grant · $6,000', logo: 'frc_crop.png' },
     { name: 'METIS IP', note: '$6,000', logo: 'metis-ip.svg' },
     { name: 'Shokz', note: '$5,000', logo: 'Shokz.png' },
@@ -41,10 +42,10 @@ const community = [
           <h2>{group.tier}</h2>
           <ul class="sponsor-grid">
             {group.sponsors.map((sponsor) => (
-              <li class:list={['sponsor-card', { 'sponsor-card--text': !sponsor.logo }]}>
+              <li aria-label={sponsor.name} class:list={['sponsor-card', { 'sponsor-card--text': !sponsor.logo }]}>
                 {sponsor.logo && <div class="sponsor-logo"><img src={`/assets/images/${sponsor.logo}`} alt={`${sponsor.name} logo`} loading="lazy" width="280" height="120" /></div>}
-                <h3>{sponsor.name}</h3>
-                <p>{sponsor.note}</p>
+                {!('logoOnly' in sponsor && sponsor.logoOnly) && <h3>{sponsor.name}</h3>}
+                {sponsor.note && <p>{sponsor.note}</p>}
               </li>
             ))}
           </ul>
