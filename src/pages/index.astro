@@ -38,16 +38,22 @@ import MenuModal from '../components/MenuModal.astro';
   <link href="/assets/css/design-simplify.css" rel="stylesheet" type="text/css"/>
 
 <style>
-.HeroContent__description {
-  max-width: 680px;
-  margin-top: 2rem;
+.HeroContent__title {
+  font-size: clamp(30px, 6vw, 75px);
+  white-space: nowrap;
+}
+
+.TeamIntro {
+  max-width: 900px;
+  margin: 0 auto 5rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(32, 32, 32, 0.15);
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(1.5rem, 2vw, 2rem);
-  font-weight: 400;
-  line-height: 1.6;
-  color: #ffffff;
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.65;
+  text-align: center;
   text-wrap: pretty;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  color: #202020;
 }
 </style>
 
@@ -210,7 +216,6 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
       <div class="HeroContent">
         <h1 class="HeroContent__title">CTRL-ALT-DEFEAT</h1>
         <p class="HeroContent__subtitle">FRC TEAM 9470</p>
-        <p class="HeroContent__description">We’re a world-class garage robotics team, home to 65+ student engineers and winners of the Archimedes Division at the 2026 FIRST Championship.</p>
       </div>
     </div>
     <div class="ScrollInvitation" onclick="if(window.app && window.app.locoScroll){ window.app.locoScroll.scrollTo('#About'); } else { document.getElementById('About').scrollIntoView({ behavior: 'smooth' }); }">
@@ -226,6 +231,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 
 <section class="NavGrid" id="About" data-scroll-section>
+  <p class="TeamIntro">We’re a world-class garage robotics team, home to 65+ student engineers and winners of the Archimedes Division at the 2026 FIRST Championship.</p>
   <div class="NavGrid__title">
     <h2>Explore Ctrl-Alt-Defeat</h2>
     <p>Learn what Team 9470 builds, teaches, and competes for.</p>
@@ -373,7 +379,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
     font-size: 2.2rem;
   }
   .NavGrid {
-    padding: 5rem 5% 6rem;
+    padding: 8rem 5% 6rem;
   }
 }
 
